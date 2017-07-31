@@ -27,6 +27,10 @@
 
   <modules>
     <module>../lichkin-springboot-base</module>
+    <module>../lichkin-springboot-database</module>
+    <module>../lichkin-springboot-web</module>
+    <module>../lichkin-springboot-web-services</module>
+    <module>../lichkin-springboot-web-controllers</module>
   </modules>
 
   <dependencyManagement>
@@ -51,6 +55,26 @@
       <dependency>
         <groupId>com.lichkin</groupId>
         <artifactId>lichkin-springboot-base</artifactId>
+        <version>${current.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>com.lichkin</groupId>
+        <artifactId>lichkin-springboot-database</artifactId>
+        <version>${current.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>com.lichkin</groupId>
+        <artifactId>lichkin-springboot-web</artifactId>
+        <version>${current.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>com.lichkin</groupId>
+        <artifactId>lichkin-springboot-web-services</artifactId>
+        <version>${current.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>com.lichkin</groupId>
+        <artifactId>lichkin-springboot-web-controllers</artifactId>
         <version>${current.version}</version>
       </dependency>
     </dependencies>
