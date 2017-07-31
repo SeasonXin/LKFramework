@@ -5,8 +5,6 @@ import java.util.List;
 
 import org.apache.commons.lang3.ArrayUtils;
 import org.apache.commons.lang3.StringUtils;
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
 import org.apache.logging.log4j.core.lookup.MainMapLookup;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -23,9 +21,6 @@ import com.lichkin.framework.utils.lang.LKStringUtils;
  */
 @SpringBootApplication // 自动配置
 public class LKMain {
-
-	/** 日志对象 */
-	private static final Log LOGGER = LogFactory.getLog(LKMain.class);
 
 	/** 默认加载的profile */
 	private static String[] PROFILES = { "db", "web", "admin", "common" };
@@ -126,19 +121,19 @@ public class LKMain {
 							LKMain.PROFILES = ArrayUtils.add(LKMain.PROFILES, LKMain.DEFAULT_PROFILE);
 							System.setProperty("webjars.compress", "false");
 							// 没有配置环境参数则增加开发环境
-							LKMain.LOGGER.warn("no profile to active, framework may append development to active.");
+							System.out.println("no profile to active, framework may append development to active.");
 						} else if (listProfile.size() == 1) {
 							// 最后增加环境配置
 							LKMain.PROFILES = ArrayUtils.add(LKMain.PROFILES, listProfile.get(0));
 						} else {
-							LKMain.LOGGER.error("the active profile must be only one.");
+							System.out.println("the active profile must be only one.");
 							throw new IllegalArgumentException("the active profile must be only one.");
 						}
 
 						// 替换处理过的配置
 						args[i] = LKMain.reBuildArgProfilesActive();
 					} else {// 配置有误
-						LKMain.LOGGER.error("the argument profiles active config should like this [--spring.profiles.active=development]");
+						System.out.println("the argument profiles active config should like this [--spring.profiles.active=development]");
 						throw new IllegalArgumentException("the argument profiles active config should like this [--spring.profiles.active=development]");
 					}
 				} else if (StringUtils.equals(argI, LKPropertiesConfigKeys.ARGS_PROJECT_NAME)) {
