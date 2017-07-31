@@ -1,0 +1,14 @@
+#database configurations
+lichkin:
+  framework:
+    db:
+      primary:
+        driverClassName: com.mysql.jdbc.Driver
+        url: jdbc:mysql://localhost/db_test
+        username: root
+        password: 
+      secondary:
+        driverClassName: com.mysql.jdbc.Driver
+        url: jdbc:mysql://localhost/db_test
+        username: root
+        password: 
