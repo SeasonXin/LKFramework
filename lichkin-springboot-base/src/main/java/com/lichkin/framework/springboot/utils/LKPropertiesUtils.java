@@ -13,8 +13,8 @@ public class LKPropertiesUtils {
 	 * @param key 参数名
 	 * @return 参数值
 	 */
-	public static String getProperty(String key) {
-		return getProperty(key, null);
+	public static String getProperty(final String key) {
+		return LKPropertiesUtils.getProperty(key, null);
 	}
 
 
@@ -24,7 +24,7 @@ public class LKPropertiesUtils {
 	 * @param defaultValue 默认值
 	 * @return 参数值
 	 */
-	public static String getProperty(String key, String defaultValue) {
+	public static String getProperty(final String key, final String defaultValue) {
 		return LKMain.env.getProperty(key, defaultValue);
 	}
 

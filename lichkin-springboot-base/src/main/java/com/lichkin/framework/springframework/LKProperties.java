@@ -9,9 +9,9 @@ import com.lichkin.framework.springboot.utils.LKPropertiesUtils;
 public class LKProperties implements LKConfigs {
 
 	/** 配置值 */
-	public static final String LK_SYSTEM_TAG = LKPropertiesUtils.getProperty(CONFIG_LK_SYSTEM_TAG, "lichkin");
+	public static final String LK_SYSTEM_TAG = LKPropertiesUtils.getProperty(LKConfigs.CONFIG_LK_SYSTEM_TAG, "lichkin");
 
 	/** 配置值 */
-	public static final String LK_SYSTEM_NAME = LKPropertiesUtils.getProperty(CONFIG_LK_SYSTEM_NAME, "鑫宏利业");
+	public static final String LK_SYSTEM_NAME = LKPropertiesUtils.getProperty(LKConfigs.CONFIG_LK_SYSTEM_NAME, "鑫宏利业");
 
 }
