@@ -1,0 +1,31 @@
+-- DROP TABLE IF EXISTS `T_SYS_USER_CAR`;
+
+CREATE TABLE `T_SYS_USER_CAR` (
+  `ID` varchar(64) NOT NULL COMMENT '主键',
+  `REMARKS` longtext COMMENT '备注',
+  `USING_STATUS` varchar(32) NOT NULL COMMENT '在用状态(枚举)',
+  `INSERT_LOGIN_ID` varchar(32) DEFAULT NULL COMMENT '新增操作人ID',
+  `INSERT_SYSTEM_TAG` varchar(100) NOT NULL COMMENT '新增操作系统标识',
+  `INSERT_TIME` varchar(19) NOT NULL COMMENT '新增操作时间(yyyy-MM-dd HH:mm:ss)',
+  `UPDATE_LOGIN_ID` varchar(32) DEFAULT NULL COMMENT '更新操作人ID',
+  `UPDATE_SYSTEM_TAG` varchar(100) NOT NULL COMMENT '更新操作系统标识',
+  `UPDATE_TIME` varchar(19) NOT NULL COMMENT '更新操作时间(yyyy-MM-dd HH:mm:ss)',
+  `BRAND_ID` text COMMENT '品牌ID',
+  `DEFAULT_CAR` varchar(32) NOT NULL COMMENT '默认车辆（枚举）',
+  `ENGINE_NUMBER` varchar(50) DEFAULT NULL COMMENT '发动机号',
+  `FRAME_NUMBER` varchar(50) DEFAULT NULL COMMENT '车架号',
+  `LICENSE_PLATE_HEADER` varchar(10) NOT NULL COMMENT '车牌号（省份码）',
+  `LICENSE_PLATE_NUMBER` varchar(10) NOT NULL COMMENT '车牌号（号码）',
+  `MODEL_ID` varchar(100) NOT NULL COMMENT '型号ID',
+  `SERISE_ID` varchar(100) NOT NULL COMMENT '系列ID',
+  `USER_ID` varchar(32) NOT NULL COMMENT '用户ID',
+  PRIMARY KEY (`ID`),
+  KEY `I_USER_CAR__USER_ID` (`USER_ID`),
+  KEY `I_USER_CAR__SERISE_ID` (`SERISE_ID`),
+  KEY `I_USER_CAR__MODEL_ID` (`MODEL_ID`),
+  KEY `I_USER_CAR__DEFAULT_CAR` (`DEFAULT_CAR`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='用户车辆信息表';
+
+
+
+

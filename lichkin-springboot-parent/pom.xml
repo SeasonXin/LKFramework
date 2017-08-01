@@ -28,7 +28,22 @@
 
   <modules>
     <module>../lichkin-springboot-base</module>
+
     <module>../lichkin-springboot-database</module>
+    <module>../lichkin-springboot-entities/lichkin-springboot-admin-entities</module>
+    <module>../lichkin-springboot-entities/lichkin-springboot-app-entities</module>
+    <module>../lichkin-springboot-entities/lichkin-springboot-area-entities</module>
+    <module>../lichkin-springboot-entities/lichkin-springboot-car-entities</module>
+    <module>../lichkin-springboot-entities/lichkin-springboot-cms-entities</module>
+    <module>../lichkin-springboot-entities/lichkin-springboot-common-entities</module>
+    <module>../lichkin-springboot-entities/lichkin-springboot-ftp-entities</module>
+    <module>../lichkin-springboot-entities/lichkin-springboot-interfaces-entities</module>
+    <module>../lichkin-springboot-entities/lichkin-springboot-mail-entities</module>
+    <module>../lichkin-springboot-entities/lichkin-springboot-mq-entities</module>
+    <module>../lichkin-springboot-entities/lichkin-springboot-sc-entities</module>
+    <module>../lichkin-springboot-entities/lichkin-springboot-sms-entities</module>
+    <module>../lichkin-springboot-entities/lichkin-springboot-wechat-entities</module>
+
     <module>../lichkin-springboot-web-starter</module>
     <module>../lichkin-springboot-web-front-starter</module>
     <module>../lichkin-springboot-web-back-starter</module>
@@ -61,6 +76,71 @@
       <dependency>
         <groupId>com.lichkin</groupId>
         <artifactId>lichkin-springboot-database</artifactId>
+        <version>${current.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>com.lichkin</groupId>
+        <artifactId>lichkin-springboot-admin-entities</artifactId>
+        <version>${current.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>com.lichkin</groupId>
+        <artifactId>lichkin-springboot-app-entities</artifactId>
+        <version>${current.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>com.lichkin</groupId>
+        <artifactId>lichkin-springboot-area-entities</artifactId>
+        <version>${current.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>com.lichkin</groupId>
+        <artifactId>lichkin-springboot-car-entities</artifactId>
+        <version>${current.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>com.lichkin</groupId>
+        <artifactId>lichkin-springboot-cms-entities</artifactId>
+        <version>${current.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>com.lichkin</groupId>
+        <artifactId>lichkin-springboot-common-entities</artifactId>
+        <version>${current.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>com.lichkin</groupId>
+        <artifactId>lichkin-springboot-ftp-entities</artifactId>
+        <version>${current.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>com.lichkin</groupId>
+        <artifactId>lichkin-springboot-interfaces-entities</artifactId>
+        <version>${current.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>com.lichkin</groupId>
+        <artifactId>lichkin-springboot-mail-entities</artifactId>
+        <version>${current.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>com.lichkin</groupId>
+        <artifactId>lichkin-springboot-mq-entities</artifactId>
+        <version>${current.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>com.lichkin</groupId>
+        <artifactId>lichkin-springboot-sc-entities</artifactId>
+        <version>${current.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>com.lichkin</groupId>
+        <artifactId>lichkin-springboot-sms-entities</artifactId>
+        <version>${current.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>com.lichkin</groupId>
+        <artifactId>lichkin-springboot-wechat-entities</artifactId>
         <version>${current.version}</version>
       </dependency>
       <dependency>
