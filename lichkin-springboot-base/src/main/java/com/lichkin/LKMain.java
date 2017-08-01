@@ -104,6 +104,7 @@ public class LKMain {
 									for (final String arg : args) {
 										if (StringUtils.equals(LKPropertiesConfigKeys.ARGS_PRODUCTION_ON, arg)) {
 											listProfile.add(profileJ);
+											System.setProperty("production", "true");
 										}
 									}
 								} else if (StringUtils.equals(profileJ, "integration")) {

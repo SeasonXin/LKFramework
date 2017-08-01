@@ -13,14 +13,8 @@ import java.lang.annotation.Target;
  */
 @Documented
 @Inherited
-@Target(ElementType.METHOD)
+@Target({ ElementType.METHOD, ElementType.TYPE })
 @Retention(RetentionPolicy.RUNTIME)
 public @interface WithOutLogin {
-
-	/**
-	 * 是否开放不需要登录就可以访问的权限
-	 * @return true：无需登录；false：需要登录。
-	 */
-	boolean validate() default true;
 
 }

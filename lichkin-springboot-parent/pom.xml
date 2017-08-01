@@ -22,15 +22,16 @@
     <java.version>1.8</java.version>
 
     <current.version>1.0.0-SNAPSHOT</current.version>
-    <current.lichkin.version>1.0.0-SNAPSHOT</current.lichkin.version>
+
+    <start-class>com.lichkin.LKMain</start-class>
   </properties>
 
   <modules>
     <module>../lichkin-springboot-base</module>
     <module>../lichkin-springboot-database</module>
-    <module>../lichkin-springboot-web</module>
-    <module>../lichkin-springboot-web-services</module>
-    <module>../lichkin-springboot-web-controllers</module>
+    <module>../lichkin-springboot-web-starter</module>
+    <module>../lichkin-springboot-web-front-starter</module>
+    <module>../lichkin-springboot-web-back-starter</module>
   </modules>
 
   <dependencyManagement>
@@ -39,17 +40,17 @@
       <dependency>
         <groupId>com.lichkin</groupId>
         <artifactId>lichkin-framework-core</artifactId>
-        <version>${current.lichkin.version}</version>
+        <version>${current.version}</version>
       </dependency>
       <dependency>
         <groupId>com.lichkin</groupId>
         <artifactId>lichkin-framework-http</artifactId>
-        <version>${current.lichkin.version}</version>
+        <version>${current.version}</version>
       </dependency>
       <dependency>
         <groupId>com.lichkin</groupId>
         <artifactId>lichkin-framework-pinyin</artifactId>
-        <version>${current.lichkin.version}</version>
+        <version>${current.version}</version>
       </dependency>
       <!-- lichkin springboot framework -->
       <dependency>
@@ -64,23 +65,29 @@
       </dependency>
       <dependency>
         <groupId>com.lichkin</groupId>
-        <artifactId>lichkin-springboot-web</artifactId>
+        <artifactId>lichkin-springboot-web-starter</artifactId>
         <version>${current.version}</version>
       </dependency>
       <dependency>
         <groupId>com.lichkin</groupId>
-        <artifactId>lichkin-springboot-web-services</artifactId>
+        <artifactId>lichkin-springboot-web-front-starter</artifactId>
         <version>${current.version}</version>
       </dependency>
       <dependency>
         <groupId>com.lichkin</groupId>
-        <artifactId>lichkin-springboot-web-controllers</artifactId>
+        <artifactId>lichkin-springboot-web-back-starter</artifactId>
         <version>${current.version}</version>
       </dependency>
     </dependencies>
   </dependencyManagement>
 
   <dependencies>
+    <!-- junit -->
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+    </dependency>
+
     <!-- lichkin framework -->
     <dependency>
       <groupId>com.lichkin</groupId>
@@ -91,6 +98,12 @@
     <dependency>
       <groupId>org.springframework.boot</groupId>
       <artifactId>spring-boot</artifactId>
+    </dependency>
+    <!-- springboot developer tools -->
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-devtools</artifactId>
+      <optional>true</optional>
     </dependency>
   </dependencies>
 
