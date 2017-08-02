@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project
+  xmlns="http://maven.apache.org/POM/4.0.0"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"
+>
+
+  <modelVersion>4.0.0</modelVersion>
+  <packaging>jar</packaging>
+
+  <artifactId>lichkin-springboot-starter-web</artifactId>
+
+  <parent>
+    <groupId>com.lichkin</groupId>
+    <artifactId>lichkin-springboot-parent</artifactId>
+    <version>1.0.0-SNAPSHOT</version>
+    <relativePath>../../lichkin-springboot-parent</relativePath>
+  </parent>
+
+  <dependencies>
+    <!-- lichkin framework -->
+    <dependency>
+      <groupId>com.lichkin</groupId>
+      <artifactId>lichkin-framework-http</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>com.lichkin</groupId>
+      <artifactId>lichkin-springboot-starter-base</artifactId>
+    </dependency>
+
+    <!-- starter -->
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-web</artifactId>
+      <exclusions>
+        <exclusion>
+          <groupId>org.springframework.boot</groupId>
+          <artifactId>spring-boot-starter-logging</artifactId>
+        </exclusion>
+      </exclusions>
+    </dependency>
+
+    <!-- web necessity -->
+    <dependency>
+      <groupId>org.apache.tomcat.embed</groupId>
+      <artifactId>tomcat-embed-jasper</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>javax.servlet</groupId>
+      <artifactId>jstl</artifactId>
+    </dependency>
+  </dependencies>
+
+</project>
