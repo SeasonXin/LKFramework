@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Demo page</title>
+</head>
+<body>
+  <div id="output"></div>
+
+  <script type="text/javascript" src="../../../../../../../../../../lichkin-springboot-web-starter/src/main/resources/META-INF/resources/webjars/lichkin-1.0.0/lichkin.js"></script>
+  <script type="text/javascript" src="../qrcode.js"></script>
+  <script type="text/javascript" src="extends.js"></script>
+  <script>
+      LK_PRODUCTION = 'false';
+      LK.qrcode('test', 'output');
+  </script>
+
+</body>
+</html>
