@@ -12,7 +12,7 @@
      * @param params 参数。网页支持JSON、字符串、DOM等，客户端仅支持JSON、字符串。
      */
     this.log = function(params) {
-      if (LK_PRODUCTION == 'false') {
+      if (typeof LK_PRODUCTION == 'undefined' || LK_PRODUCTION == 'false') {
         if (window.WebViewJavascriptBridge) {
           if (typeof params == 'undefined') {
             params = 'params is undefined';
