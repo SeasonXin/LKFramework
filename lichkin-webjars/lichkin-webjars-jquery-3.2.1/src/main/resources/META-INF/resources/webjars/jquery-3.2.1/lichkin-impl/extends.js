@@ -516,3 +516,5 @@ LK.$.appendTo = function(htmlStr, toObj, scope) {
     return parent.$(htmlStr).appendTo(toObj);
   }
 };
+
+LK.JQuery = LK.$;
