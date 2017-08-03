@@ -6,6 +6,8 @@ import org.quartz.JobExecutionContext;
 import org.quartz.JobExecutionException;
 
 import com.lichkin.framework.bases.enums.LKDatePatternEnum;
+import com.lichkin.framework.springboot.applications.LKApplicationContext;
+import com.lichkin.framework.springboot.db.dao.LKDao;
 import com.lichkin.framework.springboot.services.LKService;
 import com.lichkin.framework.utils.lang.LKRandomUtils;
 import com.lichkin.framework.utils.lang.LKStringUtils;
@@ -24,6 +26,9 @@ public abstract class LKBaseJobService extends LKService implements Job {
 
 	/** 当前业务ID */
 	private String busId;
+
+	/** 数据库访问对象 */
+	protected LKDao dao = (LKDao) LKApplicationContext.getBean("dao");
 
 
 	/**
