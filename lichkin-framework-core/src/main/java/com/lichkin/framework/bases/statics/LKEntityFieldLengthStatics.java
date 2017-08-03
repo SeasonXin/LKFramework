@@ -27,6 +27,9 @@ public interface LKEntityFieldLengthStatics {
 	/** length for field busId */
 	public static final int LENGTH_BUS_ID = 64;
 
+	/** length for field busName */
+	public static final int LENGTH_BUS_NAME = 64;
+
 	/** length for field busType */
 	public static final int LENGTH_BUS_TYPE = 64;
 

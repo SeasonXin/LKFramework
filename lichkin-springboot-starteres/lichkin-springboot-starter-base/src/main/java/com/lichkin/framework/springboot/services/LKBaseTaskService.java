@@ -13,10 +13,10 @@ import com.lichkin.framework.utils.lang.LKStringUtils;
 public abstract class LKBaseTaskService extends LKService {
 
 	/** 当前任务开始时间 */
-	private final DateTime startTime = DateTime.now();
+	private DateTime startTime;
 
 	/** 当前任务ID */
-	private final String taskId = startTime.toString(LKDatePatternEnum.TIMESTAPFULL.getNameEn()) + LKRandomUtils.create(15);
+	private String taskId;
 
 	/** 当前业务ID */
 	private String busId;
@@ -26,6 +26,9 @@ public abstract class LKBaseTaskService extends LKService {
 	 * 执行任务
 	 */
 	public void executeTask() {
+		startTime = DateTime.now();
+		taskId = startTime.toString(LKDatePatternEnum.TIMESTAPFULL.getNameEn()) + LKRandomUtils.create(15);
+
 		logger.info("taskId: [" + taskId + "] starting at " + startTime.toString(LKDatePatternEnum.ALL.getNameEn()) + ".");
 
 		doTask();
