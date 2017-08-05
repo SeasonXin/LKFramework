@@ -1,0 +1,831 @@
+/*
+ * 扩展样式
+ */
+/** table border */
+.datagrid-toolbar table {
+  border: 0px;
+}
+
+.datagrid-toolbar table thead tr {
+  height: auto;
+  background: transparent;
+}
+
+.datagrid-toolbar table th, td {
+  border: 0px;
+  text-align: left;
+}
+
+.dialog-toolbar table {
+  border: 0px;
+}
+
+.dialog-toolbar table thead tr {
+  height: auto;
+  background: transparent;
+}
+
+.dialog-toolbar table th, td {
+  border: 0px;
+  text-align: left;
+}
+
+/** accordion */
+.accordion .accordion-header:hover {
+  background: #428bca;
+}
+
+.accordion .accordion-header:hover .panel-title {
+  color: #ffffff;
+  font-size: 15px;
+}
+
+.accordion .accordion-header-selected .accordion-collapse {
+  background: url('images/accordion_arrows-selected.png') no-repeat 0 0;
+}
+
+.accordion .accordion-header-selected .accordion-expand {
+  background: url('images/accordion_arrows-selected.png') no-repeat -16px 0;
+}
+
+.accordion .accordion-header:hover .accordion-collapse {
+  background: url('images/accordion_arrows-selected.png') no-repeat 0 0;
+}
+
+.accordion .accordion-header:hover .accordion-expand {
+  background: url('images/accordion_arrows-selected.png') no-repeat -16px 0;
+}
+
+/** tree */
+.tree-node .tree-title {
+  color: #2d3e50;
+}
+
+.tree-node-selected {
+  background: #428bca;
+}
+
+.tree-node:hover {
+  background: #428bca;
+}
+
+.tree-node-selected .tree-title {
+  color: #ffffff;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.tree-node:hover .tree-title {
+  color: #ffffff;
+  font-weight: bold;
+  font-size: 15px;
+}
+
+/** window */
+.window .window-header .panel-title {
+  margin-left: 10px;
+  height: 32px;
+  line-height: 32px;
+  font-family: 隶书;
+  color: #ffffff;
+  font-size: 20px;
+}
+
+.window .window-header .panel-with-icon {
+  margin-left: 13px;
+  line-height: 30px;
+}
+
+.window .window-header .panel-tool a.panel-tool-close {
+  margin-right: 8px;
+}
+
+.panel-tool-close:hover {
+  background: url('images/panel_tools-selected.png') no-repeat -16px 0px;
+}
+
+.panel-tool-min:hover {
+  background: url('images/panel_tools-selected.png') no-repeat 0px 0px;
+}
+
+.panel-tool-max:hover {
+  background: url('images/panel_tools-selected.png') no-repeat 0px -16px;
+}
+
+.panel-tool-restore:hover {
+  background: url('images/panel_tools-selected.png') no-repeat -16px -16px;
+}
+
+.panel-tool-collapse:hover {
+  background: url('images/panel_tools-selected.png') no-repeat -32px 0;
+}
+
+.panel-tool-expand:hover {
+  background: url('images/panel_tools-selected.png') no-repeat -32px -16px;
+}
+
+/** messager */
+.messager-body {
+  font-family: 隶书;
+  font-size: 16px;
+}
+
+.messager-body div {
+  font-family: 隶书;
+  font-size: 20px;
+}
+
+.messager-icon+div {
+  min-height: 64px;
+}
+
+.messager-error {
+  background: url('images/messager_icons.png') no-repeat scroll -128px 0;
+}
+
+.messager-info {
+  background: url('images/messager_icons.png') no-repeat scroll 0 0;
+}
+
+.messager-question {
+  background: url('images/messager_icons.png') no-repeat scroll -64px 0;
+}
+
+.messager-warning {
+  background: url('images/messager_icons.png') no-repeat scroll -192px 0;
+}
+
+/** datagrid */
+.datagrid-header-row .datagrid-cell {
+  font-weight: bold;
+  font-size: 14px;
+  text-align: center;
+  color: #2d3e50;
+  padding-top: 8px;
+  padding-bottom: 8px;
+}
+
+.datagrid-row .datagrid-cell {
+  color: #2d3e50;
+  padding-top: 8px;
+  padding-bottom: 8px;
+}
+
+.datagrid-row-selected {
+  background: #d9edf7;
+}
+
+.datagrid-row-selected .datagrid-cell {
+  color: #356ba5;
+  font-weight: bold;
+}
+
+.lk-form-fields .lk-form-field-with-btn .lk-form-field-value .textbox {
+  width: 166px !important;
+  height: 84px !important;
+  border: 1px solid #95B8E7;
+  border-radius: 3px;
+}
+
+.lk-form-fields .lk-form-field-with-btn .lk-form-field-value .textbox-invalid {
+  border-color: #ffa8a8;
+}
+
+.datagrid table {
+  border: none;
+}
+
+.datagrid table th, td {
+  border: none;
+}
+
+.lk-datagird-tip .datagrid-cell {
+  background-color: #f8fbc2;
+  color: #65691a;
+}
+
+.lk-datagird-danger .datagrid-cell {
+  background-color: #fde5e4;
+  color: #67221f;
+}
+
+.lk-datagird-warning .datagrid-cell {
+  background-color: #ffebce;
+  color: #543912;
+}
+
+.lk-datagird-success .datagrid-cell {
+  background-color: #dff0d8;
+  color: #468847;
+}
+
+/** icon on l-btn */
+.l-btn .lk-icon-add {
+  background: url('../../../res/img/icons.png') no-repeat 0px 0px;
+}
+
+.l-btn .lk-icon-cut {
+  background: url('../../../res/img/icons.png') no-repeat -16px 0px;
+}
+
+.l-btn .lk-icon-remove {
+  background: url('../../../res/img/icons.png') no-repeat -32px 0px;
+}
+
+.l-btn .lk-icon-edit {
+  background: url('../../../res/img/icons.png') no-repeat -48px 0px;
+}
+
+.l-btn .lk-icon-search {
+  background: url('../../../res/img/icons.png') no-repeat -64px 0px;
+}
+
+.l-btn .lk-icon-reset {
+  background: url('../../../res/img/icons.png') no-repeat -80px 0px;
+}
+
+.l-btn .lk-icon-disable {
+  background: url('../../../res/img/icons.png') no-repeat -96px 0px;
+}
+
+.l-btn .lk-icon-enable {
+  background: url('../../../res/img/icons.png') no-repeat -112px 0px;
+}
+
+.l-btn .lk-icon-user {
+  background: url('../../../res/img/icons.png') no-repeat -128px 0px;
+}
+
+.l-btn .lk-icon-exit {
+  background: url('../../../res/img/icons.png') no-repeat -144px 0px;
+}
+
+.l-btn .lk-icon-pwd {
+  background: url('../../../res/img/icons.png') no-repeat -160px 0px;
+}
+
+.l-btn .lk-icon-refresh {
+  background: url('../../../res/img/icons.png') no-repeat -176px 0px;
+}
+
+.l-btn .lk-icon-ok {
+  background: url('../../../res/img/icons.png') no-repeat -192px 0px;
+}
+
+.l-btn .lk-icon-cancel {
+  background: url('../../../res/img/icons.png') no-repeat -208px 0px;
+}
+
+.l-btn .lk-icon-refresh-min {
+  background: url('../../../res/img/icons.png') no-repeat -224px 0px;
+}
+
+.l-btn .lk-icon-close-min {
+  background: url('../../../res/img/icons.png') no-repeat -240px 0px;
+}
+
+.l-btn .lk-icon-close {
+  background: url('../../../res/img/icons.png') no-repeat -256px 0px;
+}
+
+.l-btn .lk-icon-close-left {
+  background: url('../../../res/img/icons.png') no-repeat -272px 0px;
+}
+
+.l-btn .lk-icon-close-right {
+  background: url('../../../res/img/icons.png') no-repeat -288px 0px;
+}
+
+.l-btn .lk-icon-close-other {
+  background: url('../../../res/img/icons.png') no-repeat -304px 0px;
+}
+
+.l-btn .lk-icon-close-all {
+  background: url('../../../res/img/icons.png') no-repeat -320px 0px;
+}
+
+.l-btn .lk-icon-help {
+  background: url('../../../res/img/icons.png') no-repeat -336px 0px;
+}
+
+.l-btn .lk-icon-selector {
+  background: url('../../../res/img/icons.png') no-repeat -352px 0px;
+}
+
+.l-btn .lk-icon-transfer {
+  background: url('../../../res/img/icons.png') no-repeat -368px 0px;
+}
+
+.l-btn .lk-icon-export {
+  background: url('../../../res/img/icons.png') no-repeat -384px 0px;
+}
+
+.l-btn .lk-icon-refund {
+  background: url('../../../res/img/icons.png') no-repeat -400px 0px;
+}
+
+.l-btn .lk-icon-upload {
+  background: url('../../../res/img/icons.png') no-repeat -416px 0px;
+}
+
+.l-btn .lk-icon-download {
+  background: url('../../../res/img/icons.png') no-repeat -432px 0px;
+}
+
+.l-btn .lk-icon-view {
+  background: url('../../../res/img/icons.png') no-repeat -448px 0px;
+}
+
+/** icon on l-btn:hover */
+.l-btn:hover .lk-icon-add {
+  background: url('../../../res/img/icons.png') no-repeat 0px -16px;
+}
+
+.l-btn:hover .lk-icon-cut {
+  background: url('../../../res/img/icons.png') no-repeat -16px -16px;
+}
+
+.l-btn:hover .lk-icon-remove {
+  background: url('../../../res/img/icons.png') no-repeat -32px -16px;
+}
+
+.l-btn:hover .lk-icon-edit {
+  background: url('../../../res/img/icons.png') no-repeat -48px -16px;
+}
+
+.l-btn:hover .lk-icon-search {
+  background: url('../../../res/img/icons.png') no-repeat -64px -16px;
+}
+
+.l-btn:hover .lk-icon-reset {
+  background: url('../../../res/img/icons.png') no-repeat -80px -16px;
+}
+
+.l-btn:hover .lk-icon-disable {
+  background: url('../../../res/img/icons.png') no-repeat -96px -16px;
+}
+
+.l-btn:hover .lk-icon-enable {
+  background: url('../../../res/img/icons.png') no-repeat -112px -16px;
+}
+
+.l-btn:hover .lk-icon-user {
+  background: url('../../../res/img/icons.png') no-repeat -128px -16px;
+}
+
+.l-btn:hover .lk-icon-exit {
+  background: url('../../../res/img/icons.png') no-repeat -144px -16px;
+}
+
+.l-btn:hover .lk-icon-pwd {
+  background: url('../../../res/img/icons.png') no-repeat -160px -16px;
+}
+
+.l-btn:hover .lk-icon-refresh {
+  background: url('../../../res/img/icons.png') no-repeat -176px -16px;
+}
+
+.l-btn:hover .lk-icon-ok {
+  background: url('../../../res/img/icons.png') no-repeat -192px -16px;
+}
+
+.l-btn:hover .lk-icon-cancel {
+  background: url('../../../res/img/icons.png') no-repeat -208px -16px;
+}
+
+.l-btn:hover .lk-icon-refresh-min {
+  background: url('../../../res/img/icons.png') no-repeat -224px -16px;
+}
+
+.l-btn:hover .lk-icon-close-min {
+  background: url('../../../res/img/icons.png') no-repeat -240px -16px;
+}
+
+.l-btn:hover .lk-icon-close {
+  background: url('../../../res/img/icons.png') no-repeat -256px -16px;
+}
+
+.l-btn:hover  .lk-icon-close-left {
+  background: url('../../../res/img/icons.png') no-repeat -272px -16px;
+}
+
+.l-btn:hover  .lk-icon-close-right {
+  background: url('../../../res/img/icons.png') no-repeat -288px -16px;
+}
+
+.l-btn:hover  .lk-icon-close-other {
+  background: url('../../../res/img/icons.png') no-repeat -304px -16px;
+}
+
+.l-btn:hover  .lk-icon-close-all {
+  background: url('../../../res/img/icons.png') no-repeat -320px -16px;
+}
+
+.l-btn:hover  .lk-icon-help {
+  background: url('../../../res/img/icons.png') no-repeat -336px -16px;
+}
+
+.l-btn:hover  .lk-icon-selector {
+  background: url('../../../res/img/icons.png') no-repeat -352px -16px;
+}
+
+.l-btn:hover  .lk-icon-transfer {
+  background: url('../../../res/img/icons.png') no-repeat -368px -16px;
+}
+
+.l-btn:hover  .lk-icon-export {
+  background: url('../../../res/img/icons.png') no-repeat -384px -16px;
+}
+
+.l-btn:hover  .lk-icon-refund {
+  background: url('../../../res/img/icons.png') no-repeat -400px -16px;
+}
+
+.l-btn:hover  .lk-icon-upload {
+  background: url('../../../res/img/icons.png') no-repeat -416px -16px;
+}
+
+.l-btn:hover  .lk-icon-download {
+  background: url('../../../res/img/icons.png') no-repeat -432px -16px;
+}
+
+.l-btn:hover  .lk-icon-view {
+  background: url('../../../res/img/icons.png') no-repeat -448px -16px;
+}
+
+/** icon:hover on window-header */
+.window-header .lk-icon-add:hover {
+  background: url('../../../res/img/icons.png') no-repeat 0px -16px;
+}
+
+.window-header .lk-icon-cut:hover {
+  background: url('../../../res/img/icons.png') no-repeat -16px -16px;
+}
+
+.window-header .lk-icon-remove:hover {
+  background: url('../../../res/img/icons.png') no-repeat -32px -16px;
+}
+
+.window-header .lk-icon-edit:hover {
+  background: url('../../../res/img/icons.png') no-repeat -48px -16px;
+}
+
+.window-header .lk-icon-search:hover {
+  background: url('../../../res/img/icons.png') no-repeat -64px -16px;
+}
+
+.window-header .lk-icon-reset:hover {
+  background: url('../../../res/img/icons.png') no-repeat -80px -16px;
+}
+
+.window-header .lk-icon-disable:hover {
+  background: url('../../../res/img/icons.png') no-repeat -96px -16px;
+}
+
+.window-header .lk-icon-enable:hover {
+  background: url('../../../res/img/icons.png') no-repeat -112px -16px;
+}
+
+.window-header .lk-icon-user:hover {
+  background: url('../../../res/img/icons.png') no-repeat -128px -16px;
+}
+
+.window-header .lk-icon-exit:hover {
+  background: url('../../../res/img/icons.png') no-repeat -144px -16px;
+}
+
+.window-header .lk-icon-pwd:hover {
+  background: url('../../../res/img/icons.png') no-repeat -160px -16px;
+}
+
+.window-header .lk-icon-refresh:hover {
+  background: url('../../../res/img/icons.png') no-repeat -176px -16px;
+}
+
+.window-header .lk-icon-ok:hover {
+  background: url('../../../res/img/icons.png') no-repeat -192px -16px;
+}
+
+.window-header .lk-icon-cancel:hover {
+  background: url('../../../res/img/icons.png') no-repeat -208px -16px;
+}
+
+.window-header .lk-icon-refresh-min:hover {
+  background: url('../../../res/img/icons.png') no-repeat -224px -16px;
+}
+
+.window-header .lk-icon-close-min:hover {
+  background: url('../../../res/img/icons.png') no-repeat -240px -16px;
+}
+
+.window-header .lk-icon-close:hover {
+  background: url('../../../res/img/icons.png') no-repeat -256px -16px;
+}
+
+.window-header  .lk-icon-close-left:hover {
+  background: url('../../../res/img/icons.png') no-repeat -272px -16px;
+}
+
+.window-header  .lk-icon-close-right:hover {
+  background: url('../../../res/img/icons.png') no-repeat -288px -16px;
+}
+
+.window-header  .lk-icon-close-other:hover {
+  background: url('../../../res/img/icons.png') no-repeat -304px -16px;
+}
+
+.window-header  .lk-icon-close-all:hover {
+  background: url('../../../res/img/icons.png') no-repeat -320px -16px;
+}
+
+.window-header  .lk-icon-help:hover {
+  background: url('../../../res/img/icons.png') no-repeat -336px -16px;
+}
+
+.window-header  .lk-icon-selector:hover {
+  background: url('../../../res/img/icons.png') no-repeat -352px -16px;
+}
+
+.window-header  .lk-icon-transfer:hover {
+  background: url('../../../res/img/icons.png') no-repeat -368px -16px;
+}
+
+.window-header  .lk-icon-export:hover {
+  background: url('../../../res/img/icons.png') no-repeat -384px -16px;
+}
+
+.window-header  .lk-icon-refund:hover {
+  background: url('../../../res/img/icons.png') no-repeat -400px -16px;
+}
+
+.window-header  .lk-icon-upload:hover {
+  background: url('../../../res/img/icons.png') no-repeat -416px -16px;
+}
+
+.window-header  .lk-icon-download:hover {
+  background: url('../../../res/img/icons.png') no-repeat -432px -16px;
+}
+
+.window-header  .lk-icon-view:hover {
+  background: url('../../../res/img/icons.png') no-repeat -448px -16px;
+}
+
+/** icon on window-header tool */
+.window-header .panel-tool .lk-icon-add {
+  background: url('../../../res/img/icons.png') no-repeat 0px -32px;
+}
+
+.window-header .panel-tool .lk-icon-cut {
+  background: url('../../../res/img/icons.png') no-repeat -16px -32px;
+}
+
+.window-header .panel-tool .lk-icon-remove {
+  background: url('../../../res/img/icons.png') no-repeat -32px -32px;
+}
+
+.window-header .panel-tool .lk-icon-edit {
+  background: url('../../../res/img/icons.png') no-repeat -48px -32px;
+}
+
+.window-header .panel-tool .lk-icon-search {
+  background: url('../../../res/img/icons.png') no-repeat -64px -32px;
+}
+
+.window-header .panel-tool .lk-icon-reset {
+  background: url('../../../res/img/icons.png') no-repeat -80px -32px;
+}
+
+.window-header .panel-tool .lk-icon-disable {
+  background: url('../../../res/img/icons.png') no-repeat -96px -32px;
+}
+
+.window-header .panel-tool .lk-icon-enable {
+  background: url('../../../res/img/icons.png') no-repeat -112px -32px;
+}
+
+.window-header .panel-tool .lk-icon-user {
+  background: url('../../../res/img/icons.png') no-repeat -128px -32px;
+}
+
+.window-header .panel-tool .lk-icon-exit {
+  background: url('../../../res/img/icons.png') no-repeat -144px -32px;
+}
+
+.window-header .panel-tool .lk-icon-pwd {
+  background: url('../../../res/img/icons.png') no-repeat -160px -32px;
+}
+
+.window-header .panel-tool .lk-icon-refresh {
+  background: url('../../../res/img/icons.png') no-repeat -176px -32px;
+}
+
+.window-header .panel-tool .lk-icon-ok {
+  background: url('../../../res/img/icons.png') no-repeat -192px -32px;
+}
+
+.window-header .panel-tool .lk-icon-cancel {
+  background: url('../../../res/img/icons.png') no-repeat -208px -32px;
+}
+
+.window-header .panel-tool .lk-icon-refresh-min {
+  background: url('../../../res/img/icons.png') no-repeat -224px -32px;
+}
+
+.window-header .panel-tool .lk-icon-close-min {
+  background: url('../../../res/img/icons.png') no-repeat -240px -32px;
+}
+
+.window-header .panel-tool .lk-icon-close {
+  background: url('../../../res/img/icons.png') no-repeat -256px -32px;
+}
+
+.window-header .panel-tool  .lk-icon-close-left {
+  background: url('../../../res/img/icons.png') no-repeat -272px -32px;
+}
+
+.window-header .panel-tool  .lk-icon-close-right {
+  background: url('../../../res/img/icons.png') no-repeat -288px -32px;
+}
+
+.window-header .panel-tool  .lk-icon-close-other {
+  background: url('../../../res/img/icons.png') no-repeat -304px -32px;
+}
+
+.window-header .panel-tool  .lk-icon-close-all {
+  background: url('../../../res/img/icons.png') no-repeat -320px -32px;
+}
+
+.window-header .panel-tool  .lk-icon-help {
+  background: url('../../../res/img/icons.png') no-repeat -336px -32px;
+}
+
+.window-header .panel-tool  .lk-icon-selector {
+  background: url('../../../res/img/icons.png') no-repeat -352px -32px;
+}
+
+.window-header .panel-tool  .lk-icon-transfer {
+  background: url('../../../res/img/icons.png') no-repeat -368px -32px;
+}
+
+.window-header .panel-tool  .lk-icon-export {
+  background: url('../../../res/img/icons.png') no-repeat -384px -32px;
+}
+
+.window-header .panel-tool  .lk-icon-refund {
+  background: url('../../../res/img/icons.png') no-repeat -400px -32px;
+}
+
+.window-header .panel-tool  .lk-icon-upload {
+  background: url('../../../res/img/icons.png') no-repeat -416px -32px;
+}
+
+.window-header .panel-tool  .lk-icon-download {
+  background: url('../../../res/img/icons.png') no-repeat -432px -32px;
+}
+
+.window-header .panel-tool  .lk-icon-view {
+  background: url('../../../res/img/icons.png') no-repeat -448px -32px;
+}
+
+/** icon:hover on window-header tool */
+.window-header .panel-tool .lk-icon-add:hover {
+  background: url('../../../res/img/icons.png') no-repeat 0px -16px;
+}
+
+.window-header .panel-tool .lk-icon-cut:hover {
+  background: url('../../../res/img/icons.png') no-repeat -16px -16px;
+}
+
+.window-header .panel-tool .lk-icon-remove:hover {
+  background: url('../../../res/img/icons.png') no-repeat -32px -16px;
+}
+
+.window-header .panel-tool .lk-icon-edit:hover {
+  background: url('../../../res/img/icons.png') no-repeat -48px -16px;
+}
+
+.window-header .panel-tool .lk-icon-search:hover {
+  background: url('../../../res/img/icons.png') no-repeat -64px -16px;
+}
+
+.window-header .panel-tool .lk-icon-reset:hover {
+  background: url('../../../res/img/icons.png') no-repeat -80px -16px;
+}
+
+.window-header .panel-tool .lk-icon-disable:hover {
+  background: url('../../../res/img/icons.png') no-repeat -96px -16px;
+}
+
+.window-header .panel-tool .lk-icon-enable:hover {
+  background: url('../../../res/img/icons.png') no-repeat -112px -16px;
+}
+
+.window-header .panel-tool .lk-icon-user:hover {
+  background: url('../../../res/img/icons.png') no-repeat -128px -16px;
+}
+
+.window-header .panel-tool .lk-icon-exit:hover {
+  background: url('../../../res/img/icons.png') no-repeat -144px -16px;
+}
+
+.window-header .panel-tool .lk-icon-pwd:hover {
+  background: url('../../../res/img/icons.png') no-repeat -160px -16px;
+}
+
+.window-header .panel-tool .lk-icon-refresh:hover {
+  background: url('../../../res/img/icons.png') no-repeat -176px -16px;
+}
+
+.window-header .panel-tool .lk-icon-ok:hover {
+  background: url('../../../res/img/icons.png') no-repeat -192px -16px;
+}
+
+.window-header .panel-tool .lk-icon-cancel:hover {
+  background: url('../../../res/img/icons.png') no-repeat -208px -16px;
+}
+
+.window-header .panel-tool .lk-icon-refresh-min:hover {
+  background: url('../../../res/img/icons.png') no-repeat -224px -16px;
+}
+
+.window-header .panel-tool .lk-icon-close-min:hover {
+  background: url('../../../res/img/icons.png') no-repeat -240px -16px;
+}
+
+.window-header .panel-tool .lk-icon-close:hover {
+  background: url('../../../res/img/icons.png') no-repeat -256px -16px;
+}
+
+.window-header .panel-tool  .lk-icon-close-left:hover {
+  background: url('../../../res/img/icons.png') no-repeat -272px -16px;
+}
+
+.window-header .panel-tool  .lk-icon-close-right:hover {
+  background: url('../../../res/img/icons.png') no-repeat -288px -16px;
+}
+
+.window-header .panel-tool  .lk-icon-close-other:hover {
+  background: url('../../../res/img/icons.png') no-repeat -304px -16px;
+}
+
+.window-header .panel-tool  .lk-icon-close-all:hover {
+  background: url('../../../res/img/icons.png') no-repeat -320px -16px;
+}
+
+.window-header .panel-tool  .lk-icon-help:hover {
+  background: url('../../../res/img/icons.png') no-repeat -336px -16px;
+}
+
+.window-header .panel-tool  .lk-icon-selector:hover {
+  background: url('../../../res/img/icons.png') no-repeat -352px -16px;
+}
+
+.window-header .panel-tool  .lk-icon-transfer:hover {
+  background: url('../../../res/img/icons.png') no-repeat -368px -16px;
+}
+
+.window-header .panel-tool  .lk-icon-export:hover {
+  background: url('../../../res/img/icons.png') no-repeat -384px -16px;
+}
+
+.window-header .panel-tool  .lk-icon-refund:hover {
+  background: url('../../../res/img/icons.png') no-repeat -400px -16px;
+}
+
+.window-header .panel-tool  .lk-icon-upload:hover {
+  background: url('../../../res/img/icons.png') no-repeat -416px -16px;
+}
+
+.window-header .panel-tool  .lk-icon-download:hover {
+  background: url('../../../res/img/icons.png') no-repeat -432px -16px;
+}
+
+.window-header .panel-tool  .lk-icon-view:hover {
+  background: url('../../../res/img/icons.png') no-repeat -448px -16px;
+}
+
+/** icon on dialog special */
+.dialog-button .lk-icon-ok {
+  background: url('../../../res/img/icons.png') no-repeat -192px -48px;
+}
+
+.dialog-button .lk-icon-cancel {
+  background: url('../../../res/img/icons.png') no-repeat -208px -48px;
+}
+
+/** icon on tabs-tool to min special */
+.tabs li a.tabs-close, .tabs li .tabs-p-tool a.lk-icon-close {
+  background: url('../../../res/img/icons.png') no-repeat -240px -2px;
+}
+
+.tabs li a.tabs-close:hover, .tabs li .tabs-p-tool a.lk-icon-close:hover {
+  background: url('../../../res/img/icons.png') no-repeat -240px -18px;
+}
+
+.tabs li .tabs-p-tool a.lk-icon-refresh {
+  background: url('../../../res/img/icons.png') no-repeat -224px -2px;
+}
+
+.tabs li .tabs-p-tool a.lk-icon-refresh:hover {
+  background: url('../../../res/img/icons.png') no-repeat -224px -18px;
+}
