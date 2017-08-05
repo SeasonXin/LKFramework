@@ -42,6 +42,7 @@
     <module>../lichkin-framework-core</module>
     <module>../lichkin-framework-http</module>
     <module>../lichkin-framework-pinyin</module>
+    <module>../lichkin-framework-mail</module>
   </modules>
 
   <dependencyManagement>
@@ -60,6 +61,11 @@
       <dependency>
         <groupId>com.lichkin</groupId>
         <artifactId>lichkin-framework-pinyin</artifactId>
+        <version>${current.lichkin.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>com.lichkin</groupId>
+        <artifactId>lichkin-framework-mail</artifactId>
         <version>${current.lichkin.version}</version>
       </dependency>
 

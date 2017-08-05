@@ -12,7 +12,7 @@ import org.springframework.context.event.ApplicationContextEvent;
 import com.lichkin.framework.bases.db.vo.LKSqlVo;
 import com.lichkin.framework.bases.enums.LKUsingStatusEnum;
 import com.lichkin.framework.springboot.db.dao.LKDao;
-import com.lichkin.framework.springframework.entities.sys.quartz.SysQuartzEntity;
+import com.lichkin.framework.springframework.entities.sys.quartz.SysConfigQuartzEntity;
 
 /**
  * 定时任务基础实现
@@ -29,9 +29,9 @@ public class LKQuartzConfigure implements ApplicationListener<ApplicationContext
 	public void onApplicationEvent(final ApplicationContextEvent event) {
 		final Scheduler scheduler = LKQuartzManager.getScheduler();
 		try {
-			final List<SysQuartzEntity> listQuartz = dao.findListByHql(new LKSqlVo("from SysQuartzEntity where usingStatus = ?", LKUsingStatusEnum.USING), SysQuartzEntity.class);
-			for (final SysQuartzEntity quartz : listQuartz) {
-				scheduler.scheduleJob(LKQuartzManager.buildJobDetail(quartz), LKQuartzManager.buildCronTrigger(quartz));
+			final List<SysConfigQuartzEntity> listConfigQuartz = dao.findListByHql(new LKSqlVo("from SysConfigQuartzEntity where usingStatus = ?", LKUsingStatusEnum.USING), SysConfigQuartzEntity.class);
+			for (final SysConfigQuartzEntity configQuartz : listConfigQuartz) {
+				scheduler.scheduleJob(LKQuartzManager.buildJobDetail(configQuartz), LKQuartzManager.buildCronTrigger(configQuartz));
 			}
 			scheduler.start();
 		} catch (final SchedulerException se) {

@@ -33,6 +33,7 @@
     <module>../lichkin-springboot-starteres/lichkin-springboot-starter-web</module>
     <module>../lichkin-springboot-starteres/lichkin-springboot-starter-web-front</module>
     <module>../lichkin-springboot-starteres/lichkin-springboot-starter-web-back</module>
+    <module>../lichkin-springboot-starteres/lichkin-springboot-starter-mail</module>
 
     <module>../lichkin-springboot-entities/lichkin-springboot-entities-admin</module>
     <module>../lichkin-springboot-entities/lichkin-springboot-entities-app</module>
@@ -69,6 +70,11 @@
         <artifactId>lichkin-framework-pinyin</artifactId>
         <version>${current.version}</version>
       </dependency>
+      <dependency>
+        <groupId>com.lichkin</groupId>
+        <artifactId>lichkin-framework-mail</artifactId>
+        <version>${current.version}</version>
+      </dependency>
       <!-- lichkin springboot framework -->
       <dependency>
         <groupId>com.lichkin</groupId>
@@ -98,6 +104,11 @@
       <dependency>
         <groupId>com.lichkin</groupId>
         <artifactId>lichkin-springboot-starter-web-back</artifactId>
+        <version>${current.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>com.lichkin</groupId>
+        <artifactId>lichkin-springboot-starter-mail</artifactId>
         <version>${current.version}</version>
       </dependency>
 

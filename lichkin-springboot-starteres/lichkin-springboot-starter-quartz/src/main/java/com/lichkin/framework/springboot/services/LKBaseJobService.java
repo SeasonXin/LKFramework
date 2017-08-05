@@ -1,4 +1,4 @@
-package com.lichkin.framework.springboot.quartz.services;
+package com.lichkin.framework.springboot.services;
 
 import org.joda.time.DateTime;
 import org.quartz.Job;

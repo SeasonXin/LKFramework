@@ -16,10 +16,10 @@ import org.quartz.impl.StdSchedulerFactory;
 
 import com.lichkin.framework.bases.enums.LKErrorCodeEnum;
 import com.lichkin.framework.bases.exceptions.LKRuntimeException;
-import com.lichkin.framework.springframework.entities.sys.quartz.SysQuartzEntity;
+import com.lichkin.framework.springframework.entities.sys.quartz.SysConfigQuartzEntity;
 
 /**
- * Scheduler封装对象
+ * 定时任务管理类
  * @author SuZhou LichKin Information Technology Co., Ltd.
  */
 public class LKQuartzManager {
@@ -50,20 +50,20 @@ public class LKQuartzManager {
 
 	/**
 	 * 构建任务详情
-	 * @param quartz 定时任务对象
+	 * @param configQuartz 定时任务对象
 	 * @return 任务详情
 	 */
 	@SuppressWarnings("unchecked")
-	public static JobDetail buildJobDetail(final SysQuartzEntity quartz) {
+	public static JobDetail buildJobDetail(final SysConfigQuartzEntity configQuartz) {
 		Class<? extends Job> clazz = null;
 		try {
-			clazz = (Class<? extends Job>) Class.forName(quartz.getClassName());
+			clazz = (Class<? extends Job>) Class.forName(configQuartz.getClassName());
 		} catch (final ClassNotFoundException e) {
 			throw new LKRuntimeException(LKErrorCodeEnum.ERROR, e);
 		}
 		final JobBuilder jobBuilder = JobBuilder.newJob(clazz);
-		jobBuilder.withIdentity(quartz.getJobName(), quartz.getGroupName());
-		jobBuilder.usingJobData("methodName", quartz.getMethodName());
+		jobBuilder.withIdentity(configQuartz.getJobName(), configQuartz.getGroupName());
+		jobBuilder.usingJobData("methodName", configQuartz.getMethodName());
 		final JobDetail jobDetail = jobBuilder.build();
 		return jobDetail;
 	}
@@ -71,16 +71,16 @@ public class LKQuartzManager {
 
 	/**
 	 * 构建触发器
-	 * @param quartz 定时任务对象
+	 * @param configQuartz 定时任务对象
 	 * @param rebuild 是否是重新构建
 	 * @return 触发器
 	 */
 	@SuppressWarnings("unchecked")
-	public static CronTrigger buildCronTrigger(final SysQuartzEntity quartz, final boolean rebuild) {
+	public static CronTrigger buildCronTrigger(final SysConfigQuartzEntity configQuartz, final boolean rebuild) {
 		TriggerBuilder<Trigger> triggerBuilder = null;
 		if (rebuild) {
 			try {
-				final Trigger trigger = LKQuartzManager.scheduler.getTrigger(new TriggerKey(quartz.getJobName(), quartz.getGroupName()));
+				final Trigger trigger = LKQuartzManager.scheduler.getTrigger(new TriggerKey(configQuartz.getJobName(), configQuartz.getGroupName()));
 				if (trigger == null) {
 					throw new LKRuntimeException(LKErrorCodeEnum.ERROR, "no trigger to rebuild.");
 				}
@@ -91,29 +91,29 @@ public class LKQuartzManager {
 		} else {
 			triggerBuilder = TriggerBuilder.newTrigger();
 		}
-		triggerBuilder.withIdentity(quartz.getJobName(), quartz.getGroupName());
-		triggerBuilder.withSchedule(CronScheduleBuilder.cronSchedule(quartz.getCronExpression()));
+		triggerBuilder.withIdentity(configQuartz.getJobName(), configQuartz.getGroupName());
+		triggerBuilder.withSchedule(CronScheduleBuilder.cronSchedule(configQuartz.getCronExpression()));
 		return (CronTrigger) triggerBuilder.build();
 	}
 
 
 	/**
 	 * 构建触发器
-	 * @param quartz 定时任务对象
+	 * @param configQuartz 定时任务对象
 	 * @return 触发器
 	 */
-	public static CronTrigger buildCronTrigger(final SysQuartzEntity quartz) {
-		return LKQuartzManager.buildCronTrigger(quartz, false);
+	public static CronTrigger buildCronTrigger(final SysConfigQuartzEntity configQuartz) {
+		return LKQuartzManager.buildCronTrigger(configQuartz, false);
 	}
 
 
 	/**
 	 * 重新构建触发器
-	 * @param quartz 定时任务对象
+	 * @param configQuartz 定时任务对象
 	 * @return 触发器
 	 */
-	public static CronTrigger rebuildCronTrigger(final SysQuartzEntity quartz) {
-		return LKQuartzManager.buildCronTrigger(quartz, true);
+	public static CronTrigger rebuildCronTrigger(final SysConfigQuartzEntity configQuartz) {
+		return LKQuartzManager.buildCronTrigger(configQuartz, true);
 	}
 
 }

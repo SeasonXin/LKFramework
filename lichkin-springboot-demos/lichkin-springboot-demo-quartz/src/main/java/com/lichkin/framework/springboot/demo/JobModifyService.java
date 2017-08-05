@@ -9,7 +9,7 @@ import org.springframework.context.event.ApplicationContextEvent;
 
 import com.lichkin.framework.springboot.configurations.LKQuartzManager;
 import com.lichkin.framework.springboot.db.dao.LKDao;
-import com.lichkin.framework.springframework.entities.sys.quartz.SysQuartzEntity;
+import com.lichkin.framework.springframework.entities.sys.quartz.SysConfigQuartzEntity;
 
 @Configuration
 public class JobModifyService implements ApplicationListener<ApplicationContextEvent> {
@@ -31,7 +31,7 @@ public class JobModifyService implements ApplicationListener<ApplicationContextE
 				}
 				System.out.println("JobModifyService running");
 
-				final SysQuartzEntity quartz = dao.findOneById(SysQuartzEntity.class, "1");
+				final SysConfigQuartzEntity quartz = dao.findOneById(SysConfigQuartzEntity.class, "1");
 				quartz.setCronExpression("0/10 * * * * ?");// 修改为10秒执行一次
 				final CronTrigger trigger = LKQuartzManager.rebuildCronTrigger(quartz);
 				try {

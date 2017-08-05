@@ -3,7 +3,7 @@ package com.lichkin.framework.springboot.demo;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 
-import com.lichkin.framework.springboot.quartz.services.LKBaseJobService;
+import com.lichkin.framework.springboot.services.LKBaseJobService;
 
 public class JobService extends LKBaseJobService {
 

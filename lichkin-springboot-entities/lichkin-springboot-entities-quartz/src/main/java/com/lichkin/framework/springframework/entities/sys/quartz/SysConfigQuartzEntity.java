@@ -15,10 +15,10 @@ import lombok.Setter;
  * @author SuZhou LichKin Information Technology Co., Ltd.
  */
 @Entity
-@Table(name = "T_SYS_QUARTZ")
+@Table(name = "T_SYS_CONFIG_QUARTZ")
 @Getter
 @Setter
-public final class SysQuartzEntity extends LKMappedBaseEntity {
+public final class SysConfigQuartzEntity extends LKMappedBaseEntity {
 
 	/** serialVersionUID */
 	private static final long serialVersionUID = -353107006539544053L;
