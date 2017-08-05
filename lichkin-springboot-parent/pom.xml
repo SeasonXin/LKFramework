@@ -34,6 +34,9 @@
     <module>../lichkin-springboot-starteres/lichkin-springboot-starter-web-front</module>
     <module>../lichkin-springboot-starteres/lichkin-springboot-starter-web-back</module>
     <module>../lichkin-springboot-starteres/lichkin-springboot-starter-mail</module>
+    <module>../lichkin-springboot-starteres/lichkin-springboot-starter-sc</module>
+    <module>../lichkin-springboot-starteres/lichkin-springboot-starter-sms</module>
+    <module>../lichkin-springboot-starteres/lichkin-springboot-starter-sms-sc</module>
 
     <module>../lichkin-springboot-entities/lichkin-springboot-entities-admin</module>
     <module>../lichkin-springboot-entities/lichkin-springboot-entities-app</module>
@@ -109,6 +112,21 @@
       <dependency>
         <groupId>com.lichkin</groupId>
         <artifactId>lichkin-springboot-starter-mail</artifactId>
+        <version>${current.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>com.lichkin</groupId>
+        <artifactId>lichkin-springboot-starter-sc</artifactId>
+        <version>${current.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>com.lichkin</groupId>
+        <artifactId>lichkin-springboot-starter-sms</artifactId>
+        <version>${current.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>com.lichkin</groupId>
+        <artifactId>lichkin-springboot-starter-sms-sc</artifactId>
         <version>${current.version}</version>
       </dependency>
 
