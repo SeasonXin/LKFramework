@@ -35,7 +35,7 @@ LK.alert = function(params, callback) {
  * @param lkOptions[showSuccess_reloadDatagrids] 成功后刷新表格列表。
  * @param lkOptions[showSuccess_closeDialogs] 成功后关闭对话框列表。
  */
-LK.jquery.ajax_success = function(responseDatas, ajaxOptions, lkOptions) {
+LK.$.ajax_success = function(responseDatas, ajaxOptions, lkOptions) {
   lkOptions = $.extend(lkOptions, {
     title : (lkOptions.showSuccess_title) ? lkOptions.showSuccess_title : '提示',
     msg : (lkOptions.showSuccess_msg) ? lkOptions.showSuccess_msg : '操作成功！~',
@@ -43,7 +43,7 @@ LK.jquery.ajax_success = function(responseDatas, ajaxOptions, lkOptions) {
     responseDatas : responseDatas
   });
   callback = (typeof lkOptions.showSuccess_callback == 'function') ? lkOptions.showSuccess_callback : function(callbackOptions) {
-    LK.log('callback LK.jquery.ajax_success => showSuccess_callback');
+    LK.log('callback LK.$.ajax_success => showSuccess_callback');
     LK.log({
       callbackOptions : callbackOptions
     });
@@ -77,14 +77,14 @@ LK.jquery.ajax_success = function(responseDatas, ajaxOptions, lkOptions) {
 /**
  * @Override 验证表单
  */
-LK.jquery.form.validate = function(frm, lkOptions) {
+LK.$.form.validate = function(frm, lkOptions) {
   if (!frm.form('validate')) {
     return false;
   }
 
   var treeValidates = true;
   frm.find('.lk-form-filed-value-tree-tree').each(function(index, item) {
-    if (!LK.easyui.tree.validate(LK.jquery.getJQueryObjByDom(this, lkOptions.scope))) {
+    if (!LK.easyui.tree.validate(LK.$.getJQueryObjByDom(this, lkOptions.scope))) {
       treeValidates = false;
     }
   });
@@ -98,14 +98,14 @@ LK.jquery.form.validate = function(frm, lkOptions) {
 /**
  * @Override 获取表单参数
  */
-LK.jquery.form.getParams = function(frm, params, lkOptions) {
+LK.$.form.getParams = function(frm, params, lkOptions) {
   if (!params) {
     params = {};
   }
 
   if (frm) {
     frm.find('.lk-form-filed-value-tree-tree').each(function(index, item) {
-      var obj = LK.jquery.getJQueryObjByDom(this, lkOptions.scope);
+      var obj = LK.$.getJQueryObjByDom(this, lkOptions.scope);
       var checks = obj.tree('getChecked', [
           'checked', 'indeterminate'
       ]);
@@ -135,10 +135,10 @@ LK.jquery.form.getParams = function(frm, params, lkOptions) {
 /**
  * @Override 获取表单参数
  */
-LK.jquery.form.bind = function(frm, datas, lkOptions) {
+LK.$.form.bind = function(frm, datas, lkOptions) {
   frm.form('load', datas);
   frm.find('.lk-form-filed-value-tree-tree').each(function(index, item) {
-    var obj = LK.jquery.getJQueryObjByDom(this, lkOptions.scope);
+    var obj = LK.$.getJQueryObjByDom(this, lkOptions.scope);
     var ids = obj.parents('.form-filed-value-tree').prev('input[type=hidden]').val();
     if (ids) {
       var arr = ids.split('#@#');
