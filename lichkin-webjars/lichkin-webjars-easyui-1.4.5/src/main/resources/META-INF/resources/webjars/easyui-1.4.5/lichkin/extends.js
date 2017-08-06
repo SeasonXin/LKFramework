@@ -31,7 +31,7 @@ LK.easyui = new Object();
 
 /**
  * 初始化表格控件
- * @param obj 对话框标识，参见LK.jquery.selector.getJQueryObj。
+ * @param obj 对话框标识，参见LK.$.selector.getJQueryObj。
  * @param easyuiOptions 参见EasyUI.datagrid。
  * @param lkOptions 参见LK.easyui.datagrid。
  */
@@ -51,7 +51,7 @@ LK.easyui.datagrid = function(obj, easyuiOptions, lkOptions) {
   if (obj == null) {
     obj = $('#divDatagrid');
   } else {
-    obj = LK.jquery.getJQueryObj(obj, lkOptions.scope);
+    obj = LK.$.getJQueryObj(obj, lkOptions.scope);
   }
 
   // 参数赋值
@@ -133,7 +133,7 @@ LK.easyui.datagrid = function(obj, easyuiOptions, lkOptions) {
  * @param lkOptions 自定义参数
  */
 LK.easyui.datagrid.getSearchParams = function(params, lkOptions) {
-  return LK.jquery.form.getParams(LK.jquery.getJQueryObj(lkOptions.frmSearch, lkOptions.scope), params);
+  return LK.$.form.getParams(LK.$.getJQueryObj(lkOptions.frmSearch, lkOptions.scope), params);
 };
 
 /**
@@ -187,7 +187,7 @@ LK.easyui.datagrid.deleteRowFormatter = function(value, row, index) {
 
 /**
  * 初始化对话框控件
- * @param obj 对话框标识，默认会在lkOptions.scope的body中创建一个分区。有值时根据参见LK.jquery.getJQueryObj。
+ * @param obj 对话框标识，默认会在lkOptions.scope的body中创建一个分区。有值时根据参见LK.$.getJQueryObj。
  * @param easyuiOptions 参见EasyUI.dialog。
  * @param lkOptions 参见LK.easyui.dialog。
  */
@@ -213,7 +213,7 @@ LK.easyui.dialog = function(obj, easyuiOptions, lkOptions) {
       return;
     }
   } else {
-    obj = LK.jquery.getJQueryObj(obj, lkOptions.scope);
+    obj = LK.$.getJQueryObj(obj, lkOptions.scope);
   }
 
   // 参数赋值
@@ -247,7 +247,7 @@ LK.easyui.dialog = function(obj, easyuiOptions, lkOptions) {
 
 /**
  * 关闭对话框控件
- * @param obj 对话框标识，参见LK.jquery.getJQueryObj。
+ * @param obj 对话框标识，参见LK.$.getJQueryObj。
  * @param lkOptions 参见LK.easyui.dialog.close。
  */
 LK.easyui.dialog.close = function(obj, lkOptions) {
@@ -257,7 +257,7 @@ LK.easyui.dialog.close = function(obj, lkOptions) {
   }
   if (typeof obj == 'object') {
   } else if (typeof obj == 'string') {
-    obj = LK.jquery.getJQueryObj(obj, lkOptions.scope);
+    obj = LK.$.getJQueryObj(obj, lkOptions.scope);
   } else {
     LK.alert({
       text : 'param error => LK.easyui.dialog.close => obj'
@@ -275,7 +275,7 @@ LK.easyui.dialog.close = function(obj, lkOptions) {
 
 /**
  * 销毁对话框控件
- * @param obj 对话框标识，参见LK.jquery.getJQueryObj。
+ * @param obj 对话框标识，参见LK.$.getJQueryObj。
  * @param lkOptions 参见LK.easyui.dialog.destroy。
  */
 LK.easyui.dialog.destroy = function(obj, lkOptions) {
@@ -285,7 +285,7 @@ LK.easyui.dialog.destroy = function(obj, lkOptions) {
   }
   if (typeof obj == 'object') {
   } else if (typeof obj == 'string') {
-    obj = LK.jquery.getJQueryObj(obj, lkOptions.scope);
+    obj = LK.$.getJQueryObj(obj, lkOptions.scope);
   } else {
     LK.alert({
       text : 'param error => LK.easyui.dialog.destroy => obj'
@@ -453,7 +453,7 @@ LK.easyui.messager.alert = function(easyuiOptions, lkOptions) {
 
 /**
  * 初始化选择控件
- * @param obj 对话框标识，参见LK.jquery.selector.getJQueryObj。
+ * @param obj 对话框标识，参见LK.$.selector.getJQueryObj。
  * @param easyuiOptions 参见EasyUI.combobox。
  * @param lkOptions 参见LK.easyui.combobox。
  */
@@ -465,7 +465,7 @@ LK.easyui.combobox = function(obj, easyuiOptions, lkOptions) {
   if (typeof lkOptions == 'undefined') {
     lkOptions = {};
   }
-  obj = LK.jquery.getJQueryObj(obj, lkOptions.scope);
+  obj = LK.$.getJQueryObj(obj, lkOptions.scope);
 
   // 参数赋值
   easyuiOptions = $.extend({
@@ -515,7 +515,7 @@ LK.easyui.combobox = function(obj, easyuiOptions, lkOptions) {
 
 /**
  * 初始化树形控件
- * @param obj 对话框标识，参见LK.jquery.selector.getJQueryObj。
+ * @param obj 对话框标识，参见LK.$.selector.getJQueryObj。
  * @param easyuiOptions 参见EasyUI.tree。
  * @param lkOptions 参见LK.easyui.tree。
  */
@@ -531,7 +531,7 @@ LK.easyui.tree = function(obj, easyuiOptions, lkOptions) {
   if (obj == null) {
     obj = $('#divTree');
   } else {
-    obj = LK.jquery.getJQueryObj(obj, lkOptions.scope);
+    obj = LK.$.getJQueryObj(obj, lkOptions.scope);
   }
 
   if (obj.hasClass('lk-form-filed-value-tree')) {// 表单中的树形控件，进行结构改造。
