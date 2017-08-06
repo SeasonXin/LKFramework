@@ -4,11 +4,9 @@
 LK.ECharts = new Object();
 
 /**
- * 生成二维码
- * 
- * @param echartsOptions QRCode参数。
- * 
- * @param lkOptions QRCode自定义参数。
+ * 创建线性图标
+ * @param echartsOptions echarts参数
+ * @param lkOptions 自定义参数
  */
 LK.ECharts.line = function(echartsOptions, lkOptions) {
   LK.log('call LK.ECharts.line');
@@ -60,7 +58,17 @@ LK.ECharts.line = function(echartsOptions, lkOptions) {
 
   LK.log(lkOptions.target);
 
-  var myChart = echarts.init(document.getElementById(lkOptions.target));
+  require.config({
+    paths : {
+      'echarts/chart/line' : _ECHARTS + '/build/dist/chart/line',
+      'echarts/chart/bar' : _ECHARTS + '/build/dist/chart/bar'
+    }
+  });
 
-  myChart.setOption(echartsOptions);
+  require([
+      'echarts', 'echarts/chart/line', 'echarts/chart/bar'
+  ], function(echarts) {
+    var myChart = echarts.init(document.getElementById(lkOptions.target));
+    myChart.setOption(echartsOptions);
+  });
 };
