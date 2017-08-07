@@ -37,6 +37,7 @@
     <module>../lichkin-springboot-starteres/lichkin-springboot-starter-sc</module>
     <module>../lichkin-springboot-starteres/lichkin-springboot-starter-sms</module>
     <module>../lichkin-springboot-starteres/lichkin-springboot-starter-sms-sc</module>
+    <module>../lichkin-springboot-starteres/lichkin-springboot-starter-wechat</module>
 
     <module>../lichkin-springboot-entities/lichkin-springboot-entities-admin</module>
     <module>../lichkin-springboot-entities/lichkin-springboot-entities-app</module>
@@ -127,6 +128,11 @@
       <dependency>
         <groupId>com.lichkin</groupId>
         <artifactId>lichkin-springboot-starter-sms-sc</artifactId>
+        <version>${current.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>com.lichkin</groupId>
+        <artifactId>lichkin-springboot-starter-wechat</artifactId>
         <version>${current.version}</version>
       </dependency>
 
