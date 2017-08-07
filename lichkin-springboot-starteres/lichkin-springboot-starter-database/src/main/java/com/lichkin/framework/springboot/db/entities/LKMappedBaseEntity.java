@@ -22,7 +22,7 @@ import lombok.Setter;
 public class LKMappedBaseEntity extends LKMappedNormalEntity implements LKBaseInterface {
 
 	/** serialVersionUID */
-	private static final long serialVersionUID = -6818791372430403579L;
+	private static final long serialVersionUID = -8888886666660002L;
 
 	/** 禁用注入 */
 	@Transient

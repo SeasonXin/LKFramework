@@ -25,7 +25,7 @@ import lombok.Setter;
 public class LKMappedNormalEntity extends LKMappedIDEntity implements LKNormalInterface {
 
 	/** serialVersionUID */
-	private static final long serialVersionUID = -6245232913948511823L;
+	private static final long serialVersionUID = -8888886666660001L;
 
 	/** 在用状态 */
 	@Column(insertable = true, updatable = true, nullable = false, unique = false, length = LKEntityFieldLengthStatics.LENGTH_STATUS)
