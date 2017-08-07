@@ -7,6 +7,10 @@ import org.springframework.scheduling.annotation.EnableScheduling;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
 
+/**
+ * 定时任务启动类
+ * @author SuZhou LichKin Information Technology Co., Ltd.
+ */
 @Component
 @EnableScheduling
 public class TaskStarter {
