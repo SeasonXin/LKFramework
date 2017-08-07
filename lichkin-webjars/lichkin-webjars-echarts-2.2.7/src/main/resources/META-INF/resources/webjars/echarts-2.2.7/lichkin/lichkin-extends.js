@@ -3,6 +3,13 @@
  */
 LK.ECharts = new Object();
 
+/** 使用AMD引入echarts的配置 */
+require.config({
+  paths : {
+    'echarts' : _ECHARTS + '/build/dist'
+  }
+});
+
 /**
  * 创建线性图标
  * @param echartsOptions echarts参数
@@ -57,13 +64,6 @@ LK.ECharts.line = function(echartsOptions, lkOptions) {
   }
 
   LK.log(lkOptions.target);
-
-  require.config({
-    paths : {
-      'echarts/chart/line' : _ECHARTS + '/build/dist/chart/line',
-      'echarts/chart/bar' : _ECHARTS + '/build/dist/chart/bar'
-    }
-  });
 
   require([
       'echarts', 'echarts/chart/line', 'echarts/chart/bar'
