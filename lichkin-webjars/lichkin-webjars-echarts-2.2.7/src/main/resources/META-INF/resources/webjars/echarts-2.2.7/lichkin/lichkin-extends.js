@@ -70,5 +70,8 @@ LK.ECharts.line = function(echartsOptions, lkOptions) {
   ], function(echarts) {
     var myChart = echarts.init(document.getElementById(lkOptions.target));
     myChart.setOption(echartsOptions);
+    window.addEventListener("resize", function() {
+      myChart.resize();
+    });
   });
 };
