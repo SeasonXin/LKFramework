@@ -17,4 +17,25 @@
     <version>1.0.0-RELEASE</version>
   </parent>
 
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-jar-plugin</artifactId>
+        <version>2.4</version>
+        <configuration>
+          <excludes>
+            <exclude>**/echarts-2.2.7/*</exclude>
+            <exclude>**/echarts-2.2.7/build/*</exclude>
+            <exclude>**/echarts-2.2.7/build/source/**</exclude>
+            <exclude>**/echarts-2.2.7/doc/**</exclude>
+            <exclude>**/echarts-2.2.7/extension/**</exclude>
+            <exclude>**/echarts-2.2.7/src/**</exclude>
+            <exclude>**/echarts-2.2.7/test/**</exclude>
+          </excludes>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+
 </project>
