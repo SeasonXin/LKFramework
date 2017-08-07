@@ -22,20 +22,20 @@ import lombok.Setter;
 @MappedSuperclass
 @Getter
 @Setter
-public class LKMappedNormalEntity extends LKMappedIDEntity implements LKNormalInterface {
+public class LKMappedNormalEntity extends LKMappedIDEntity implements LKNormalInterface, LKEntityFieldLengthStatics, LKJSONFieldOrdinal {
 
 	/** serialVersionUID */
 	private static final long serialVersionUID = -8888886666660001L;
 
 	/** 在用状态 */
-	@Column(insertable = true, updatable = true, nullable = false, unique = false, length = LKEntityFieldLengthStatics.LENGTH_STATUS)
+	@Column(insertable = true, updatable = true, nullable = false, unique = false, length = LENGTH_STATUS)
 	@Enumerated(EnumType.STRING)
-	@JSONField(ordinal = LKJSONFieldOrdinal.ORDINAL_USING_STATUS)
+	@JSONField(ordinal = ORDINAL_USING_STATUS)
 	private LKUsingStatusEnum usingStatus = LKUsingStatusEnum.STAND_BY;
 
 	/** 备注信息 */
-	@JSONField(ordinal = LKJSONFieldOrdinal.ORDINAL_REMARKS)
-	@Column(insertable = true, updatable = true, nullable = true, unique = false, length = LKEntityFieldLengthStatics.LENGTH_REMARKS)
+	@JSONField(ordinal = ORDINAL_REMARKS)
+	@Column(insertable = true, updatable = true, nullable = true, unique = false, length = LENGTH_REMARKS)
 	private String remarks;
 
 

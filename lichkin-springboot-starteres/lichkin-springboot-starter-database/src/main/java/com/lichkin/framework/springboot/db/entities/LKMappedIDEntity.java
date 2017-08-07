@@ -27,7 +27,7 @@ import lombok.Setter;
 @Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)
 @Getter
 @Setter
-public class LKMappedIDEntity implements LKIDInterface {
+public class LKMappedIDEntity implements LKIDInterface, LKEntityFieldLengthStatics, LKJSONFieldOrdinal {
 
 	/** serialVersionUID */
 	private static final long serialVersionUID = 8888886666660000L;
@@ -36,8 +36,8 @@ public class LKMappedIDEntity implements LKIDInterface {
 	@Id
 	@GenericGenerator(name = "uuid", strategy = "uuid.hex")
 	@GeneratedValue(generator = "uuid")
-	@Column(length = LKEntityFieldLengthStatics.LENGTH_ID)
-	@JSONField(ordinal = LKJSONFieldOrdinal.ORDINAL_ID)
+	@Column(length = LENGTH_ID)
+	@JSONField(ordinal = ORDINAL_ID)
 	private String id;
 
 

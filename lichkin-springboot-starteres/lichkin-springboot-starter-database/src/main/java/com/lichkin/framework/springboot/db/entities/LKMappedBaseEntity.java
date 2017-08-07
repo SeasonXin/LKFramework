@@ -19,7 +19,7 @@ import lombok.Setter;
 @MappedSuperclass
 @Getter
 @Setter
-public class LKMappedBaseEntity extends LKMappedNormalEntity implements LKBaseInterface {
+public class LKMappedBaseEntity extends LKMappedNormalEntity implements LKBaseInterface, LKEntityFieldLengthStatics, LKJSONFieldOrdinal {
 
 	/** serialVersionUID */
 	private static final long serialVersionUID = -8888886666660002L;
@@ -29,33 +29,33 @@ public class LKMappedBaseEntity extends LKMappedNormalEntity implements LKBaseIn
 	private boolean disableInject = false;
 
 	/** 新增操作系统编码 */
-	@Column(insertable = true, updatable = false, nullable = false, unique = false, length = LKEntityFieldLengthStatics.LENGTH_SYSTEM_TAG)
-	@JSONField(ordinal = LKJSONFieldOrdinal.ORDINAL_INSERT_SYSTEM_TAG)
+	@Column(insertable = true, updatable = false, nullable = false, unique = false, length = LENGTH_SYSTEM_TAG)
+	@JSONField(ordinal = ORDINAL_INSERT_SYSTEM_TAG)
 	private String insertSystemTag;
 
 	/** 新增操作时间（yyyy-MM-dd HH:ss:mm） */
-	@Column(insertable = true, updatable = false, nullable = false, unique = false, length = LKEntityFieldLengthStatics.LENGTH_TIME)
-	@JSONField(ordinal = LKJSONFieldOrdinal.ORDINAL_INSERT_TIME)
+	@Column(insertable = true, updatable = false, nullable = false, unique = false, length = LENGTH_TIME)
+	@JSONField(ordinal = ORDINAL_INSERT_TIME)
 	private String insertTime;
 
 	/** 新增操作人登录ID */
-	@Column(insertable = true, updatable = false, nullable = true, unique = false, length = LKEntityFieldLengthStatics.LENGTH_ID)
-	@JSONField(ordinal = LKJSONFieldOrdinal.ORDINAL_INSERT_LOGIN_ID)
+	@Column(insertable = true, updatable = false, nullable = true, unique = false, length = LENGTH_ID)
+	@JSONField(ordinal = ORDINAL_INSERT_LOGIN_ID)
 	private String insertLoginId;
 
 	/** 更新操作系统编码 */
-	@Column(insertable = true, updatable = true, nullable = false, unique = false, length = LKEntityFieldLengthStatics.LENGTH_SYSTEM_TAG)
-	@JSONField(ordinal = LKJSONFieldOrdinal.ORDINAL_UPDATE_SYSTEM_TAG)
+	@Column(insertable = true, updatable = true, nullable = false, unique = false, length = LENGTH_SYSTEM_TAG)
+	@JSONField(ordinal = ORDINAL_UPDATE_SYSTEM_TAG)
 	private String updateSystemTag;
 
 	/** 更新操作时间（yyyy-MM-dd HH:ss:mm） */
-	@Column(insertable = true, updatable = true, nullable = false, unique = false, length = LKEntityFieldLengthStatics.LENGTH_TIME)
-	@JSONField(ordinal = LKJSONFieldOrdinal.ORDINAL_UPDATE_TIME)
+	@Column(insertable = true, updatable = true, nullable = false, unique = false, length = LENGTH_TIME)
+	@JSONField(ordinal = ORDINAL_UPDATE_TIME)
 	private String updateTime;
 
 	/** 更新操作人登录ID */
-	@Column(insertable = true, updatable = true, nullable = true, unique = false, length = LKEntityFieldLengthStatics.LENGTH_ID)
-	@JSONField(ordinal = LKJSONFieldOrdinal.ORDINAL_UPDATE_LOGIN_ID)
+	@Column(insertable = true, updatable = true, nullable = true, unique = false, length = LENGTH_ID)
+	@JSONField(ordinal = ORDINAL_UPDATE_LOGIN_ID)
 	private String updateLoginId;
 
 }
