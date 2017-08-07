@@ -6,6 +6,7 @@ import javax.persistence.Enumerated;
 import javax.persistence.MappedSuperclass;
 
 import com.lichkin.framework.bases.entities.LKUserInterface;
+import com.lichkin.framework.bases.enums.LKAuthenticationEnum;
 import com.lichkin.framework.bases.enums.LKGenderEnum;
 import com.lichkin.framework.bases.statics.LKEntityFieldLengthStatics;
 import com.lichkin.framework.bases.statics.LKStringStatics;
@@ -119,6 +120,11 @@ public class LKMappedUserEntity extends LKMappedBaseEntity implements LKUserInte
 	/** 校验码 */
 	@Column(insertable = true, updatable = true, nullable = true, unique = false, length = LKEntityFieldLengthStatics.LENGTH_CODE)
 	private String checkCode;
+
+	/** 实名认证等级（枚举） */
+	@Enumerated(EnumType.STRING)
+	@Column(insertable = true, updatable = true, nullable = false, unique = false, length = 32)
+	private LKAuthenticationEnum authentication;
 
 
 	/**
