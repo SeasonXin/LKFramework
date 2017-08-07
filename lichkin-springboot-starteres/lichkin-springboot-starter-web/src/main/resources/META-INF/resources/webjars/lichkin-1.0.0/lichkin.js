@@ -30,6 +30,7 @@
     /**
      * 弹出提示窗
      * @param params 参数。支持JSON、字符串。
+     * @param params[msg] 输出信息，如果params为JSON，且此JSON中有msg的键，则输出此msg信息。
      * @param callback 回调函数，方法块或方法名。
      */
     this.alert = function(params, callback) {
@@ -51,7 +52,11 @@
         } else if (typeof params == 'string') {
           alert(params);
         } else if (typeof params == 'object') {
-          alert(JSON.stringify(params));
+          if (typeof params.msg != 'undefined') {
+            alert(JSON.stringify(params.msg));
+          } else {
+            alert(JSON.stringify(params));
+          }
         }
         if (typeof callback == 'function') {
           callback(params);
