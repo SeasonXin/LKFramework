@@ -5,10 +5,11 @@ import java.lang.reflect.Method;
 import org.joda.time.DateTime;
 
 import com.lichkin.framework.bases.enums.LKDatePatternEnum;
+import com.lichkin.framework.bases.statics.configs.LKSysConfigKeys;
+import com.lichkin.framework.bases.statics.configs.LKSysConfigs;
 import com.lichkin.framework.springboot.db.entities.LKMappedBaseEntity;
 import com.lichkin.framework.springboot.db.entities.LKMappedUserEntity;
 import com.lichkin.framework.springboot.db.entities.LKMappedUserLoginEntity;
-import com.lichkin.framework.springframework.LKProperties;
 import com.lichkin.framework.utils.lang.LKStringUtils;
 
 /**
@@ -25,8 +26,8 @@ public class LKEntityInitializer {
 	public static Object initBean(final Object e) {
 		if (e instanceof LKMappedBaseEntity) {
 			final String currentTime = DateTime.now().toString(LKDatePatternEnum.STANDARD.getNameEn());
-			final String systemTag = LKProperties.LK_SYSTEM_TAG;
-			final String loginId = LKEntityInitializer.getLoginId();
+			final String systemTag = LKSysConfigs.get(LKSysConfigKeys.CONFIG_LK_SYSTEM_TAG);
+			final String loginId = getLoginId();
 
 			if (!((LKMappedBaseEntity) e).isDisableInject()) {// 没有禁用注入，则自动注入值。
 				// 新增/修改数据

@@ -34,6 +34,7 @@ import com.lichkin.framework.utils.lang.LKStringUtils;
  */
 public abstract class LKBaseDao implements LKDao {
 
+	/** 日志记录对象 */
 	private final Log logger = LogFactory.getLog(getClass());
 
 
@@ -360,7 +361,6 @@ public abstract class LKBaseDao implements LKDao {
 
 	/**
 	 * 返回对象
-	 * @param <T> 类型
 	 * @param list 列表
 	 * @return 对象
 	 */
@@ -394,7 +394,6 @@ public abstract class LKBaseDao implements LKDao {
 
 	/**
 	 * 执行查询
-	 * @param <T> 类型
 	 * @param sql SQL语句
 	 * @param query 查询对象
 	 * @param params 参数

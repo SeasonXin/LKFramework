@@ -19,7 +19,7 @@ import lombok.Setter;
 public class LKMappedCategoryEntity extends LKMappedNormalEntity implements LKCategoryInterface {
 
 	/** serialVersionUID */
-	private static final long serialVersionUID = -3272539833652272811L;
+	private static final long serialVersionUID = 8888886666660003L;
 
 	/** 类目编号 */
 	@Column(insertable = true, updatable = false, nullable = false, unique = true, length = LKEntityFieldLengthStatics.LENGTH_CODE)

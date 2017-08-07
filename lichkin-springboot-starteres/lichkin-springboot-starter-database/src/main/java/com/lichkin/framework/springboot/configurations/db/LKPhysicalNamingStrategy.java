@@ -44,12 +44,12 @@ public class LKPhysicalNamingStrategy implements PhysicalNamingStrategy {
 			return null;
 		}
 
-		String str = LKPhysicalNamingStrategy.addUnderscores(name.getText());
-		if (!str.startsWith(LKPhysicalNamingStrategy.TABLE_PREFIX)) {
-			str = LKPhysicalNamingStrategy.TABLE_PREFIX + str;
+		String str = addUnderscores(name.getText());
+		if (!str.startsWith(TABLE_PREFIX)) {
+			str = TABLE_PREFIX + str;
 		}
-		if (str.endsWith(LKPhysicalNamingStrategy.TABLE_SUFFIX)) {
-			str.replace(LKPhysicalNamingStrategy.TABLE_SUFFIX, "");
+		if (str.endsWith(TABLE_SUFFIX)) {
+			str.replace(TABLE_SUFFIX, "");
 		}
 
 		return Identifier.toIdentifier(str);
@@ -67,10 +67,15 @@ public class LKPhysicalNamingStrategy implements PhysicalNamingStrategy {
 		if (name == null) {
 			return null;
 		}
-		return Identifier.toIdentifier(LKPhysicalNamingStrategy.addUnderscores(name.getText()));
+		return Identifier.toIdentifier(addUnderscores(name.getText()));
 	}
 
 
+	/**
+	 * 增加下划线
+	 * @param name 驼峰类型的名字
+	 * @return 下划线类型的名字
+	 */
 	protected static String addUnderscores(String name) {
 		if (name.endsWith("Entity")) {
 			name = name.substring(0, name.length() - "Entity".length());

@@ -6,7 +6,7 @@ import javax.persistence.PersistenceContext;
 import org.springframework.stereotype.Component;
 
 /**
- * 主数据库访问类
+ * 从数据库访问类
  * @author SuZhou LichKin Information Technology Co., Ltd.
  */
 @Component("dao2")

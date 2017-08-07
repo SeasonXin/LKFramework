@@ -24,7 +24,7 @@ public class LKPageUtils {
 		if (datas.containsKey(null)) {
 			datas = new LKDatas(JSONObject.fromObject(datas.getMap().get(null)));
 		}
-		final PageRequest pageRequest = new PageRequest(LKPageUtils.getPageNumber(datas), LKPageUtils.getPageSize(datas));
+		final PageRequest pageRequest = new PageRequest(getPageNumber(datas), getPageSize(datas));
 		return pageRequest;
 	}
 
@@ -36,7 +36,7 @@ public class LKPageUtils {
 	 * @return 分页信息
 	 */
 	public static Pageable getPageable(final LKDatas datas, final Sort sort) {
-		return new PageRequest(LKPageUtils.getPageNumber(datas), LKPageUtils.getPageSize(datas), sort);
+		return new PageRequest(getPageNumber(datas), getPageSize(datas), sort);
 	}
 
 
@@ -47,7 +47,7 @@ public class LKPageUtils {
 	 * @return 分页信息
 	 */
 	public static Pageable getPageable(final LKDatas datas, final int limit) {
-		return new PageRequest(LKPageUtils.getPageable(datas).getPageNumber(), limit);
+		return new PageRequest(getPageable(datas).getPageNumber(), limit);
 	}
 
 

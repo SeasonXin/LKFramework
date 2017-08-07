@@ -26,7 +26,7 @@ import lombok.Setter;
 public class LKMappedUserEntity extends LKMappedBaseEntity implements LKUserInterface {
 
 	/** serialVersionUID */
-	private static final long serialVersionUID = -1099098385896470439L;
+	private static final long serialVersionUID = 8888886666660005L;
 
 	/** 业务ID */
 	@Column(insertable = true, updatable = true, nullable = true, unique = false, length = LKEntityFieldLengthStatics.LENGTH_BUS_ID)
@@ -123,7 +123,7 @@ public class LKMappedUserEntity extends LKMappedBaseEntity implements LKUserInte
 
 	/** 实名认证等级（枚举） */
 	@Enumerated(EnumType.STRING)
-	@Column(insertable = true, updatable = true, nullable = false, unique = false, length = 32)
+	@Column(insertable = true, updatable = true, nullable = false, unique = false, length = LKEntityFieldLengthStatics.LENGTH_CODE)
 	private LKAuthenticationEnum authentication;
 
 

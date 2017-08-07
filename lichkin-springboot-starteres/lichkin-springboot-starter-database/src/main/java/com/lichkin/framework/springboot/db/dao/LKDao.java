@@ -24,7 +24,6 @@ public interface LKDao {
 
 	/**
 	 * 查询列表
-	 * @param <T> 类型
 	 * @param sqlVo 查询对象
 	 * @param clazz 查询结果映射对象
 	 * @return 列表
@@ -34,7 +33,6 @@ public interface LKDao {
 
 	/**
 	 * 获取对象
-	 * @param <T> 类型
 	 * @param sqlVo 查询条件对象
 	 * @param clazz 查询结果映射对象
 	 * @return 对象
@@ -44,7 +42,6 @@ public interface LKDao {
 
 	/**
 	 * 查询分页
-	 * @param <T> 类型
 	 * @param sqlVo 查询对象
 	 * @param clazz 查询结果映射对象
 	 * @param pageable 分页信息
@@ -63,7 +60,6 @@ public interface LKDao {
 
 	/**
 	 * 查询列表
-	 * @param <T> 类型
 	 * @param sqlVo 查询对象
 	 * @param clazz 查询结果映射对象
 	 * @return 列表
@@ -73,7 +69,6 @@ public interface LKDao {
 
 	/**
 	 * 查询分页
-	 * @param <T> 类型
 	 * @param sqlVo 查询对象
 	 * @param clazz 查询结果映射对象
 	 * @param pageable 分页信息
@@ -84,7 +79,6 @@ public interface LKDao {
 
 	/**
 	 * 获取对象
-	 * @param <T> 类型
 	 * @param sqlVo 查询条件对象
 	 * @param clazz 查询结果映射对象
 	 * @return 对象
@@ -94,7 +88,6 @@ public interface LKDao {
 
 	/**
 	 * 获取对象
-	 * @param <T> 类型
 	 * @param clazz 查询结果映射对象
 	 * @param id 主键
 	 * @return 对象
@@ -112,7 +105,6 @@ public interface LKDao {
 
 	/**
 	 * 保存对象
-	 * @param <T> 类型
 	 * @param obj 对象
 	 * @param merge true：调用merge方法；false：调用persist方法。
 	 * @return 对象
@@ -122,7 +114,6 @@ public interface LKDao {
 
 	/**
 	 * 保存对象（merge方法）
-	 * @param <T> 类型
 	 * @param obj 对象
 	 * @return 对象
 	 */
@@ -131,7 +122,6 @@ public interface LKDao {
 
 	/**
 	 * 保存对象
-	 * @param <T> 类型
 	 * @param obj 对象
 	 * @return 对象
 	 */
@@ -140,7 +130,6 @@ public interface LKDao {
 
 	/**
 	 * 保存对象
-	 * @param <T> 类型
 	 * @param obj 对象
 	 * @return 对象
 	 */

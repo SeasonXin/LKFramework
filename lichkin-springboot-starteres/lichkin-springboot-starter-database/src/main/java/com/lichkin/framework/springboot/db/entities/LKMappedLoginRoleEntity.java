@@ -19,7 +19,7 @@ import lombok.Setter;
 public class LKMappedLoginRoleEntity extends LKMappedBaseEntity implements LKLoginRoleInterface {
 
 	/** serialVersionUID */
-	private static final long serialVersionUID = 3616981907414016373L;
+	private static final long serialVersionUID = 8888886666660007L;
 
 	/** 登录ID */
 	@Column(insertable = true, updatable = false, nullable = false, unique = false, length = LKEntityFieldLengthStatics.LENGTH_ID)

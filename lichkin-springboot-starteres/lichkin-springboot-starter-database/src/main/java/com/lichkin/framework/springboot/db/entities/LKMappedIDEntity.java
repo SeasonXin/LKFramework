@@ -30,7 +30,7 @@ import lombok.Setter;
 public class LKMappedIDEntity implements LKIDInterface {
 
 	/** serialVersionUID */
-	private static final long serialVersionUID = 968896259162238254L;
+	private static final long serialVersionUID = 8888886666660000L;
 
 	/** 主键 */
 	@Id

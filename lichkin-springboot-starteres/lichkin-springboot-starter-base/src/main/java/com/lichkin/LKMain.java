@@ -13,6 +13,7 @@ import org.springframework.util.ClassUtils;
 import com.lichkin.framework.bases.statics.configs.LKSysConfig;
 import com.lichkin.framework.bases.statics.configs.LKSysConfigKeys;
 import com.lichkin.framework.bases.statics.configs.LKSysConfigs;
+import com.lichkin.framework.utils.lang.json.alibaba.LKJSONUtils;
 
 /**
  * 项目主类
@@ -40,6 +41,8 @@ public class LKMain implements LKSysConfigKeys {
 	public static void main(String[] args) {
 		// 解析参数
 		args = analysizeArgs(args);
+
+		System.out.println("analysized args:" + LKJSONUtils.toJson(args, false, true));
 
 		// 配置log4j2的启动参数值
 		MainMapLookup.setMainArguments(new String[] { CONFIG_LK_SYSTEM_TAG, LKSysConfigs.get(CONFIG_LK_SYSTEM_TAG), CONFIG_LK_SYSTEM_LOGLEVEL, LKSysConfigs.get(CONFIG_LK_SYSTEM_LOGLEVEL) });

@@ -26,10 +26,12 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 @EnableJpaRepositories(enableDefaultTransactions = false, entityManagerFactoryRef = "secondaryLocalContainerEntityManagerFactoryBean", basePackages = { "com.lichkin.**.dao" })
 public class LKSpringBootConfiguration4DBSecondary {
 
+	/** 数据源 */
 	@Autowired
 	@Qualifier("secondaryDataSource")
 	private DataSource dataSource;
 
+	/** JPA配置属性 */
 	@Autowired
 	private JpaProperties jpaProperties;
 
@@ -46,18 +48,33 @@ public class LKSpringBootConfiguration4DBSecondary {
 	}
 
 
+	/**
+	 * 定义实体类管理对象
+	 * @param builder 实体类管理对象工厂
+	 * @return 实体类管理对象
+	 */
 	@Bean(name = "secondaryEntityManager")
 	public EntityManager secondaryEntityManager(final EntityManagerFactoryBuilder builder) {
 		return secondaryLocalContainerEntityManagerFactoryBean(builder).getObject().createEntityManager();
 	}
 
 
+	/**
+	 * 配置实体类管理对象工厂
+	 * @param builder 实体类管理对象工厂
+	 * @return 实体类管理对象工厂
+	 */
 	@Bean(name = "secondaryLocalContainerEntityManagerFactoryBean")
 	public LocalContainerEntityManagerFactoryBean secondaryLocalContainerEntityManagerFactoryBean(final EntityManagerFactoryBuilder builder) {
 		return builder.dataSource(dataSource).properties(jpaProperties.getHibernateProperties(dataSource)).packages("com.lichkin.**.entity").persistenceUnit("secondaryPersistenceUnit").build();
 	}
 
 
+	/**
+	 * 定义事务管理对象
+	 * @param builder 实体类管理对象工厂
+	 * @return 事务管理对象
+	 */
 	@Bean(name = "secondaryPlatformTransactionManager")
 	public PlatformTransactionManager secondaryPlatformTransactionManager(final EntityManagerFactoryBuilder builder) {
 		final JpaTransactionManager transactionManager = new JpaTransactionManager(secondaryLocalContainerEntityManagerFactoryBean(builder).getObject());
