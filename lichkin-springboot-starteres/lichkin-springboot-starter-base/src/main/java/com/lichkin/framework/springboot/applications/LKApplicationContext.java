@@ -14,6 +14,7 @@ import org.springframework.stereotype.Component;
 @Component
 public class LKApplicationContext implements ApplicationContextAware {
 
+	/** 日志记录对象 */
 	protected static final Log LOGGER = LogFactory.getLog(LKApplicationContext.class);
 
 	/** 应用上下文 */
@@ -22,7 +23,7 @@ public class LKApplicationContext implements ApplicationContextAware {
 
 	@Override
 	public void setApplicationContext(final ApplicationContext applicationContext) throws BeansException {
-		LKApplicationContext.context = applicationContext;
+		context = applicationContext;
 	}
 
 
@@ -31,10 +32,10 @@ public class LKApplicationContext implements ApplicationContextAware {
 	 * @return 应用上下文
 	 */
 	public static ApplicationContext getContext() {
-		if (LKApplicationContext.context == null) {
-			LKApplicationContext.LOGGER.error("ApplicationContext is not ready.");
+		if (context == null) {
+			LOGGER.error("ApplicationContext is not ready.");
 		}
-		return LKApplicationContext.context;
+		return context;
 	}
 
 
@@ -45,11 +46,11 @@ public class LKApplicationContext implements ApplicationContextAware {
 	 * @return 对象
 	 */
 	public final static Object getBean(final String name) {
-		final ApplicationContext context = LKApplicationContext.getContext();
+		final ApplicationContext context = getContext();
 		if (context != null) {
-			return LKApplicationContext.getContext().getBean(name);
+			return getContext().getBean(name);
 		}
-		LKApplicationContext.LOGGER.error("ApplicationContext is not ready.");
+		LOGGER.error("ApplicationContext is not ready.");
 		return null;
 	}
 
@@ -58,15 +59,15 @@ public class LKApplicationContext implements ApplicationContextAware {
 	 * 获取对象
 	 * @param <T> 类型
 	 * @param requiredType 类型
-	 * @see org.springframework.context.ApplicationContext#getBean(String)
+	 * @see org.springframework.context.ApplicationContext#getBean(Class)
 	 * @return 对象
 	 */
 	public final static <T> T getBean(final Class<T> requiredType) {
-		final ApplicationContext context = LKApplicationContext.getContext();
+		final ApplicationContext context = getContext();
 		if (context != null) {
-			return LKApplicationContext.getContext().getBean(requiredType);
+			return getContext().getBean(requiredType);
 		}
-		LKApplicationContext.LOGGER.error("ApplicationContext is not ready.");
+		LOGGER.error("ApplicationContext is not ready.");
 		return null;
 	}
 

@@ -3,7 +3,8 @@ package com.lichkin.framework.springboot.services;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 
-import com.lichkin.framework.springframework.LKProperties;
+import com.lichkin.framework.bases.statics.configs.LKSysConfigKeys;
+import com.lichkin.framework.bases.statics.configs.LKSysConfigs;
 
 /**
  * 通用服务类
@@ -15,9 +16,9 @@ public abstract class LKService {
 	protected final Log logger = LogFactory.getLog(getClass());
 
 	/** 当前系统标识 */
-	protected String $systemTag = LKProperties.LK_SYSTEM_TAG;
+	protected String $systemTag = LKSysConfigs.get(LKSysConfigKeys.CONFIG_LK_SYSTEM_TAG);
 
 	/** 当前系统名称 */
-	protected String $systemName = LKProperties.LK_SYSTEM_NAME;
+	protected String $systemName = LKSysConfigs.get(LKSysConfigKeys.CONFIG_LK_SYSTEM_NAME);
 
 }

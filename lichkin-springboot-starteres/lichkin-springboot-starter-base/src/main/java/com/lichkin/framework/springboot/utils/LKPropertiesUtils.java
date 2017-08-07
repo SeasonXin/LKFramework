@@ -1,6 +1,7 @@
 package com.lichkin.framework.springboot.utils;
 
 import com.lichkin.LKMain;
+import com.lichkin.framework.bases.statics.configs.LKSysConfigs;
 
 /**
  * 属性工具类，被spring管理的所有属性配置。
@@ -14,7 +15,7 @@ public class LKPropertiesUtils {
 	 * @return 参数值
 	 */
 	public static String getProperty(final String key) {
-		return LKPropertiesUtils.getProperty(key, null);
+		return getProperty(key, null);
 	}
 
 
@@ -25,7 +26,11 @@ public class LKPropertiesUtils {
 	 * @return 参数值
 	 */
 	public static String getProperty(final String key, final String defaultValue) {
-		return LKMain.env.getProperty(key, defaultValue);
+		String value = LKSysConfigs.get(key);// 先从框架中找配置值
+		if (value == null) {// 框架中没有配置，则到配置文件中找配置值。
+			value = LKMain.env.getProperty(key, defaultValue);
+		}
+		return value;
 	}
 
 }
