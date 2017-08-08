@@ -152,7 +152,7 @@ public class LKMain implements LKSysConfigKeys {
 	 * @return 依赖数据库环境返回true，否则返回false。
 	 */
 	private static void analysizeProfileDB() {
-		if (!ClassUtils.isPresent("com.lichkin.framework.springboot.db.dao.LKDao", null)) {
+		if (!ClassUtils.isPresent("com.lichkin.framework.springboot.daos.LKDao", null)) {
 			PROFILES = ArrayUtils.removeElement(PROFILES, "db");
 		}
 	}

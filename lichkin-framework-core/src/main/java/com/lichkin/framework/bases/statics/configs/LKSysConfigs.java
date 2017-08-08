@@ -13,7 +13,7 @@ import com.lichkin.framework.bases.exceptions.LKRuntimeException;
 public class LKSysConfigs implements LKSysConfigKeys {
 
 	/** 配置集合 */
-	private static Map<String, String> map = new HashMap<>();
+	public static Map<String, String> map = new HashMap<>();
 
 
 	/**
@@ -21,7 +21,7 @@ public class LKSysConfigs implements LKSysConfigKeys {
 	 * @param config 配置对象
 	 */
 	public static void put(final LKSysConfig config) {
-		LKSysConfigs.map.put(config.getConfigKey(), config.getConfigValue());
+		map.put(config.getConfigKey(), config.getConfigValue());
 	}
 
 
@@ -32,7 +32,7 @@ public class LKSysConfigs implements LKSysConfigKeys {
 	 * @return 配置值
 	 */
 	public static String get(final String key, final String defaultValue) {
-		final String value = LKSysConfigs.map.get(key);
+		final String value = map.get(key);
 		if (value == null) {
 			return defaultValue;
 		}
@@ -47,7 +47,7 @@ public class LKSysConfigs implements LKSysConfigKeys {
 	 * @return 配置值
 	 */
 	public static int get(final String key, final int defaultValue) {
-		final String value = LKSysConfigs.map.get(key);
+		final String value = map.get(key);
 		if (value == null) {
 			return defaultValue;
 		}
@@ -82,7 +82,7 @@ public class LKSysConfigs implements LKSysConfigKeys {
 			default:
 			break;
 		}
-		return LKSysConfigs.get(key, defaultValue);
+		return get(key, defaultValue);
 	}
 
 }
