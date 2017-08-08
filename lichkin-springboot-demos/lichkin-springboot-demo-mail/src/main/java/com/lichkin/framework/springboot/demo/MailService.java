@@ -11,7 +11,7 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.context.event.ApplicationContextEvent;
 
 import com.lichkin.framework.mail.bean.LKSysMailInfoBean;
-import com.lichkin.framework.springboot.configurations.mail.LKMailManager;
+import com.lichkin.framework.springboot.configurations.LKMailManager;
 import com.lichkin.framework.springboot.services.impl.LKSysMailService;
 
 @Configuration

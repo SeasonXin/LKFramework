@@ -2,7 +2,7 @@ package com.lichkin.framework.springboot.demo;
 
 import org.springframework.stereotype.Service;
 
-import com.lichkin.framework.springboot.demo.entities.DemoEntity;
+import com.lichkin.framework.springboot.demo.entities.impl.DemoEntity;
 import com.lichkin.framework.springboot.services.LKBaseTaskDBService;
 import com.lichkin.framework.utils.lang.json.alibaba.LKJSONUtils;
 

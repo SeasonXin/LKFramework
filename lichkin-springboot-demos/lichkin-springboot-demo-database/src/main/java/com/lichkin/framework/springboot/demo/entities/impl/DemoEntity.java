@@ -1,8 +1,8 @@
-package com.lichkin.framework.springboot.demo.entities;
+package com.lichkin.framework.springboot.demo.entities.impl;
 
 import javax.persistence.Entity;
 
-import com.lichkin.framework.springboot.db.entities.LKMappedIDEntity;
+import com.lichkin.framework.springboot.entities.LKMappedIDEntity;
 
 import lombok.Getter;
 import lombok.Setter;

@@ -8,8 +8,8 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.context.event.ApplicationContextEvent;
 
 import com.lichkin.framework.springboot.configurations.LKQuartzManager;
-import com.lichkin.framework.springboot.db.dao.LKDao;
-import com.lichkin.framework.springframework.entities.sys.quartz.SysConfigQuartzEntity;
+import com.lichkin.framework.springboot.daos.LKDao;
+import com.lichkin.framework.springboot.entities.impl.SysConfigQuartzEntity;
 
 @Configuration
 public class JobModifyService implements ApplicationListener<ApplicationContextEvent> {
