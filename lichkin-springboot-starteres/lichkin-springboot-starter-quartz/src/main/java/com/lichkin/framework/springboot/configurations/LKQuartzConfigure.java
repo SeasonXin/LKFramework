@@ -11,8 +11,8 @@ import org.springframework.context.event.ApplicationContextEvent;
 
 import com.lichkin.framework.bases.db.vo.LKSqlVo;
 import com.lichkin.framework.bases.enums.LKUsingStatusEnum;
-import com.lichkin.framework.springboot.db.dao.LKDao;
-import com.lichkin.framework.springframework.entities.sys.quartz.SysConfigQuartzEntity;
+import com.lichkin.framework.springboot.daos.LKDao;
+import com.lichkin.framework.springboot.entities.impl.SysConfigQuartzEntity;
 
 /**
  * 定时任务基础实现

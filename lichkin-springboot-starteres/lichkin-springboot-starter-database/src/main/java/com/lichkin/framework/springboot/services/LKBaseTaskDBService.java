@@ -2,7 +2,7 @@ package com.lichkin.framework.springboot.services;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
-import com.lichkin.framework.springboot.db.dao.LKDao;
+import com.lichkin.framework.springboot.daos.LKDao;
 
 /**
  * 通用基本任务服务类

@@ -16,7 +16,7 @@ import org.quartz.impl.StdSchedulerFactory;
 
 import com.lichkin.framework.bases.enums.LKErrorCodeEnum;
 import com.lichkin.framework.bases.exceptions.LKRuntimeException;
-import com.lichkin.framework.springframework.entities.sys.quartz.SysConfigQuartzEntity;
+import com.lichkin.framework.springboot.entities.impl.SysConfigQuartzEntity;
 
 /**
  * 定时任务管理类

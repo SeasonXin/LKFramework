@@ -9,8 +9,8 @@ import com.lichkin.framework.bases.enums.LKErrorCodeEnum;
 import com.lichkin.framework.bases.exceptions.LKRuntimeException;
 import com.lichkin.framework.mail.bean.LKSysMailInfoBean;
 import com.lichkin.framework.mail.utils.LKMailSender;
+import com.lichkin.framework.springboot.entities.impl.SysMailLogEntity;
 import com.lichkin.framework.springboot.services.LKDBService;
-import com.lichkin.framework.springframework.entities.sys.mail.SysMailLogEntity;
 import com.lichkin.framework.utils.security.md5.LKMD5Encrypter;
 
 /**
