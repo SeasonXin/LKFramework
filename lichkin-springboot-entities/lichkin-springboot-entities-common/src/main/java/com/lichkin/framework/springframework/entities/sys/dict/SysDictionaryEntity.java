@@ -4,7 +4,7 @@ import javax.persistence.Entity;
 import javax.persistence.Table;
 
 import com.lichkin.framework.bases.entities.LKDictionaryInterface;
-import com.lichkin.framework.springboot.db.entities.LKMappedDictionaryEntity;
+import com.lichkin.framework.springboot.entities.LKMappedDictionaryEntity;
 
 import lombok.Getter;
 import lombok.Setter;
@@ -20,6 +20,6 @@ import lombok.Setter;
 public final class SysDictionaryEntity extends LKMappedDictionaryEntity implements LKDictionaryInterface {
 
 	/** serialVersionUID */
-	private static final long serialVersionUID = 3488701277746928427L;
+	private static final long serialVersionUID = 8888886666668013L;
 
 }

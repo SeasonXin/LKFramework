@@ -3,7 +3,7 @@ package com.lichkin.framework.springframework.entities.sys.user;
 import javax.persistence.Entity;
 import javax.persistence.Table;
 
-import com.lichkin.framework.springboot.db.entities.LKMappedUserEntity;
+import com.lichkin.framework.springboot.entities.LKMappedUserEntity;
 
 import lombok.Getter;
 import lombok.Setter;
@@ -19,6 +19,6 @@ import lombok.Setter;
 public final class SysUserEntity extends LKMappedUserEntity {
 
 	/** serialVersionUID */
-	private static final long serialVersionUID = -4875725064370776937L;
+	private static final long serialVersionUID = 8888886666668006L;
 
 }

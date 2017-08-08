@@ -3,7 +3,7 @@ package com.lichkin.framework.springframework.entities.sys.auth;
 import javax.persistence.Entity;
 import javax.persistence.Table;
 
-import com.lichkin.framework.springboot.db.entities.LKMappedRoleEntity;
+import com.lichkin.framework.springboot.entities.LKMappedRoleEntity;
 
 import lombok.Getter;
 import lombok.Setter;
@@ -19,6 +19,6 @@ import lombok.Setter;
 public final class SysRoleEntity extends LKMappedRoleEntity {
 
 	/** serialVersionUID */
-	private static final long serialVersionUID = 8782769803921056089L;
+	private static final long serialVersionUID = 8888886666668009L;
 
 }

@@ -4,7 +4,7 @@ import javax.persistence.Entity;
 import javax.persistence.Table;
 
 import com.lichkin.framework.bases.entities.LKCategoryInterface;
-import com.lichkin.framework.springboot.db.entities.LKMappedCategoryEntity;
+import com.lichkin.framework.springboot.entities.LKMappedCategoryEntity;
 
 import lombok.Getter;
 import lombok.Setter;
@@ -20,6 +20,6 @@ import lombok.Setter;
 public final class SysCategoryEntity extends LKMappedCategoryEntity implements LKCategoryInterface {
 
 	/** serialVersionUID */
-	private static final long serialVersionUID = 2198520104897179276L;
+	private static final long serialVersionUID = 8888886666668012L;
 
 }
