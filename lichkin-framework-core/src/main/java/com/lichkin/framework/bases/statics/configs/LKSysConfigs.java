@@ -1,7 +1,6 @@
 package com.lichkin.framework.bases.statics.configs;
 
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
 import com.lichkin.framework.bases.enums.LKErrorCodeEnum;
@@ -15,19 +14,6 @@ public class LKSysConfigs implements LKSysConfigKeys {
 
 	/** 配置集合 */
 	private static Map<String, String> map = new HashMap<>();
-
-
-	/**
-	 * 初始化
-	 * @param configs 配置对象列表
-	 */
-	public static void init(final List<LKSysConfig> configs) {
-		if ((configs != null) && !configs.isEmpty()) {
-			for (final LKSysConfig config : configs) {
-				LKSysConfigs.map.put(config.getConfigKey(), config.getConfigValue());
-			}
-		}
-	}
 
 
 	/**
