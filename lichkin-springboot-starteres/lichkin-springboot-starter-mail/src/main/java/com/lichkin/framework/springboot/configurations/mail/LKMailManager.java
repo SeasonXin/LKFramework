@@ -23,7 +23,7 @@ public class LKMailManager {
 	 * @return 邮件信息
 	 */
 	public static LKSysMailInfoBean getMailInfo(final String busCode) {
-		final SysConfigMailEntity config = LKMailManager.configs.get(busCode);
+		final SysConfigMailEntity config = configs.get(busCode);
 		if (config == null) {
 			return null;
 		} else {

@@ -36,15 +36,15 @@ public class LKQuartzManager {
 	 * @return Scheduler
 	 */
 	public static Scheduler getScheduler() {
-		if (LKQuartzManager.scheduler == null) {
+		if (scheduler == null) {
 			try {
-				LKQuartzManager.logger.warn("scheduler is null, we create a new one for this.");
-				LKQuartzManager.scheduler = StdSchedulerFactory.getDefaultScheduler();
+				logger.warn("scheduler is null, we create a new one for this.");
+				scheduler = StdSchedulerFactory.getDefaultScheduler();
 			} catch (final SchedulerException e) {
 				throw new LKRuntimeException(LKErrorCodeEnum.ERROR, e);
 			}
 		}
-		return LKQuartzManager.scheduler;
+		return scheduler;
 	}
 
 
@@ -80,7 +80,7 @@ public class LKQuartzManager {
 		TriggerBuilder<Trigger> triggerBuilder = null;
 		if (rebuild) {
 			try {
-				final Trigger trigger = LKQuartzManager.scheduler.getTrigger(new TriggerKey(configQuartz.getJobName(), configQuartz.getGroupName()));
+				final Trigger trigger = scheduler.getTrigger(new TriggerKey(configQuartz.getJobName(), configQuartz.getGroupName()));
 				if (trigger == null) {
 					throw new LKRuntimeException(LKErrorCodeEnum.ERROR, "no trigger to rebuild.");
 				}
@@ -103,7 +103,7 @@ public class LKQuartzManager {
 	 * @return 触发器
 	 */
 	public static CronTrigger buildCronTrigger(final SysConfigQuartzEntity configQuartz) {
-		return LKQuartzManager.buildCronTrigger(configQuartz, false);
+		return buildCronTrigger(configQuartz, false);
 	}
 
 
@@ -113,7 +113,7 @@ public class LKQuartzManager {
 	 * @return 触发器
 	 */
 	public static CronTrigger rebuildCronTrigger(final SysConfigQuartzEntity configQuartz) {
-		return LKQuartzManager.buildCronTrigger(configQuartz, true);
+		return buildCronTrigger(configQuartz, true);
 	}
 
 }
