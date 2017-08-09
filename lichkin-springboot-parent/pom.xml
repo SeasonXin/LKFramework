@@ -39,7 +39,7 @@
     <module>../lichkin-springboot-starteres/lichkin-springboot-starter-web</module>
     <module>../lichkin-springboot-starteres/lichkin-springboot-starter-web-front</module>
     <module>../lichkin-springboot-starteres/lichkin-springboot-starter-web-back</module>
-    <module>../lichkin-springboot-starteres/lichkin-springboot-starter-web-wechat</module>
+    <module>../lichkin-springboot-starteres/lichkin-springboot-starter-wechat</module>
 
     <module>../lichkin-springboot-entities/lichkin-springboot-entities-quartz</module>
     <module>../lichkin-springboot-entities/lichkin-springboot-entities-mail</module>
