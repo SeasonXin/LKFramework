@@ -129,6 +129,7 @@ public class LKMain implements LKSysConfigKeys {
 				args = ArrayUtils.add(args, reBuildArgProfilesActive());// 增加profile配置
 			}
 		} else {// 不包含参数，所有都设置默认值。
+			PROFILES = ArrayUtils.add(PROFILES, DEFAULT_PROFILE);
 			args = new String[] { reBuildArgProfilesActive() };
 		}
 
