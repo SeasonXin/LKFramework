@@ -1,4 +1,4 @@
-INSERT INTO db_test.t_sys_config (ID,REMARKS,USING_STATUS,CONFIG_KEY,CONFIG_VALUE,SYSTEM_TAG)
+INSERT INTO t_sys_config (ID,REMARKS,USING_STATUS,CONFIG_KEY,CONFIG_VALUE,SYSTEM_TAG)
 VALUES 
 ('wechat.00.debug',NULL,'USING','lichkin.framework.wechat.debug','false','LichKin-Project'),
 ('wechat.00.debug.openid',NULL,'USING','lichkin.framework.wechat.debug.openid','oZwfPviq9MDTmNSwnpOHzSJmtijA','LichKin-Project'),
