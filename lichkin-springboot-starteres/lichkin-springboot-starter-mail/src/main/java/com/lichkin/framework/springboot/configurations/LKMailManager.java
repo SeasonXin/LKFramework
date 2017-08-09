@@ -3,6 +3,7 @@ package com.lichkin.framework.springboot.configurations;
 import java.util.HashMap;
 import java.util.Map;
 
+import com.lichkin.framework.bases.LKDatas;
 import com.lichkin.framework.mail.bean.LKSysMailInfoBean;
 import com.lichkin.framework.springboot.entities.impl.SysConfigMailEntity;
 import com.lichkin.framework.utils.lang.LKStringUtils;
@@ -46,15 +47,15 @@ public class LKMailManager {
 	/**
 	 * 获取邮件信息
 	 * @param busCode 邮件业务编码
-	 * @param repalceDatas 数据集合。用于替换标题及内容中的动态值。
+	 * @param replaceDatas 数据集合。用于替换标题及内容中的动态值。
 	 * @return 邮件信息
 	 */
-	public static LKSysMailInfoBean getMailInfo(final String busCode, final Map<String, String> repalceDatas) {
+	public static LKSysMailInfoBean getMailInfo(final String busCode, final LKDatas replaceDatas) {
 		final LKSysMailInfoBean config = LKMailManager.getMailInfo(busCode);
 
-		if ((config != null) && (repalceDatas != null)) {
-			config.setSubject(LKStringUtils.replaceDatas(config.getSubject(), repalceDatas));
-			config.setContent(LKStringUtils.replaceDatas(config.getContent(), repalceDatas));
+		if ((config != null) && (replaceDatas != null)) {
+			config.setSubject(LKStringUtils.replaceDatas(config.getSubject(), replaceDatas));
+			config.setContent(LKStringUtils.replaceDatas(config.getContent(), replaceDatas));
 		}
 
 		return config;

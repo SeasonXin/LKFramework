@@ -17,26 +17,26 @@ public final class LKBooleanUtils extends BooleanUtils {
 	 * 转换成布尔值
 	 *
 	 * <pre>
-	 *   LKBooleanUtils.toBoolean(null, defaultValue)       = defaultValue
+	 *   toBoolean(null, defaultValue)       = defaultValue
 	 *
-	 *   LKBooleanUtils.toBoolean("", defaultValue)         = defaultValue
-	 *   LKBooleanUtils.toBoolean(" ", defaultValue)        = defaultValue
-	 *   LKBooleanUtils.toBoolean("other", defaultValue)    = defaultValue
+	 *   toBoolean("", defaultValue)         = defaultValue
+	 *   toBoolean(" ", defaultValue)        = defaultValue
+	 *   toBoolean("other", defaultValue)    = defaultValue
 	 *
-	 *   LKBooleanUtils.toBoolean("y", defaultValue)        = true
-	 *   LKBooleanUtils.toBoolean("t", defaultValue)        = true
-	 *   LKBooleanUtils.toBoolean("on", defaultValue)       = true
-	 *   LKBooleanUtils.toBoolean("yes", defaultValue)      = true
-	 *   LKBooleanUtils.toBoolean("true", defaultValue)     = true
-	 *   LKBooleanUtils.toBoolean("tRue", defaultValue)     = true
-	 *   LKBooleanUtils.toBoolean("trUe", defaultValue)     = true
-	 *   LKBooleanUtils.toBoolean("TRUE", defaultValue)     = true
-	 *   LKBooleanUtils.toBoolean(" TRUE ", defaultValue)   = true
+	 *   toBoolean("y", defaultValue)        = true
+	 *   toBoolean("t", defaultValue)        = true
+	 *   toBoolean("on", defaultValue)       = true
+	 *   toBoolean("yes", defaultValue)      = true
+	 *   toBoolean("true", defaultValue)     = true
+	 *   toBoolean("tRue", defaultValue)     = true
+	 *   toBoolean("trUe", defaultValue)     = true
+	 *   toBoolean("TRUE", defaultValue)     = true
+	 *   toBoolean(" TRUE ", defaultValue)   = true
 	 *
-	 *   LKBooleanUtils.toBoolean("0", defaultValue)        = false
-	 *   LKBooleanUtils.toBoolean("-1", defaultValue)       = false
-	 *   LKBooleanUtils.toBoolean("1", defaultValue)        = true
-	 *   LKBooleanUtils.toBoolean("1.1", defaultValue)      = true
+	 *   toBoolean("0", defaultValue)        = false
+	 *   toBoolean("-1", defaultValue)       = false
+	 *   toBoolean("1", defaultValue)        = true
+	 *   toBoolean("1.1", defaultValue)      = true
 	 * </pre>
 	 *
 	 * @param str 字符串
@@ -47,7 +47,7 @@ public final class LKBooleanUtils extends BooleanUtils {
 		if (str != null) {
 			if (LKStringUtils.isNotBlank(str)) {
 				final String trimmed = LKStringUtils.trimToEmpty(str);
-				for (final String t : LKBooleanUtils._TRUES) {
+				for (final String t : _TRUES) {
 					if (t.equalsIgnoreCase(trimmed)) {
 						return Boolean.TRUE;
 					}
@@ -66,33 +66,33 @@ public final class LKBooleanUtils extends BooleanUtils {
 	 * 转换成布尔值
 	 *
 	 * <pre>
-	 *   LKBooleanUtils.toBoolean(null)       = false
+	 *   toBoolean(null)       = false
 	 *
-	 *   LKBooleanUtils.toBoolean("")         = false
-	 *   LKBooleanUtils.toBoolean(" ")        = false
-	 *   LKBooleanUtils.toBoolean("other")    = false
+	 *   toBoolean("")         = false
+	 *   toBoolean(" ")        = false
+	 *   toBoolean("other")    = false
 	 *
-	 *   LKBooleanUtils.toBoolean("y")        = true
-	 *   LKBooleanUtils.toBoolean("t")        = true
-	 *   LKBooleanUtils.toBoolean("on")       = true
-	 *   LKBooleanUtils.toBoolean("yes")      = true
-	 *   LKBooleanUtils.toBoolean("true")     = true
-	 *   LKBooleanUtils.toBoolean("tRue")     = true
-	 *   LKBooleanUtils.toBoolean("trUe")     = true
-	 *   LKBooleanUtils.toBoolean("TRUE")     = true
-	 *   LKBooleanUtils.toBoolean(" TRUE ")   = true
+	 *   toBoolean("y")        = true
+	 *   toBoolean("t")        = true
+	 *   toBoolean("on")       = true
+	 *   toBoolean("yes")      = true
+	 *   toBoolean("true")     = true
+	 *   toBoolean("tRue")     = true
+	 *   toBoolean("trUe")     = true
+	 *   toBoolean("TRUE")     = true
+	 *   toBoolean(" TRUE ")   = true
 	 *
-	 *   LKBooleanUtils.toBoolean("0")        = false
-	 *   LKBooleanUtils.toBoolean("-1")       = false
-	 *   LKBooleanUtils.toBoolean("1")        = true
-	 *   LKBooleanUtils.toBoolean("1.1")      = true
+	 *   toBoolean("0")        = false
+	 *   toBoolean("-1")       = false
+	 *   toBoolean("1")        = true
+	 *   toBoolean("1.1")      = true
 	 * </pre>
 	 *
 	 * @param str 字符串
 	 * @return 解析值为真时返回true，否则返回false。
 	 */
 	public static boolean toBoolean(final String str) {
-		return LKBooleanUtils.toBoolean(str, Boolean.FALSE);
+		return toBoolean(str, Boolean.FALSE);
 	}
 
 
@@ -100,12 +100,12 @@ public final class LKBooleanUtils extends BooleanUtils {
 	 * 转换成布尔值
 	 *
 	 * <pre>
-	 *   LKBooleanUtils.toBoolean(null, defaultValue)     = defaultValue
+	 *   toBoolean(null, defaultValue)     = defaultValue
 	 *
-	 *   LKBooleanUtils.toBoolean(0, defaultValue)        = false
-	 *   LKBooleanUtils.toBoolean(-1, defaultValue)       = false
-	 *   LKBooleanUtils.toBoolean(1, defaultValue)        = true
-	 *   LKBooleanUtils.toBoolean(1.1, defaultValue)      = true
+	 *   toBoolean(0, defaultValue)        = false
+	 *   toBoolean(-1, defaultValue)       = false
+	 *   toBoolean(1, defaultValue)        = true
+	 *   toBoolean(1.1, defaultValue)      = true
 	 * </pre>
 	 *
 	 * @param num 数字
@@ -125,19 +125,19 @@ public final class LKBooleanUtils extends BooleanUtils {
 	 * 转换成布尔值
 	 *
 	 * <pre>
-	 *   LKBooleanUtils.toBoolean(null)     = false
+	 *   toBoolean(null)     = false
 	 *
-	 *   LKBooleanUtils.toBoolean(0)        = false
-	 *   LKBooleanUtils.toBoolean(-1)       = false
-	 *   LKBooleanUtils.toBoolean(1)        = true
-	 *   LKBooleanUtils.toBoolean(1.1)      = true
+	 *   toBoolean(0)        = false
+	 *   toBoolean(-1)       = false
+	 *   toBoolean(1)        = true
+	 *   toBoolean(1.1)      = true
 	 * </pre>
 	 *
 	 * @param num 数字
 	 * @return 可解析时，返回解析值，否则返回默认值。
 	 */
 	public static boolean toBoolean(final Number num) {
-		return LKBooleanUtils.toBoolean(num, Boolean.FALSE);
+		return toBoolean(num, Boolean.FALSE);
 	}
 
 }

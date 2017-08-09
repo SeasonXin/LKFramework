@@ -11,8 +11,6 @@ import java.util.Map.Entry;
 
 import org.apache.commons.collections.MapUtils;
 
-import com.lichkin.framework.bases.statics.LKStringStatics;
-
 /**
  * Map工具类，继承自org.apache.commons.collections.MapUtils
  * @see org.apache.commons.collections.MapUtils
@@ -210,10 +208,10 @@ public final class LKMapUtils extends MapUtils {
 			return result;
 		}
 
-		for (Entry<String, T> entry : map.entrySet()) {
+		for (final Entry<String, T> entry : map.entrySet()) {
 			final String key = entry.getKey();
 			final T value = entry.getValue();
-			if ((value == null) || value.equals(LKStringStatics.STR_EMPTY)) {
+			if ((value == null) || value.equals("")) {
 				continue;
 			}
 			result.put(key, value);
@@ -238,11 +236,11 @@ public final class LKMapUtils extends MapUtils {
 			return result;
 		}
 
-		for (Entry<String, T> entry : map.entrySet()) {
+		for (final Entry<String, T> entry : map.entrySet()) {
 			final String key = entry.getKey();
 			Object value = entry.getValue();
 			if (value == null) {
-				value = LKStringStatics.STR_EMPTY;
+				value = "";
 			}
 			result.put(key, URLEncoder.encode(value.toString(), charset));
 		}
@@ -275,24 +273,24 @@ public final class LKMapUtils extends MapUtils {
 			for (final String key : keys) {
 				Object value = map.get(key);
 				if (value == null) {
-					value = LKStringStatics.STR_EMPTY;
+					value = "";
 				}
 				if (encode) {
 					value = URLEncoder.encode(value.toString(), charset);
 				}
-				sb.append(LKStringStatics.STR_AND).append(key).append(LKStringStatics.STR_EQUAL).append(value);
+				sb.append("&").append(key).append("=").append(value);
 			}
 		} else {
-			for (Entry<String, T> entry : map.entrySet()) {
+			for (final Entry<String, T> entry : map.entrySet()) {
 				final String key = entry.getKey();
 				Object value = entry.getValue();
 				if (value == null) {
-					value = LKStringStatics.STR_EMPTY;
+					value = "";
 				}
 				if (encode) {
 					value = URLEncoder.encode(value.toString(), charset);
 				}
-				sb.append(LKStringStatics.STR_AND).append(key).append(LKStringStatics.STR_EQUAL).append(value);
+				sb.append("&").append(key).append("=").append(value);
 			}
 		}
 		return sb.substring(1);
@@ -312,7 +310,7 @@ public final class LKMapUtils extends MapUtils {
 			return result;
 		}
 
-		for (Entry<String, T> entry : map.entrySet()) {
+		for (final Entry<String, T> entry : map.entrySet()) {
 			final String key = entry.getKey();
 			final T value = entry.getValue();
 			if (value == null) {
@@ -339,7 +337,7 @@ public final class LKMapUtils extends MapUtils {
 			return result;
 		}
 
-		for (Entry<String, T> entry : map.entrySet()) {
+		for (final Entry<String, T> entry : map.entrySet()) {
 			final String key = entry.getKey();
 			final T value = entry.getValue();
 			if (value == null) {

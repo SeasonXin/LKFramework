@@ -2,10 +2,15 @@ package com.lichkin.framework.bases.db.vo;
 
 import java.io.Serializable;
 
+import lombok.Getter;
+import lombok.Setter;
+
 /**
  * 单返回值对象类
  * @author SuZhou LichKin Information Technology Co., Ltd.
  */
+@Getter
+@Setter
 public class LKOneVo implements Serializable {
 
 	/** serialVersionUID */
@@ -13,23 +18,5 @@ public class LKOneVo implements Serializable {
 
 	/** 单返回值 */
 	private Object one;
-
-
-	/**
-	 * 获取值
-	 * @return 值
-	 */
-	public Object getOne() {
-		return one;
-	}
-
-
-	/**
-	 * 设置值
-	 * @param one 值
-	 */
-	public void setOne(final Object one) {
-		this.one = one;
-	}
 
 }

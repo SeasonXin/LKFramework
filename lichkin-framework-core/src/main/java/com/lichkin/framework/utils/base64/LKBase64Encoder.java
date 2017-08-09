@@ -28,7 +28,7 @@ public class LKBase64Encoder {
 	 * @return base64编码字符串
 	 */
 	public static String encodeWithHex(final String hex) {
-		return LKBase64Encoder.encodeWithBinaryData(LKHexUtils.toBytesFromHex(hex));
+		return encodeWithBinaryData(LKHexUtils.toBytesFromHex(hex));
 	}
 
 
@@ -38,7 +38,7 @@ public class LKBase64Encoder {
 	 * @return base64编码字符串
 	 */
 	public static String encodeWithDecimal(final String decimal) {
-		return LKBase64Encoder.encodeWithBinaryData(LKHexUtils.toBytesFromDecimal(decimal));
+		return encodeWithBinaryData(LKHexUtils.toBytesFromDecimal(decimal));
 	}
 
 
@@ -48,7 +48,7 @@ public class LKBase64Encoder {
 	 * @return base64编码字符串
 	 */
 	public static String encodeWithBigInteger(final BigInteger decimal) {
-		return LKBase64Encoder.encodeWithBinaryData(LKHexUtils.toBytesFromBigInteger(decimal));
+		return encodeWithBinaryData(LKHexUtils.toBytesFromBigInteger(decimal));
 	}
 
 
@@ -58,7 +58,7 @@ public class LKBase64Encoder {
 	 * @return base64编码字符串
 	 */
 	public static String encodeWithLong(final long decimal) {
-		return LKBase64Encoder.encodeWithBinaryData(LKHexUtils.toBytesFromLong(decimal));
+		return encodeWithBinaryData(LKHexUtils.toBytesFromLong(decimal));
 	}
 
 
@@ -68,7 +68,7 @@ public class LKBase64Encoder {
 	 * @return base64编码字符串
 	 */
 	public static String encodeWithInteger(final int decimal) {
-		return LKBase64Encoder.encodeWithBinaryData(LKHexUtils.toBytesFromInteger(decimal));
+		return encodeWithBinaryData(LKHexUtils.toBytesFromInteger(decimal));
 	}
 
 
@@ -78,7 +78,7 @@ public class LKBase64Encoder {
 	 * @return base64编码字符串
 	 */
 	public static String encodeWithShort(final short decimal) {
-		return LKBase64Encoder.encodeWithBinaryData(LKHexUtils.toBytesFromShort(decimal));
+		return encodeWithBinaryData(LKHexUtils.toBytesFromShort(decimal));
 	}
 
 
@@ -88,7 +88,7 @@ public class LKBase64Encoder {
 	 * @return base64编码字符串
 	 */
 	public static String encodeWithByte(final byte decimal) {
-		return LKBase64Encoder.encodeWithBinaryData(LKHexUtils.toBytesFromByte(decimal));
+		return encodeWithBinaryData(LKHexUtils.toBytesFromByte(decimal));
 	}
 
 }

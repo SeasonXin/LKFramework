@@ -1,7 +1,6 @@
 package com.lichkin.framework.bases.enums;
 
 import com.lichkin.framework.bases.enums.interfaces.LKBaseEnum;
-import com.lichkin.framework.bases.statics.LKStringStatics;
 
 /**
  * 日期模式枚举
@@ -25,28 +24,28 @@ public enum LKDatePatternEnum implements LKBaseEnum {
 	TIME_ONLY(1003, "HH时mm分ss秒", "HH:mm:ss"),
 
 	/** 年份 */
-	YEAR(365, "yyyy年", LKStringStatics.STR_YEAR),
+	YEAR(365, "yyyy年", "yyyy"),
 
 	/** 月份 */
-	MONTH(30, "MM月", LKStringStatics.STR_MONTH),
+	MONTH(30, "MM月", "MM"),
 
 	/** 日 */
-	DAY(86400000, "dd日", LKStringStatics.STR_DAY),
+	DAY(86400000, "dd日", "dd"),
 
 	/** 小时 */
-	HOUR(3600000, "HH时", LKStringStatics.STR_HOUR),
+	HOUR(3600000, "HH时", "HH"),
 
 	/** 分钟 */
-	MINUTE(60000, "mm分", LKStringStatics.STR_MINUTE),
+	MINUTE(60000, "mm分", "mm"),
 
 	/** 秒 */
-	SECOND(1000, "ss秒", LKStringStatics.STR_SECOND),
+	SECOND(1000, "ss秒", "ss"),
 
 	/** 毫秒 */
 	TIME_ONLY_FULL(0, "HH时mm分ss秒SSS毫秒", "HH:mm:ss:SSS"),
 
 	/** 毫秒 */
-	MILLISECOND(1, "SSS毫秒", LKStringStatics.STR_MILLISECOND),
+	MILLISECOND(1, "SSS毫秒", "SSS"),
 
 	/** 时间戳 */
 	TIMESTAP(2, "yyyyMMddHHmmss", "yyyyMMddHHmmss"),

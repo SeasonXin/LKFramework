@@ -6,6 +6,9 @@ package com.lichkin.framework.bases.statics;
  */
 public interface LKSQLStatics {
 
+	/** BLANK */
+	public static final String BLANK = " ";
+
 	/** SELECT */
 	public static final String SELECT = "SELECT";
 
@@ -28,12 +31,12 @@ public interface LKSQLStatics {
 	public static final String OR = "OR";
 
 	/** BLANK AS BLANK */
-	public static final String BLANKASBLANK = LKStringStatics.STR_BLANK + LKSQLStatics.AS + LKStringStatics.STR_BLANK;
+	public static final String BLANKASBLANK = BLANK + AS + BLANK;
 
 	/** BLANK WHERE BLANK */
-	public static final String BLANKWHEREBLANK = LKStringStatics.STR_BLANK + LKSQLStatics.WHERE + LKStringStatics.STR_BLANK;
+	public static final String BLANKWHEREBLANK = BLANK + WHERE + BLANK;
 
 	/** SELECT BLANK DISTINCT */
-	public static final String SELECTBLANKDISTINCT = LKSQLStatics.SELECT + LKStringStatics.STR_BLANK + LKSQLStatics.DISTINCT;
+	public static final String SELECTBLANKDISTINCT = SELECT + BLANK + DISTINCT;
 
 }

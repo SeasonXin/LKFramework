@@ -1,0 +1,10 @@
+#web configurations
+lichkin:
+  framework:
+    web:
+      webjarsCompress: false
+      request:
+        suffix:
+          formatter: yyyy_MM_dd_HH
+#      ui: lichkin
+#      isAdmin: true

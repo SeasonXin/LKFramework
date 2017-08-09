@@ -19,7 +19,7 @@ public final class LKReflectUtils {
 	 * @return 读写属性数组
 	 */
 	public static PropertyDescriptor[] getBeanProperties(final Class<?> clazz) {
-		return LKReflectUtils.getPropertiesHelper(clazz, true, true);
+		return getPropertiesHelper(clazz, true, true);
 	}
 
 
@@ -29,7 +29,7 @@ public final class LKReflectUtils {
 	 * @return 读属性数组
 	 */
 	public static PropertyDescriptor[] getBeanGetters(final Class<?> clazz) {
-		return LKReflectUtils.getPropertiesHelper(clazz, true, false);
+		return getPropertiesHelper(clazz, true, false);
 	}
 
 
@@ -39,7 +39,7 @@ public final class LKReflectUtils {
 	 * @return 写属性数组
 	 */
 	public static PropertyDescriptor[] getBeanSetters(final Class<?> clazz) {
-		return LKReflectUtils.getPropertiesHelper(clazz, false, true);
+		return getPropertiesHelper(clazz, false, true);
 	}
 
 

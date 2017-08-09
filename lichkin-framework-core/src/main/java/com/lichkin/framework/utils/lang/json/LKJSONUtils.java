@@ -26,8 +26,8 @@ public final class LKJSONUtils {
 
 	static {
 		final LKJSONProcessor processor = new LKJSONProcessor();
-		LKJSONUtils.conf.registerJsonValueProcessor(LKDatas.class, processor);
-		LKJSONUtils.conf.registerJsonValueProcessor(Date.class, processor);
+		conf.registerJsonValueProcessor(LKDatas.class, processor);
+		conf.registerJsonValueProcessor(Date.class, processor);
 	}
 
 
@@ -54,12 +54,12 @@ public final class LKJSONUtils {
 
 		if (isArray) {
 			if ((obj instanceof List<?>) || (obj instanceof Object[])) {
-				return JSONArray.fromObject(obj, LKJSONUtils.conf).toString();
+				return JSONArray.fromObject(obj, conf).toString();
 			}
-			return "[" + JSONObject.fromObject(obj, LKJSONUtils.conf).toString() + "]";
+			return "[" + JSONObject.fromObject(obj, conf).toString() + "]";
 		}
 
-		return JSONObject.fromObject(obj, LKJSONUtils.conf).toString();
+		return JSONObject.fromObject(obj, conf).toString();
 	}
 
 
@@ -122,9 +122,9 @@ public final class LKJSONUtils {
 					map.put(model.getKey(), model.getValue());
 				}
 			}
-			return LKJSONUtils.toBean(map, clazz);
+			return toBean(map, clazz);
 		}
-		return LKJSONUtils.toBean(jsonStr, clazz);
+		return toBean(jsonStr, clazz);
 	}
 
 
@@ -162,7 +162,7 @@ public final class LKJSONUtils {
 	 */
 	@Deprecated
 	public static <T> T toBean(final String jsonStr, final String key, final Class<T> clazz) {
-		return LKJSONUtils.toBean(JSONObject.fromObject(LKJSONUtils.getJsonObj(jsonStr, key)), clazz);
+		return toBean(JSONObject.fromObject(getJsonObj(jsonStr, key)), clazz);
 	}
 
 
@@ -178,7 +178,7 @@ public final class LKJSONUtils {
 	 */
 	@Deprecated
 	public static <T> List<T> toListBean(final String jsonStr, final String key, final Class<T> clazz) {
-		return LKJSONUtils.toListBean(JSONArray.fromObject(LKJSONUtils.getJsonObj(jsonStr, key)), clazz);
+		return toListBean(JSONArray.fromObject(getJsonObj(jsonStr, key)), clazz);
 	}
 
 

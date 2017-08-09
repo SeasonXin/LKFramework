@@ -4,10 +4,13 @@ import java.security.KeyPair;
 
 import com.lichkin.framework.utils.lang.LKHexUtils;
 
+import lombok.Getter;
+
 /**
  * 秘钥对
  * @author SuZhou LichKin Information Technology Co., Ltd.
  */
+@Getter
 public class LKKeyPair {
 
 	/** 秘钥对 */
@@ -29,33 +32,6 @@ public class LKKeyPair {
 		this.keyPair = keyPair;
 		privateKey = LKHexUtils.toHexFromBinaryData(keyPair.getPrivate().getEncoded());
 		publicKey = LKHexUtils.toHexFromBinaryData(keyPair.getPublic().getEncoded());
-	}
-
-
-	/**
-	 * 获取钥匙对
-	 * @return 钥匙对
-	 */
-	public KeyPair getKeyPair() {
-		return keyPair;
-	}
-
-
-	/**
-	 * 获取私钥
-	 * @return 私钥
-	 */
-	public String getPrivateKey() {
-		return privateKey;
-	}
-
-
-	/**
-	 * 获取公钥
-	 * @return 公钥
-	 */
-	public String getPublicKey() {
-		return publicKey;
 	}
 
 

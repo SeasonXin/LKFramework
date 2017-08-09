@@ -24,11 +24,11 @@ public class LKEnumUtils {
 	public static LKBaseEnum getEnum(final LKBaseEnum[] enums, final LKGetTypeEnum type, final Object key) {
 		switch (type) {
 			case CODE:
-				return LKEnumUtils.getEnumByCode(enums, (Integer) key);
+				return getEnumByCode(enums, (Integer) key);
 			case NAME:
-				return LKEnumUtils.getEnumByName(enums, (String) key);
+				return getEnumByName(enums, (String) key);
 			case NAME_EN:
-				return LKEnumUtils.getEnumByNameEn(enums, (String) key);
+				return getEnumByNameEn(enums, (String) key);
 			default:
 				throw new LKRuntimeException(LKErrorCodeEnum.PARAMS_EXCEPTION);
 		}

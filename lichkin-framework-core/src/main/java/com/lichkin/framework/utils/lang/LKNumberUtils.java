@@ -158,7 +158,7 @@ public final class LKNumberUtils extends NumberUtils {
 	 */
 	public static String toHex(final long number, final int byteCnt) {
 		final String hexStr = Long.toHexString(number);
-		return LKNumberUtils.toHex(hexStr, byteCnt);
+		return toHex(hexStr, byteCnt);
 	}
 
 
@@ -186,7 +186,7 @@ public final class LKNumberUtils extends NumberUtils {
 	 * @return 十六进制字符串
 	 */
 	public static String toHex(final String hexStr, final int byteCnt) {
-		return LKNumberUtils.toHex(hexStr, byteCnt, true);
+		return toHex(hexStr, byteCnt, true);
 	}
 
 
@@ -200,11 +200,11 @@ public final class LKNumberUtils extends NumberUtils {
 		final StringBuilder sb = new StringBuilder();
 		if (asc) {
 			for (final byte number : arr) {
-				sb.insert(0, LKNumberUtils.toHex(number, 1));
+				sb.insert(0, toHex(number, 1));
 			}
 		} else {
 			for (final byte number : arr) {
-				sb.append(LKNumberUtils.toHex(number, 1));
+				sb.append(toHex(number, 1));
 			}
 		}
 		return sb.toString();
@@ -248,7 +248,7 @@ public final class LKNumberUtils extends NumberUtils {
 	 * @return 十六进制字符串
 	 */
 	public static long toDecimal(final byte[] arr, final boolean asc) {
-		return Long.parseLong(LKNumberUtils.toHex(arr, asc), 16);
+		return Long.parseLong(toHex(arr, asc), 16);
 	}
 
 
@@ -260,7 +260,7 @@ public final class LKNumberUtils extends NumberUtils {
 	public static String[] toHexArr(final byte[] datas) {
 		final String[] hexes = new String[datas.length];
 		for (int i = 0; i < hexes.length; i++) {
-			hexes[i] = LKNumberUtils.toHex(datas[i], 1);
+			hexes[i] = toHex(datas[i], 1);
 		}
 		return hexes;
 	}
@@ -284,7 +284,7 @@ public final class LKNumberUtils extends NumberUtils {
 	public static byte[] toBytes(final String message) {
 		final byte[] buffer = new byte[message.length() / 2];
 		for (int i = 0; i < buffer.length; i++) {
-			buffer[i] = LKNumberUtils.toByte(message.substring(i * 2, (i + 1) * 2));
+			buffer[i] = toByte(message.substring(i * 2, (i + 1) * 2));
 		}
 		return buffer;
 	}

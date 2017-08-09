@@ -37,7 +37,7 @@ public class LKRSADecrypter extends LKRSA {
 	 * @return 明文
 	 */
 	public static String decryptFromBase64WithHexPrivateKey(final String ciphertext, final String privateKey) {
-		return LKRSADecrypter.decryptFromDecimalWithHexPrivateKey(LKBase64Decoder.decodeToDecimal(ciphertext), privateKey);
+		return decryptFromDecimalWithHexPrivateKey(LKBase64Decoder.decodeToDecimal(ciphertext), privateKey);
 	}
 
 
@@ -48,7 +48,7 @@ public class LKRSADecrypter extends LKRSA {
 	 * @return 明文
 	 */
 	public static String decryptFromDecimalWithBase64PrivateKey(final String ciphertext, final String privateKey) {
-		return LKRSADecrypter.decryptFromDecimalWithHexPrivateKey(ciphertext, LKBase64Decoder.decodeToHex(privateKey));
+		return decryptFromDecimalWithHexPrivateKey(ciphertext, LKBase64Decoder.decodeToHex(privateKey));
 	}
 
 
@@ -59,7 +59,7 @@ public class LKRSADecrypter extends LKRSA {
 	 * @return 明文
 	 */
 	public static String decryptFromBase64WithBase64PrivateKey(final String ciphertext, final String privateKey) {
-		return LKRSADecrypter.decryptFromDecimalWithHexPrivateKey(LKBase64Decoder.decodeToDecimal(ciphertext), LKBase64Decoder.decodeToHex(privateKey));
+		return decryptFromDecimalWithHexPrivateKey(LKBase64Decoder.decodeToDecimal(ciphertext), LKBase64Decoder.decodeToHex(privateKey));
 	}
 
 }

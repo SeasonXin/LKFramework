@@ -6,8 +6,6 @@ import java.util.List;
 import org.apache.commons.collections.CollectionUtils;
 import org.apache.commons.lang3.ArrayUtils;
 
-import com.lichkin.framework.bases.statics.LKStringStatics;
-
 /**
  * SQL语句对象类
  * @author SuZhou LichKin Information Technology Co., Ltd.
@@ -25,7 +23,7 @@ public class LKSqlVo {
 	 * 构造方法
 	 */
 	public LKSqlVo() {
-		this(LKStringStatics.STR_EMPTY);
+		this("");
 	}
 
 
@@ -80,7 +78,7 @@ public class LKSqlVo {
 	 * @return SQL语句对象
 	 */
 	public LKSqlVo appendSql(final String subSql) {
-		sql.append(LKStringStatics.STR_BLANK).append(subSql);
+		sql.append(" ").append(subSql);
 		return this;
 	}
 

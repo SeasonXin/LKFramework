@@ -31,7 +31,7 @@ public class JobModifyService implements ApplicationListener<ApplicationContextE
 				}
 				System.out.println("JobModifyService running");
 
-				final SysConfigQuartzEntity quartz = dao.findOneById(SysConfigQuartzEntity.class, "1");
+				final SysConfigQuartzEntity quartz = dao.findOneById(SysConfigQuartzEntity.class, "demo");
 				quartz.setCronExpression("0/10 * * * * ?");// 修改为10秒执行一次
 				final CronTrigger trigger = LKQuartzManager.rebuildCronTrigger(quartz);
 				try {

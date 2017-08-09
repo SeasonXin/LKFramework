@@ -29,7 +29,7 @@ public class LKCommonValidator {
 		if (LKStringUtils.isBlank(cellphone)) {
 			throw new LKRuntimeException(LKErrorCodeEnum.PARAMS_EXCEPTION, "cellphone is null.");
 		}
-		if (!LKCommonValidator.isCellphone(cellphone)) {
+		if (!isCellphone(cellphone)) {
 			throw new LKRuntimeException(LKErrorCodeEnum.PARAMS_EXCEPTION, "cellphone incorrect.");
 		}
 	}

@@ -7,33 +7,34 @@ import java.util.Map.Entry;
 
 import org.apache.commons.lang3.StringUtils;
 
-import com.lichkin.framework.bases.statics.LKStringStatics;
+import com.lichkin.framework.bases.LKDatas;
+import com.lichkin.framework.bases.statics.LKStatics;
 
 /**
  * 字符串工具类，继承自org.apache.commons.lang3.StringUtils
  * @see org.apache.commons.lang3.StringUtils
  * @author SuZhou LichKin Information Technology Co., Ltd.
  */
-public final class LKStringUtils extends StringUtils {
+public final class LKStringUtils extends StringUtils implements LKStatics {
 
 	/**
 	 * 判断字符数组是否为空
 	 *
 	 * <pre>
-	 * LKStringUtils.isBlank(null)        = true
-	 * LKStringUtils.isBlank("null")      = true
-	 * LKStringUtils.isBlank(" null ")    = true
-	 * LKStringUtils.isBlank("")          = true
-	 * LKStringUtils.isBlank(" ")         = true
-	 * LKStringUtils.isBlank("other")     = false
-	 * LKStringUtils.isBlank("  other  ") = false
+	 * isBlank(null)        = true
+	 * isBlank("null")      = true
+	 * isBlank(" null ")    = true
+	 * isBlank("")          = true
+	 * isBlank(" ")         = true
+	 * isBlank("other")     = false
+	 * isBlank("  other  ") = false
 	 * </pre>
 	 *
 	 * @param cs 字符数组
 	 * @return 为空时返回true，否则返回false。
 	 */
 	public static boolean isBlank(final CharSequence cs) {
-		return LKStringUtils.trimToEmpty(cs).equals(LKStringStatics.STR_EMPTY);
+		return trimToEmpty(cs).equals("");
 	}
 
 
@@ -41,20 +42,20 @@ public final class LKStringUtils extends StringUtils {
 	 * 判断字符数组是否不为空
 	 *
 	 * <pre>
-	 * LKStringUtils.isNotBlank(null)        = false
-	 * LKStringUtils.isNotBlank("null")      = false
-	 * LKStringUtils.isNotBlank(" null ")    = false
-	 * LKStringUtils.isNotBlank("")          = false
-	 * LKStringUtils.isNotBlank(" ")         = false
-	 * LKStringUtils.isNotBlank("other")     = true
-	 * LKStringUtils.isNotBlank("  other  ") = true
+	 * isNotBlank(null)        = false
+	 * isNotBlank("null")      = false
+	 * isNotBlank(" null ")    = false
+	 * isNotBlank("")          = false
+	 * isNotBlank(" ")         = false
+	 * isNotBlank("other")     = true
+	 * isNotBlank("  other  ") = true
 	 * </pre>
 	 *
 	 * @param cs 字符数组
 	 * @return 不为空时返回true，否则返回false。
 	 */
 	public static boolean isNotBlank(final CharSequence cs) {
-		return !LKStringUtils.isBlank(cs);
+		return !isBlank(cs);
 	}
 
 
@@ -62,22 +63,22 @@ public final class LKStringUtils extends StringUtils {
 	 * 去除空格
 	 *
 	 * <pre>
-	 * LKStringUtils.trimToEmpty(null)        = ""
-	 * LKStringUtils.trimToEmpty("null")      = ""
-	 * LKStringUtils.trimToEmpty(" null ")    = ""
-	 * LKStringUtils.trimToEmpty("")          = ""
-	 * LKStringUtils.trimToEmpty(" ")         = ""
-	 * LKStringUtils.trimToEmpty("other")     = "other"
-	 * LKStringUtils.trimToEmpty("  other  ") = "other"
+	 * trimToEmpty(null)        = ""
+	 * trimToEmpty("null")      = ""
+	 * trimToEmpty(" null ")    = ""
+	 * trimToEmpty("")          = ""
+	 * trimToEmpty(" ")         = ""
+	 * trimToEmpty("other")     = "other"
+	 * trimToEmpty("  other  ") = "other"
 	 * </pre>
 	 *
 	 * @param cs 字符串
 	 * @return 去空格，当目标值为"null"时，认为是null，返回EMPTY。
 	 */
 	public static String trimToEmpty(final CharSequence cs) {
-		final String str = (cs == null ? LKStringStatics.STR_EMPTY : cs.toString().trim());
-		if (str.equalsIgnoreCase(LKStringStatics.STR_NULL) || str.equalsIgnoreCase(LKStringStatics.STR_UNDEFINED)) {
-			return LKStringStatics.STR_EMPTY;
+		final String str = (cs == null ? "" : cs.toString().trim());
+		if (str.equalsIgnoreCase("null") || str.equalsIgnoreCase("undefined")) {
+			return "";
 		}
 		return str;
 	}
@@ -87,13 +88,13 @@ public final class LKStringUtils extends StringUtils {
 	 * 去除空格
 	 *
 	 * <pre>
-	 * LKStringUtils.trimToEmpty(null)        = ""
-	 * LKStringUtils.trimToEmpty("null")      = ""
-	 * LKStringUtils.trimToEmpty(" null ")    = ""
-	 * LKStringUtils.trimToEmpty("")          = ""
-	 * LKStringUtils.trimToEmpty(" ")         = ""
-	 * LKStringUtils.trimToEmpty("other")     = "other"
-	 * LKStringUtils.trimToEmpty("  other  ") = "other"
+	 * trimToEmpty(null)        = ""
+	 * trimToEmpty("null")      = ""
+	 * trimToEmpty(" null ")    = ""
+	 * trimToEmpty("")          = ""
+	 * trimToEmpty(" ")         = ""
+	 * trimToEmpty("other")     = "other"
+	 * trimToEmpty("  other  ") = "other"
 	 * </pre>
 	 *
 	 * @param str 字符串
@@ -101,11 +102,11 @@ public final class LKStringUtils extends StringUtils {
 	 */
 	public static String trimToEmpty(final String str) {
 		if (str == null) {
-			return LKStringStatics.STR_EMPTY;
+			return "";
 		}
 		final String resultStr = str.trim();
-		if (resultStr.equalsIgnoreCase(LKStringStatics.STR_NULL) || resultStr.equalsIgnoreCase(LKStringStatics.STR_UNDEFINED)) {
-			return LKStringStatics.STR_EMPTY;
+		if (resultStr.equalsIgnoreCase("null") || resultStr.equalsIgnoreCase("undefined")) {
+			return "";
 		}
 		return resultStr;
 	}
@@ -118,9 +119,9 @@ public final class LKStringUtils extends StringUtils {
 	 * @return Byte类型值
 	 */
 	public static Byte toByte(final CharSequence cs, final Byte defaultValue) {
-		if (LKStringUtils.isNotBlank(cs)) {
+		if (isNotBlank(cs)) {
 			try {
-				return Byte.parseByte(LKStringUtils.trimToEmpty(cs));
+				return Byte.parseByte(trimToEmpty(cs));
 			} catch (final Exception e) {
 			}
 		}
@@ -135,9 +136,9 @@ public final class LKStringUtils extends StringUtils {
 	 * @return Short类型值
 	 */
 	public static Short toShort(final CharSequence cs, final Short defaultValue) {
-		if (LKStringUtils.isNotBlank(cs)) {
+		if (isNotBlank(cs)) {
 			try {
-				return Short.parseShort(LKStringUtils.trimToEmpty(cs));
+				return Short.parseShort(trimToEmpty(cs));
 			} catch (final Exception e) {
 			}
 		}
@@ -152,9 +153,9 @@ public final class LKStringUtils extends StringUtils {
 	 * @return Integer类型值
 	 */
 	public static Integer toInteger(final CharSequence cs, final Integer defaultValue) {
-		if (LKStringUtils.isNotBlank(cs)) {
+		if (isNotBlank(cs)) {
 			try {
-				return Integer.parseInt(LKStringUtils.trimToEmpty(cs));
+				return Integer.parseInt(trimToEmpty(cs));
 			} catch (final Exception e) {
 			}
 		}
@@ -169,9 +170,9 @@ public final class LKStringUtils extends StringUtils {
 	 * @return Long类型值
 	 */
 	public static Long toLong(final CharSequence cs, final Long defaultValue) {
-		if (LKStringUtils.isNotBlank(cs)) {
+		if (isNotBlank(cs)) {
 			try {
-				return Long.parseLong(LKStringUtils.trimToEmpty(cs));
+				return Long.parseLong(trimToEmpty(cs));
 			} catch (final Exception e) {
 			}
 		}
@@ -186,9 +187,9 @@ public final class LKStringUtils extends StringUtils {
 	 * @return Float类型值
 	 */
 	public static Float toFloat(final CharSequence cs, final Float defaultValue) {
-		if (LKStringUtils.isNotBlank(cs)) {
+		if (isNotBlank(cs)) {
 			try {
-				return Float.parseFloat(LKStringUtils.trimToEmpty(cs));
+				return Float.parseFloat(trimToEmpty(cs));
 			} catch (final Exception e) {
 			}
 		}
@@ -203,9 +204,9 @@ public final class LKStringUtils extends StringUtils {
 	 * @return Double类型值
 	 */
 	public static Double toDouble(final CharSequence cs, final Double defaultValue) {
-		if (LKStringUtils.isNotBlank(cs)) {
+		if (isNotBlank(cs)) {
 			try {
-				return Double.parseDouble(LKStringUtils.trimToEmpty(cs));
+				return Double.parseDouble(trimToEmpty(cs));
 			} catch (final Exception e) {
 			}
 		}
@@ -220,9 +221,9 @@ public final class LKStringUtils extends StringUtils {
 	 * @return BigDecimal类型值
 	 */
 	public static BigDecimal toBigDecimal(final CharSequence cs, final BigDecimal defaultValue) {
-		if (LKStringUtils.isNotBlank(cs)) {
-			final String str = LKStringUtils.trimToEmpty(cs);
-			if (str.contains(LKStringStatics.STR_DOT)) {
+		if (isNotBlank(cs)) {
+			final String str = trimToEmpty(cs);
+			if (str.contains(".")) {
 				try {
 					return new BigDecimal(Double.parseDouble(str));
 				} catch (final Exception e) {
@@ -245,10 +246,10 @@ public final class LKStringUtils extends StringUtils {
 	 * @return String类型值
 	 */
 	public static String toString(final CharSequence cs, final String defaultValue) {
-		if (LKStringUtils.isBlank(cs)) {
+		if (isBlank(cs)) {
 			return defaultValue;
 		}
-		return LKStringUtils.trimToEmpty(cs);
+		return trimToEmpty(cs);
 	}
 
 
@@ -271,8 +272,8 @@ public final class LKStringUtils extends StringUtils {
 	 * @return 以文件分隔符开始则返回true，否则放回false。
 	 */
 	public static boolean startsWith(final CharSequence cs, final String prefix) {
-		if (LKStringUtils.isNotBlank(cs)) {
-			return LKStringUtils.trimToEmpty(cs).startsWith(prefix);
+		if (isNotBlank(cs)) {
+			return trimToEmpty(cs).startsWith(prefix);
 		}
 		return false;
 	}
@@ -285,8 +286,8 @@ public final class LKStringUtils extends StringUtils {
 	 * @return 以文件分隔符结尾则返回true，否则放回false。
 	 */
 	public static boolean endsWith(final CharSequence cs, final String suffix) {
-		if (LKStringUtils.isNotBlank(cs)) {
-			return LKStringUtils.trimToEmpty(cs).endsWith(suffix);
+		if (isNotBlank(cs)) {
+			return trimToEmpty(cs).endsWith(suffix);
 		}
 		return false;
 	}
@@ -298,9 +299,9 @@ public final class LKStringUtils extends StringUtils {
 	 * @return 以文件分隔符开始则返回true，否则放回false。
 	 */
 	public static boolean startsWithFileSeparator(final CharSequence cs) {
-		if (LKStringUtils.isNotBlank(cs)) {
-			final String str = LKStringUtils.trimToEmpty(cs);
-			if (str.startsWith(LKStringStatics.STR_SEPARATOR) || str.startsWith(LKStringStatics.STR_BACKLASH)) {
+		if (isNotBlank(cs)) {
+			final String str = trimToEmpty(cs);
+			if (str.startsWith(SEPARATOR) || str.startsWith(BACKLASH)) {
 				return true;
 			}
 		}
@@ -314,9 +315,9 @@ public final class LKStringUtils extends StringUtils {
 	 * @return 以文件分隔符结尾则返回true，否则放回false。
 	 */
 	public static boolean endsWithFileSeparator(final CharSequence cs) {
-		if (LKStringUtils.isNotBlank(cs)) {
-			final String str = LKStringUtils.trimToEmpty(cs);
-			if (str.endsWith(LKStringStatics.STR_SEPARATOR) || str.endsWith(LKStringStatics.STR_BACKLASH)) {
+		if (isNotBlank(cs)) {
+			final String str = trimToEmpty(cs);
+			if (str.endsWith(SEPARATOR) || str.endsWith(BACKLASH)) {
 				return true;
 			}
 		}
@@ -330,16 +331,16 @@ public final class LKStringUtils extends StringUtils {
 	 * @return BLANK或单行字符串
 	 */
 	public static String format2SingleLine(final CharSequence cs) {
-		if (LKStringUtils.isNotBlank(cs)) {
-			String str = LKStringUtils.trimToEmpty(cs);
-			str = LKStringUtils.replaceAll("[\r]+", str, LKStringStatics.STR_BLANK);
-			str = LKStringUtils.replaceAll("[\n]+", str, LKStringStatics.STR_BLANK);
-			str = LKStringUtils.replaceAll("[\t]+", str, LKStringStatics.STR_BLANK);
-			str = LKStringUtils.replaceAll("[\b]+", str, LKStringStatics.STR_BLANK);
-			str = LKStringUtils.replaceAll("[ ]+", str, LKStringStatics.STR_BLANK);
-			return LKStringUtils.trimToEmpty(str);
+		if (isNotBlank(cs)) {
+			String str = trimToEmpty(cs);
+			str = replaceAll("[\r]+", str, " ");
+			str = replaceAll("[\n]+", str, " ");
+			str = replaceAll("[\t]+", str, " ");
+			str = replaceAll("[\b]+", str, " ");
+			str = replaceAll("[ ]+", str, " ");
+			return trimToEmpty(str);
 		}
-		return LKStringStatics.STR_EMPTY;
+		return "";
 	}
 
 
@@ -367,10 +368,10 @@ public final class LKStringUtils extends StringUtils {
 	 * @return 驼峰
 	 */
 	public static String underlineToHump(final String str) {
-		final String[] strs = LKStringUtils.trimToEmpty(str).toLowerCase(Locale.CHINA).split(LKStringStatics.STR_UNDERLINE);
+		final String[] strs = trimToEmpty(str).toLowerCase(Locale.CHINA).split("_");
 		final StringBuilder result = new StringBuilder(strs[0]);
 		for (int i = 1; i < strs.length; i++) {
-			result.append(LKStringUtils.capitalize(strs[i]));
+			result.append(capitalize(strs[i]));
 		}
 		return result.toString();
 	}
@@ -385,7 +386,7 @@ public final class LKStringUtils extends StringUtils {
 		final StringBuilder sb = new StringBuilder(str);
 		for (int i = 1; i < (sb.length() - 1); i++) {
 			if (Character.isLowerCase(sb.charAt(i - 1)) && Character.isUpperCase(sb.charAt(i)) && Character.isLowerCase(sb.charAt(i + 1))) {
-				sb.insert(i++, LKStringStatics.STR_UNDERLINE);
+				sb.insert(i++, "_");
 			}
 		}
 		return sb.toString().toUpperCase(Locale.CHINA);
@@ -398,7 +399,7 @@ public final class LKStringUtils extends StringUtils {
 	 * @return 字符串
 	 */
 	public static String join(final String... strs) {
-		return LKStringUtils.join(strs, null, 0, -1);
+		return join(strs, null, 0, -1);
 	}
 
 
@@ -409,7 +410,7 @@ public final class LKStringUtils extends StringUtils {
 	 * @return 字符串
 	 */
 	public static String join(final String[] strs, final String separator) {
-		return LKStringUtils.join(strs, separator, 0, -1);
+		return join(strs, separator, 0, -1);
 	}
 
 
@@ -423,10 +424,10 @@ public final class LKStringUtils extends StringUtils {
 	 */
 	public static String join(final String[] strs, final String separator, final int startIndex, final int endIndex) {
 		if (strs == null) {
-			return LKStringStatics.STR_EMPTY;
+			return "";
 		}
 
-		final String sep = LKStringUtils.trimToEmpty(separator);
+		final String sep = trimToEmpty(separator);
 		int start = startIndex;
 		int end = endIndex;
 
@@ -439,7 +440,7 @@ public final class LKStringUtils extends StringUtils {
 
 		final int noOfItems = end - start;
 		if (noOfItems <= 0) {
-			return LKStringStatics.STR_EMPTY;
+			return "";
 		}
 
 		final StringBuilder buf = new StringBuilder(noOfItems * 16);
@@ -449,7 +450,7 @@ public final class LKStringUtils extends StringUtils {
 				buf.append(sep);
 			}
 			if (strs[i] != null) {
-				buf.append(LKStringUtils.trimToEmpty(strs[i]));
+				buf.append(trimToEmpty(strs[i]));
 			}
 		}
 		return buf.toString();
@@ -460,16 +461,16 @@ public final class LKStringUtils extends StringUtils {
 	 * 补零
 	 *
 	 * <pre>
-	 * LKStringUtils.fillZero("3",	1,	true)	.equals("3")
-	 * LKStringUtils.fillZero("3",	2,	true)	.equals("03")
-	 * LKStringUtils.fillZero("33",	1,	true)	.equals("33")
-	 * LKStringUtils.fillZero("33",	2,	true)	.equals("33")
-	 * LKStringUtils.fillZero("33",	3,	true)	.equals("033")
-	 * LKStringUtils.fillZero("3",	1,	false)	.equals("3")
-	 * LKStringUtils.fillZero("3",	2,	false)	.equals("30")
-	 * LKStringUtils.fillZero("33",	1,	false)	.equals("33")
-	 * LKStringUtils.fillZero("33",	2,	false)	.equals("33")
-	 * LKStringUtils.fillZero("33",	3,	false)	.equals("330")
+	 * fillZero("3",	1,	true)	.equals("3")
+	 * fillZero("3",	2,	true)	.equals("03")
+	 * fillZero("33",	1,	true)	.equals("33")
+	 * fillZero("33",	2,	true)	.equals("33")
+	 * fillZero("33",	3,	true)	.equals("033")
+	 * fillZero("3",	1,	false)	.equals("3")
+	 * fillZero("3",	2,	false)	.equals("30")
+	 * fillZero("33",	1,	false)	.equals("33")
+	 * fillZero("33",	2,	false)	.equals("33")
+	 * fillZero("33",	3,	false)	.equals("330")
 	 * </pre>
 	 *
 	 * @param number 当前数字
@@ -508,7 +509,7 @@ public final class LKStringUtils extends StringUtils {
 	 * @see LKStringUtils#fillZero(String, int, boolean)
 	 */
 	public static String fillZero(final String number, final int digit) {
-		return LKStringUtils.fillZero(number, digit, true);
+		return fillZero(number, digit, true);
 	}
 
 
@@ -519,10 +520,26 @@ public final class LKStringUtils extends StringUtils {
 	 * @return 替换后的字符串
 	 */
 	public static String replaceDatas(String str, final Map<String, String> datas) {
-		for (Entry<String, String> entry : datas.entrySet()) {
+		for (final Entry<String, String> entry : datas.entrySet()) {
 			final String key = entry.getKey().toString();
 			final String value = entry.getValue().toString();
-			str = LKStringUtils.replaceAll(key, str, value);
+			str = replaceAll(key, str, value);
+		}
+		return str;
+	}
+
+
+	/**
+	 * 替换数据变量
+	 * @param str 待替换字符串
+	 * @param datas 数据集合，需存放的Key和Value都是String。
+	 * @return 替换后的字符串
+	 */
+	public static String replaceDatas(String str, final LKDatas datas) {
+		for (final Entry<String, Object> entry : datas.getMap().entrySet()) {
+			final String key = entry.getKey().toString();
+			final String value = entry.getValue().toString();
+			str = replaceAll(key, str, value);
 		}
 		return str;
 	}

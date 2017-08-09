@@ -10,7 +10,6 @@ import com.lichkin.framework.bases.entities.LKUserInterface;
 import com.lichkin.framework.bases.enums.LKAuthenticationEnum;
 import com.lichkin.framework.bases.enums.LKGenderEnum;
 import com.lichkin.framework.bases.statics.LKEntityFieldLengthStatics;
-import com.lichkin.framework.bases.statics.LKStringStatics;
 import com.lichkin.framework.utils.lang.LKStringUtils;
 import com.lichkin.framework.utils.security.md5.LKMD5Encrypter;
 
@@ -156,7 +155,7 @@ public class LKMappedUserEntity extends LKMappedBaseEntity implements LKUserInte
 	 * 更新校验码
 	 */
 	public void updateCheckCode() {
-		setCheckCode(LKMD5Encrypter.encrypt(LKStringUtils.trimToEmpty(getUserName()) + LKStringUtils.trimToEmpty(getCellphone()) + LKStringUtils.trimToEmpty(getEmail()) + LKStringUtils.trimToEmpty(getUserCard()), LKStringStatics.STR_CHARSET_UTF_8, LKStringUtils.trimToEmpty(getBusId())));
+		setCheckCode(LKMD5Encrypter.encrypt(LKStringUtils.trimToEmpty(getUserName()) + LKStringUtils.trimToEmpty(getCellphone()) + LKStringUtils.trimToEmpty(getEmail()) + LKStringUtils.trimToEmpty(getUserCard()), "UTF-8", LKStringUtils.trimToEmpty(getBusId())));
 	}
 
 }

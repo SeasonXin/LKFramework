@@ -50,7 +50,7 @@ public final class LKTimeUtils {
 	 * @return 差值
 	 */
 	public static final long calcDiff(final String startTime, final String endTime, final LKDatePatternEnum datePattern) {
-		return LKTimeUtils.calcDiff(DateTime.parse(startTime), DateTime.parse(endTime), datePattern);
+		return calcDiff(DateTime.parse(startTime), DateTime.parse(endTime), datePattern);
 	}
 
 
@@ -75,7 +75,7 @@ public final class LKTimeUtils {
 	 * @return 间隔日期
 	 */
 	public static String[] getGapDaysArray(final String startTime, final String endTime, final boolean containsStart, final boolean containsEnd) {
-		return LKTimeUtils.getGapDaysArray(DateTime.parse(startTime), DateTime.parse(endTime), containsStart, containsEnd);
+		return getGapDaysArray(DateTime.parse(startTime), DateTime.parse(endTime), containsStart, containsEnd);
 	}
 
 
@@ -94,7 +94,7 @@ public final class LKTimeUtils {
 			if (containsStart) {
 				start--;
 			}
-			long diff = LKTimeUtils.calcDiff(startTime, endTime, LKDatePatternEnum.DAY);
+			long diff = calcDiff(startTime, endTime, LKDatePatternEnum.DAY);
 			if (containsEnd) {
 				diff++;
 			}

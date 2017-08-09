@@ -30,7 +30,7 @@ public class TaskService extends LKBaseTaskDBService {
 	 */
 	public void query() {
 		logger.debug("查询数据");
-		logger.debug(LKJSONUtils.toJson(dao.findOneById(DemoEntity.class, "1"), false, false));
+		logger.debug(LKJSONUtils.toJson(dao.findOneById(DemoEntity.class, "demo"), false, false));
 	}
 
 

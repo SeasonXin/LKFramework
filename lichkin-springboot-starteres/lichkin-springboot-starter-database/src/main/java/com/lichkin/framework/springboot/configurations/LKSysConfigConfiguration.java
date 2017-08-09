@@ -3,8 +3,6 @@ package com.lichkin.framework.springboot.configurations;
 import java.util.List;
 
 import org.apache.commons.collections.CollectionUtils;
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
 import org.springframework.beans.factory.InitializingBean;
 import org.springframework.stereotype.Component;
 
@@ -22,10 +20,6 @@ import com.lichkin.framework.utils.lang.json.alibaba.LKJSONUtils;
  */
 @Component
 public class LKSysConfigConfiguration extends LKDBService implements InitializingBean {
-
-	/** 日志对象 */
-	protected final Log logger = LogFactory.getLog(getClass());
-
 
 	@Override
 	public void afterPropertiesSet() throws Exception {

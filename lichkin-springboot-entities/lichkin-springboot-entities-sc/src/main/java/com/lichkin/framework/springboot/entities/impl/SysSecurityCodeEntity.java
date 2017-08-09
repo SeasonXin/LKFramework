@@ -23,19 +23,24 @@ public class SysSecurityCodeEntity extends LKMappedBaseEntity {
 	/** serialVersionUID */
 	private static final long serialVersionUID = 8888886666668004L;
 
+	/** 系统编码 */
+	@Column(insertable = true, updatable = false, nullable = false, unique = false, length = LENGTH_SYSTEM_TAG)
+	@JSONField(ordinal = 1)
+	private String systemTag;
+
 	/** 业务类型 */
 	@Column(insertable = true, updatable = false, nullable = false, unique = false, length = LENGTH_BUS_TYPE)
-	@JSONField(ordinal = 1)
+	@JSONField(ordinal = 2)
 	private String busType;
 
 	/** 手机号码 */
 	@Column(insertable = true, updatable = false, nullable = false, unique = false, length = LENGTH_CELLPHONE)
-	@JSONField(ordinal = 2)
+	@JSONField(ordinal = 3)
 	private String cellphone;
 
 	/** 验证码 */
 	@Column(insertable = true, updatable = false, nullable = false, unique = false, length = LENGTH_CODE)
-	@JSONField(ordinal = 3)
+	@JSONField(ordinal = 4)
 	private String securityCode;
 
 }

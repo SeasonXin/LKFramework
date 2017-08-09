@@ -41,7 +41,7 @@ public class LKRSAEncrypter extends LKRSA {
 	 * @return Base64表示的密文
 	 */
 	public static String encryptToBase64WithHexPublicKey(final String plaintext, final String publicKey) {
-		return LKBase64Encoder.encodeWithDecimal(LKRSAEncrypter.encryptToDecimalWithHexPublicKey(plaintext, publicKey));
+		return LKBase64Encoder.encodeWithDecimal(encryptToDecimalWithHexPublicKey(plaintext, publicKey));
 	}
 
 
@@ -52,7 +52,7 @@ public class LKRSAEncrypter extends LKRSA {
 	 * @return 十进制表示的密文
 	 */
 	public static String encryptToDecimalWithBase64PublicKey(final String plaintext, final String publicKey) {
-		return LKRSAEncrypter.encryptToDecimalWithHexPublicKey(plaintext, LKBase64Decoder.decodeToHex(publicKey));
+		return encryptToDecimalWithHexPublicKey(plaintext, LKBase64Decoder.decodeToHex(publicKey));
 	}
 
 
@@ -63,7 +63,7 @@ public class LKRSAEncrypter extends LKRSA {
 	 * @return Base64表示的密文
 	 */
 	public static String encryptToBase64WithBase64PublicKey(final String plaintext, final String publicKey) {
-		return LKBase64Encoder.encodeWithDecimal(LKRSAEncrypter.encryptToDecimalWithHexPublicKey(plaintext, LKBase64Decoder.decodeToHex(publicKey)));
+		return LKBase64Encoder.encodeWithDecimal(encryptToDecimalWithHexPublicKey(plaintext, LKBase64Decoder.decodeToHex(publicKey)));
 	}
 
 }

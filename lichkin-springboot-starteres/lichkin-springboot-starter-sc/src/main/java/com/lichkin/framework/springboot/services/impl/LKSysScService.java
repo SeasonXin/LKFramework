@@ -51,6 +51,7 @@ public class LKSysScService extends LKDBService {
 			entity.setUpdateSystemTag(systemTag);
 			entity.setUpdateLoginId(loginId);
 
+			entity.setSystemTag(systemTag);
 			entity.setBusType(busType.toString());
 			entity.setCellphone(cellphone);
 			entity.setSecurityCode(LKRandomUtils.createNumber(((length > 10) || (length < 0)) ? 6 : length));
@@ -135,7 +136,7 @@ public class LKSysScService extends LKDBService {
 		final LKSqlVo sql = new LKSqlVo("from SysSecurityCodeEntity t");
 		sql.appendSql("where t.usingStatus = ?").addParam(USING);
 		sql.appendSql("and t.systemTag = ?").addParam(systemTag);
-		sql.appendSql("and t.busType = ?").addParam(busType);
+		sql.appendSql("and t.busType = ?").addParam(busType.toString());
 		sql.appendSql("and t.cellphone = ?").addParam(cellphone);
 		sql.appendSql("and t.insertTime > ?").addParam(DateTime.now().minusMinutes(timeout).toString(LKDatePatternEnum.STANDARD.getNameEn()));
 		final SysSecurityCodeEntity entity = dao.findOneByHql(sql, SysSecurityCodeEntity.class);

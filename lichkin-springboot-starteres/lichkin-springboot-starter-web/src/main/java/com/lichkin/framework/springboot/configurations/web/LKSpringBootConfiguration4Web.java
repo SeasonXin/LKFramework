@@ -18,13 +18,12 @@ import org.springframework.http.HttpStatus;
 import org.springframework.web.servlet.DispatcherServlet;
 
 import com.lichkin.framework.bases.statics.LKWebStatics;
-import com.lichkin.framework.springboot.web.LKWebProperties;
 
 /**
  * Web项目基础配置
  */
 @Configuration
-public class LKSpringBootConfiguration4Web {
+public class LKSpringBootConfiguration4Web implements LKWebStatics {
 
 	/**
 	 * 构建servle容器
@@ -73,7 +72,7 @@ public class LKSpringBootConfiguration4Web {
 
 		embeddedServletContainerFactory.setSessionTimeout(30, TimeUnit.MINUTES);
 
-		embeddedServletContainerFactory.addErrorPages(new ErrorPage(HttpStatus.NOT_FOUND, LKWebProperties.LK_WEB_PAGE_ERROR_URL));
+		embeddedServletContainerFactory.addErrorPages(new ErrorPage(HttpStatus.NOT_FOUND, "/error.html"));
 
 		return embeddedServletContainerFactory;
 	}
@@ -87,8 +86,8 @@ public class LKSpringBootConfiguration4Web {
 	@Bean
 	public ServletRegistrationBean servletRegistrationBean(final DispatcherServlet dispatcherServlet) {
 		final ServletRegistrationBean registration = new ServletRegistrationBean(dispatcherServlet);
-		registration.addUrlMappings("*" + LKWebStatics.VIEW_REQUEST_SUFFIX);// 添加页面请求映射
-		registration.addUrlMappings("*" + LKWebStatics.DATA_REQUEST_SUFFIX);// 添加数据请求映射
+		registration.addUrlMappings("*" + VIEW_REQUEST_SUFFIX);// 添加页面请求映射
+		registration.addUrlMappings("*" + DATA_REQUEST_SUFFIX);// 添加数据请求映射
 		registration.setLoadOnStartup(1);// 设置顺序
 		return registration;
 	}

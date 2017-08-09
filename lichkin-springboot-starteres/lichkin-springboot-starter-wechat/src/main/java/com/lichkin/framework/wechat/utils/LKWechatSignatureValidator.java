@@ -8,7 +8,7 @@ import org.apache.commons.lang3.StringUtils;
 import com.lichkin.framework.bases.beans.LKHexMessage;
 import com.lichkin.framework.bases.enums.LKErrorCodeEnum;
 import com.lichkin.framework.bases.exceptions.LKRuntimeException;
-import com.lichkin.framework.springboot.wechat.LKWechatProperties;
+import com.lichkin.framework.wechat.statics.LKWechatConfigStatics;
 
 /**
  * 签名验证工具类
@@ -24,7 +24,7 @@ public final class LKWechatSignatureValidator {
 	 * @return 验证成功返回true，否则返回false。
 	 */
 	public static void check(final String signature, final String timestamp, final String nonce) {
-		final String[] arr = { LKWechatProperties.WECHAT_PROJECT_TOKEN, timestamp, nonce };
+		final String[] arr = { LKWechatConfigStatics.token, timestamp, nonce };
 
 		Arrays.sort(arr);
 

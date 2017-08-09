@@ -6,7 +6,7 @@ import java.nio.charset.Charset;
  * web常量
  * @author SuZhou LichKin Information Technology Co., Ltd.
  */
-public interface LKWebStatics {
+public interface LKWebStatics extends LKStatics {
 
 	/** 请求ID */
 	public static final String REQUEST_ID = "requestId";
@@ -63,45 +63,45 @@ public interface LKWebStatics {
 	public static final String RESPONSE_ELAPSED_TIME = "responseElapsedTime";
 
 	/** 编码 */
-	public static final String DEFAULT_ENCODING = LKStringStatics.STR_CHARSET_UTF_8;
+	public static final String DEFAULT_ENCODING = "UTF-8";
 
 	/** 默认编码 */
-	public static final Charset DEFAULT_CHARSET = Charset.forName(LKWebStatics.DEFAULT_ENCODING);
+	public static final Charset DEFAULT_CHARSET = Charset.forName(DEFAULT_ENCODING);
 
 	/** 请求ID */
-	public static final String LK_REQUEST_ID = LKStringStatics.STR_LICHKIN + LKStringStatics.STR_UNDERLINE + LKWebStatics.REQUEST_ID;
+	public static final String LK_REQUEST_ID = LICHKIN_ + REQUEST_ID;
 
 	/** 请求时间 */
-	public static final String LK_REQUEST_TIME = LKStringStatics.STR_LICHKIN + LKStringStatics.STR_UNDERLINE + LKWebStatics.REQUEST_TIME;
+	public static final String LK_REQUEST_TIME = LICHKIN_ + REQUEST_TIME;
 
 	/** 请求IP */
-	public static final String LK_REQUEST_IP = LKStringStatics.STR_LICHKIN + LKStringStatics.STR_UNDERLINE + LKWebStatics.REQUEST_IP;
+	public static final String LK_REQUEST_IP = LICHKIN_ + REQUEST_IP;
 
 	/** 请求地址 */
-	public static final String LK_REQUEST_URL = LKStringStatics.STR_LICHKIN + LKStringStatics.STR_UNDERLINE + LKWebStatics.REQUEST_URL;
+	public static final String LK_REQUEST_URL = LICHKIN_ + REQUEST_URL;
 
 	/** 请求参数 */
-	public static final String LK_REQUEST_DATAS = LKStringStatics.STR_LICHKIN + LKStringStatics.STR_UNDERLINE + LKWebStatics.REQUEST_DATAS;
+	public static final String LK_REQUEST_DATAS = LICHKIN_ + REQUEST_DATAS;
 
 	/** 请求参数（文件类型只存放文件名） */
-	public static final String LK_REQUEST_DATAS_REDUCE = LKStringStatics.STR_LICHKIN + LKStringStatics.STR_UNDERLINE + LKWebStatics.REQUEST_DATAS_REDUCE;
+	public static final String LK_REQUEST_DATAS_REDUCE = LICHKIN_ + REQUEST_DATAS_REDUCE;
 
 	/** 请求环境上下文 */
-	public static final String LK_REQUEST_CTX = LKStringStatics.STR_LICHKIN + LKStringStatics.STR_UNDERLINE + LKWebStatics.REQUEST_CTX;
+	public static final String LK_REQUEST_CTX = LICHKIN_ + REQUEST_CTX;
 
 	/** 请求路径（包含环境上下文） */
-	public static final String LK_REQUEST_URI = LKStringStatics.STR_LICHKIN + LKStringStatics.STR_UNDERLINE + LKWebStatics.REQUEST_URI;
+	public static final String LK_REQUEST_URI = LICHKIN_ + REQUEST_URI;
 
 	/** 请求路径（不包含环境上下文） */
-	public static final String LK_REQUEST_URI_WITHOUT_CTX = LKStringStatics.STR_LICHKIN + LKStringStatics.STR_UNDERLINE + LKWebStatics.REQUEST_URI_WITHOUT_CTX;
+	public static final String LK_REQUEST_URI_WITHOUT_CTX = LICHKIN_ + REQUEST_URI_WITHOUT_CTX;
 
 	/** 请求根路径 */
-	public static final String LK_REQUEST_URI_ROOT = LKStringStatics.STR_LICHKIN + LKStringStatics.STR_UNDERLINE + LKWebStatics.REQUEST_URI_ROOT;
+	public static final String LK_REQUEST_URI_ROOT = LICHKIN_ + REQUEST_URI_ROOT;
 
 	/** 请求子路径 */
-	public static final String LK_REQUEST_URI_SUB = LKStringStatics.STR_LICHKIN + LKStringStatics.STR_UNDERLINE + LKWebStatics.REQUEST_URI_SUB;
+	public static final String LK_REQUEST_URI_SUB = LICHKIN_ + REQUEST_URI_SUB;
 
 	/** 关闭页面回调方法名 */
-	public static final String LK_ONCLOSE_FUNC_NAME = LKStringStatics.STR_LICHKIN + LKStringStatics.STR_UNDERLINE + LKWebStatics.ONCLOSE_FUNC_NAME;
+	public static final String LK_ONCLOSE_FUNC_NAME = LICHKIN_ + ONCLOSE_FUNC_NAME;
 
 }

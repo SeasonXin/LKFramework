@@ -6,7 +6,6 @@ import java.security.NoSuchAlgorithmException;
 
 import com.lichkin.framework.bases.enums.LKErrorCodeEnum;
 import com.lichkin.framework.bases.exceptions.LKRuntimeException;
-import com.lichkin.framework.bases.statics.LKStringStatics;
 import com.lichkin.framework.utils.lang.LKHexUtils;
 
 /**
@@ -20,7 +19,7 @@ public class LKMD5Encrypter {
 
 	static {
 		try {
-			LKMD5Encrypter.md5 = MessageDigest.getInstance("MD5");
+			md5 = MessageDigest.getInstance("MD5");
 		} catch (final NoSuchAlgorithmException e) {
 			e.printStackTrace();
 		}
@@ -33,7 +32,7 @@ public class LKMD5Encrypter {
 	 * @return 密文
 	 */
 	public static String encrypt(final String plaintext) {
-		return LKMD5Encrypter.encrypt(plaintext, LKStringStatics.STR_CHARSET_UTF_8, "");
+		return encrypt(plaintext, "UTF-8", "");
 	}
 
 
@@ -44,7 +43,7 @@ public class LKMD5Encrypter {
 	 * @return 密文
 	 */
 	public static String encrypt(final String plaintext, final String charset) {
-		return LKMD5Encrypter.encrypt(plaintext, charset, "");
+		return encrypt(plaintext, charset, "");
 	}
 
 
@@ -57,11 +56,11 @@ public class LKMD5Encrypter {
 	 */
 	public static String encrypt(final String plaintext, final String charset, final String key) {
 		try {
-			LKMD5Encrypter.md5.update((plaintext + key).getBytes(charset));
+			md5.update((plaintext + key).getBytes(charset));
 		} catch (final UnsupportedEncodingException e) {
 			throw new LKRuntimeException(LKErrorCodeEnum.ERROR, e);
 		}
-		final byte[] bytes = LKMD5Encrypter.md5.digest();
+		final byte[] bytes = md5.digest();
 		return LKHexUtils.toHexBytesFromBinaryData(bytes);
 	}
 

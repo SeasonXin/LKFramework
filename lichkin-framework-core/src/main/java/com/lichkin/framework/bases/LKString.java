@@ -1,9 +1,16 @@
 package com.lichkin.framework.bases;
 
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
 /**
  * 字符串类
  * @author SuZhou LichKin Information Technology Co., Ltd.
  */
+@Getter
+@Setter
+@NoArgsConstructor
 public class LKString {
 
 	/** 内置字符串 */
@@ -16,24 +23,6 @@ public class LKString {
 	 */
 	public LKString(final String str) {
 		super();
-		this.str = str;
-	}
-
-
-	/**
-	 * 获取字符串
-	 * @return 字符串
-	 */
-	public String getStr() {
-		return str;
-	}
-
-
-	/**
-	 * 设置字符串
-	 * @param str 字符串
-	 */
-	public void setStr(final String str) {
 		this.str = str;
 	}
 

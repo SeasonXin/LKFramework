@@ -13,7 +13,6 @@ import org.apache.commons.lang3.ArrayUtils;
 
 import com.lichkin.framework.bases.statics.LKCharStatics;
 import com.lichkin.framework.bases.statics.LKSQLStatics;
-import com.lichkin.framework.bases.statics.LKStringStatics;
 import com.lichkin.framework.utils.lang.LKReflectUtils;
 import com.lichkin.framework.utils.lang.LKStringUtils;
 
@@ -71,8 +70,8 @@ public class LKSQLUtils {
 			if (strUp.contains(LKSQLStatics.BLANKASBLANK)) {
 				// 包含别名，则记录别名。
 				map.put(str.substring(strUp.indexOf(LKSQLStatics.BLANKASBLANK) + LKSQLStatics.BLANKASBLANK.length()), strUp.substring(0, strUp.indexOf(LKSQLStatics.BLANKASBLANK)));
-			} else if (strUp.contains(LKStringStatics.STR_DOT)) {
-				map.put(LKStringUtils.underlineToHump(strUp.substring(strUp.indexOf(LKStringStatics.STR_DOT) + 1)), strUp);
+			} else if (strUp.contains(".")) {
+				map.put(LKStringUtils.underlineToHump(strUp.substring(strUp.indexOf(".") + 1)), strUp);
 			} else {
 				map.put(LKStringUtils.underlineToHump(strUp), strUp);
 			}
@@ -82,33 +81,33 @@ public class LKSQLUtils {
 		} else {
 			sb = new StringBuilder(LKSQLStatics.SELECT);
 		}
-		for (Entry<String, String> entry : map.entrySet()) {
+		for (final Entry<String, String> entry : map.entrySet()) {
 			final String key = entry.getKey();
 			final String value = entry.getValue();
-			if (key.equals(LKStringStatics.STR_STAR)) {
+			if (key.equals("*")) {
 				final PropertyDescriptor[] props = LKReflectUtils.getBeanProperties(clazz);
-				if (value.equals(LKStringStatics.STR_STAR)) {
+				if (value.equals("*")) {
 					for (final PropertyDescriptor prop : props) {
 						final String displayName = prop.getDisplayName();
 						if (map.containsKey(displayName)) {
 							// 已经有指定，则不转换。
 							continue;
 						}
-						sb.append(LKStringStatics.STR_BLANK).append(LKStringUtils.humpToUnderline(displayName)).append(LKSQLStatics.BLANKASBLANK).append(displayName).append(LKStringStatics.STR_COMMA);
+						sb.append(" ").append(LKStringUtils.humpToUnderline(displayName)).append(LKSQLStatics.BLANKASBLANK).append(displayName).append(",");
 					}
 				} else {
-					final String tableAlias = value.substring(0, value.indexOf(LKStringStatics.STR_DOT)).toUpperCase();
+					final String tableAlias = value.substring(0, value.indexOf(".")).toUpperCase();
 					for (final PropertyDescriptor prop : props) {
 						final String displayName = prop.getDisplayName();
 						if (map.containsKey(displayName)) {
 							// 已经有指定，则不转换。
 							continue;
 						}
-						sb.append(LKStringStatics.STR_BLANK).append(tableAlias).append(LKStringStatics.STR_DOT).append(LKStringUtils.humpToUnderline(displayName)).append(LKSQLStatics.BLANKASBLANK).append(displayName).append(LKStringStatics.STR_COMMA);
+						sb.append(" ").append(tableAlias).append(".").append(LKStringUtils.humpToUnderline(displayName)).append(LKSQLStatics.BLANKASBLANK).append(displayName).append(",");
 					}
 				}
 			} else {
-				sb.append(LKStringStatics.STR_BLANK).append(value).append(LKSQLStatics.BLANKASBLANK).append(key).append(LKStringStatics.STR_COMMA);
+				sb.append(" ").append(value).append(LKSQLStatics.BLANKASBLANK).append(key).append(",");
 			}
 		}
 		sb.setCharAt(sb.length() - 1, LKCharStatics.CHAR_BLANK);
@@ -127,21 +126,21 @@ public class LKSQLUtils {
 	public static String jointInSql(final String[] strArr, final boolean withBracket, final boolean withQuotation) {
 		final StringBuilder sb = new StringBuilder();
 		if (withBracket) {
-			sb.append(LKStringStatics.STR_LEFT_BRACKET);
+			sb.append("{");
 		}
 		for (final String str : strArr) {
 			if (withQuotation) {
-				sb.append(LKStringStatics.STR_QUOTATION);
+				sb.append("'");
 			}
 			sb.append(str);
 			if (withQuotation) {
-				sb.append(LKStringStatics.STR_QUOTATION);
+				sb.append("'");
 			}
-			sb.append(LKStringStatics.STR_COMMA);
+			sb.append(",");
 		}
 		sb.deleteCharAt(sb.length() - 1);
 		if (withBracket) {
-			sb.append(LKStringStatics.STR_RIGHT_BRACKET);
+			sb.append(")");
 		}
 		return sb.toString();
 	}

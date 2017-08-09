@@ -21,7 +21,7 @@ public class LKPinYin4jUtils {
 	 * @return 第一个中文的首字母
 	 */
 	public static String getFirstPinYinCapital(final String chinese, final boolean toUpperCase) {
-		return LKPinYin4jUtils.getPinYinCapital(chinese.charAt(0), toUpperCase);
+		return getPinYinCapital(chinese.charAt(0), toUpperCase);
 	}
 
 
@@ -34,9 +34,9 @@ public class LKPinYin4jUtils {
 	public static String getPinYinCapital(final String chinese, final boolean toUpperCase) {
 		final char[] arr = chinese.toCharArray();
 		final StringBuffer sb = new StringBuffer();
-		final HanyuPinyinOutputFormat format = LKPinYin4jUtils.getOutputFormat(toUpperCase);
+		final HanyuPinyinOutputFormat format = getOutputFormat(toUpperCase);
 		for (final char element : arr) {
-			sb.append(LKPinYin4jUtils.getPinYinCapital(element, format));
+			sb.append(getPinYinCapital(element, format));
 		}
 		return sb.toString();
 	}
@@ -52,9 +52,9 @@ public class LKPinYin4jUtils {
 	public static String toPinYin(final String chinese, final boolean toUpperCase, final String connector) {
 		final char[] arr = chinese.toCharArray();
 		final StringBuffer sb = new StringBuffer();
-		final HanyuPinyinOutputFormat format = LKPinYin4jUtils.getOutputFormat(toUpperCase);
+		final HanyuPinyinOutputFormat format = getOutputFormat(toUpperCase);
 		for (final char element : arr) {
-			sb.append(LKPinYin4jUtils.toPinYin(element, format));
+			sb.append(toPinYin(element, format));
 			sb.append(connector);
 		}
 		return sb.substring(0, sb.length() - connector.length());
@@ -87,7 +87,7 @@ public class LKPinYin4jUtils {
 	 * @return 汉字拼音首字母
 	 */
 	public static String getPinYinCapital(final char chinese, final boolean toUpperCase) {
-		return LKPinYin4jUtils.getPinYinCapital(chinese, LKPinYin4jUtils.getOutputFormat(toUpperCase));
+		return getPinYinCapital(chinese, getOutputFormat(toUpperCase));
 	}
 
 

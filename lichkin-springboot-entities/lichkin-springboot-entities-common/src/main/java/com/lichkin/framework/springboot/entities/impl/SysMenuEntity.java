@@ -1,0 +1,24 @@
+package com.lichkin.framework.springboot.entities.impl;
+
+import javax.persistence.Entity;
+import javax.persistence.Table;
+
+import com.lichkin.framework.springboot.entities.LKMappedMenuEntity;
+
+import lombok.Getter;
+import lombok.Setter;
+
+/**
+ * 菜单表实体类
+ * @author SuZhou LichKin Information Technology Co., Ltd.
+ */
+@Entity
+@Table(name = "T_SYS_MENU")
+@Getter
+@Setter
+public final class SysMenuEntity extends LKMappedMenuEntity {
+
+	/** serialVersionUID */
+	private static final long serialVersionUID = 8888886666668011L;
+
+}

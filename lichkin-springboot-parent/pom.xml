@@ -29,31 +29,23 @@
   <modules>
     <module>../lichkin-springboot-starteres/lichkin-springboot-starter-base</module>
     <module>../lichkin-springboot-starteres/lichkin-springboot-starter-database</module>
+
     <module>../lichkin-springboot-starteres/lichkin-springboot-starter-quartz</module>
-    <module>../lichkin-springboot-starteres/lichkin-springboot-starter-web</module>
-    <module>../lichkin-springboot-starteres/lichkin-springboot-starter-web-front</module>
-    <module>../lichkin-springboot-starteres/lichkin-springboot-starter-web-back</module>
     <module>../lichkin-springboot-starteres/lichkin-springboot-starter-mail</module>
     <module>../lichkin-springboot-starteres/lichkin-springboot-starter-sc</module>
     <module>../lichkin-springboot-starteres/lichkin-springboot-starter-sms</module>
     <module>../lichkin-springboot-starteres/lichkin-springboot-starter-sms-sc</module>
-    <module>../lichkin-springboot-starteres/lichkin-springboot-starter-wechat</module>
 
-    <module>../lichkin-springboot-entities/lichkin-springboot-entities-admin</module>
-    <module>../lichkin-springboot-entities/lichkin-springboot-entities-app</module>
-    <module>../lichkin-springboot-entities/lichkin-springboot-entities-area</module>
-    <module>../lichkin-springboot-entities/lichkin-springboot-entities-car</module>
-    <module>../lichkin-springboot-entities/lichkin-springboot-entities-cms</module>
-    <module>../lichkin-springboot-entities/lichkin-springboot-entities-common</module>
-    <module>../lichkin-springboot-entities/lichkin-springboot-entities-ftp</module>
-    <module>../lichkin-springboot-entities/lichkin-springboot-entities-interfaces</module>
+    <module>../lichkin-springboot-starteres/lichkin-springboot-starter-web</module>
+    <module>../lichkin-springboot-starteres/lichkin-springboot-starter-web-front</module>
+    <module>../lichkin-springboot-starteres/lichkin-springboot-starter-web-back</module>
+    <module>../lichkin-springboot-starteres/lichkin-springboot-starter-web-wechat</module>
+
+    <module>../lichkin-springboot-entities/lichkin-springboot-entities-quartz</module>
     <module>../lichkin-springboot-entities/lichkin-springboot-entities-mail</module>
-    <module>../lichkin-springboot-entities/lichkin-springboot-entities-mq</module>
     <module>../lichkin-springboot-entities/lichkin-springboot-entities-sc</module>
     <module>../lichkin-springboot-entities/lichkin-springboot-entities-sms</module>
     <module>../lichkin-springboot-entities/lichkin-springboot-entities-wechat</module>
-    <module>../lichkin-springboot-entities/lichkin-springboot-entities-quartz</module>
-
   </modules>
 
   <dependencyManagement>
@@ -90,24 +82,10 @@
         <artifactId>lichkin-springboot-starter-database</artifactId>
         <version>${current.version}</version>
       </dependency>
+
       <dependency>
         <groupId>com.lichkin</groupId>
         <artifactId>lichkin-springboot-starter-quartz</artifactId>
-        <version>${current.version}</version>
-      </dependency>
-      <dependency>
-        <groupId>com.lichkin</groupId>
-        <artifactId>lichkin-springboot-starter-web</artifactId>
-        <version>${current.version}</version>
-      </dependency>
-      <dependency>
-        <groupId>com.lichkin</groupId>
-        <artifactId>lichkin-springboot-starter-web-front</artifactId>
-        <version>${current.version}</version>
-      </dependency>
-      <dependency>
-        <groupId>com.lichkin</groupId>
-        <artifactId>lichkin-springboot-starter-web-back</artifactId>
         <version>${current.version}</version>
       </dependency>
       <dependency>
@@ -130,6 +108,22 @@
         <artifactId>lichkin-springboot-starter-sms-sc</artifactId>
         <version>${current.version}</version>
       </dependency>
+
+      <dependency>
+        <groupId>com.lichkin</groupId>
+        <artifactId>lichkin-springboot-starter-web</artifactId>
+        <version>${current.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>com.lichkin</groupId>
+        <artifactId>lichkin-springboot-starter-web-front</artifactId>
+        <version>${current.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>com.lichkin</groupId>
+        <artifactId>lichkin-springboot-starter-web-back</artifactId>
+        <version>${current.version}</version>
+      </dependency>
       <dependency>
         <groupId>com.lichkin</groupId>
         <artifactId>lichkin-springboot-starter-wechat</artifactId>
@@ -138,52 +132,12 @@
 
       <dependency>
         <groupId>com.lichkin</groupId>
-        <artifactId>lichkin-springboot-entities-admin</artifactId>
-        <version>${current.version}</version>
-      </dependency>
-      <dependency>
-        <groupId>com.lichkin</groupId>
-        <artifactId>lichkin-springboot-entities-app</artifactId>
-        <version>${current.version}</version>
-      </dependency>
-      <dependency>
-        <groupId>com.lichkin</groupId>
-        <artifactId>lichkin-springboot-entities-area</artifactId>
-        <version>${current.version}</version>
-      </dependency>
-      <dependency>
-        <groupId>com.lichkin</groupId>
-        <artifactId>lichkin-springboot-entities-car</artifactId>
-        <version>${current.version}</version>
-      </dependency>
-      <dependency>
-        <groupId>com.lichkin</groupId>
-        <artifactId>lichkin-springboot-entities-cms</artifactId>
-        <version>${current.version}</version>
-      </dependency>
-      <dependency>
-        <groupId>com.lichkin</groupId>
-        <artifactId>lichkin-springboot-entities-common</artifactId>
-        <version>${current.version}</version>
-      </dependency>
-      <dependency>
-        <groupId>com.lichkin</groupId>
-        <artifactId>lichkin-springboot-entities-ftp</artifactId>
-        <version>${current.version}</version>
-      </dependency>
-      <dependency>
-        <groupId>com.lichkin</groupId>
-        <artifactId>lichkin-springboot-entities-interfaces</artifactId>
+        <artifactId>lichkin-springboot-entities-quartz</artifactId>
         <version>${current.version}</version>
       </dependency>
       <dependency>
         <groupId>com.lichkin</groupId>
         <artifactId>lichkin-springboot-entities-mail</artifactId>
-        <version>${current.version}</version>
-      </dependency>
-      <dependency>
-        <groupId>com.lichkin</groupId>
-        <artifactId>lichkin-springboot-entities-mq</artifactId>
         <version>${current.version}</version>
       </dependency>
       <dependency>
@@ -199,11 +153,6 @@
       <dependency>
         <groupId>com.lichkin</groupId>
         <artifactId>lichkin-springboot-entities-wechat</artifactId>
-        <version>${current.version}</version>
-      </dependency>
-      <dependency>
-        <groupId>com.lichkin</groupId>
-        <artifactId>lichkin-springboot-entities-quartz</artifactId>
         <version>${current.version}</version>
       </dependency>
     </dependencies>
@@ -227,6 +176,7 @@
       <groupId>org.springframework.boot</groupId>
       <artifactId>spring-boot</artifactId>
     </dependency>
+
     <!-- springboot developer tools -->
     <dependency>
       <groupId>org.springframework.boot</groupId>

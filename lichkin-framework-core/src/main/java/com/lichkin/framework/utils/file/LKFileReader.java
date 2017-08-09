@@ -12,7 +12,6 @@ import org.apache.commons.lang3.ArrayUtils;
 
 import com.lichkin.framework.bases.enums.LKErrorCodeEnum;
 import com.lichkin.framework.bases.exceptions.LKRuntimeException;
-import com.lichkin.framework.bases.statics.LKStringStatics;
 
 /**
  * 文件读取工具类
@@ -26,7 +25,7 @@ public class LKFileReader {
 	 * @return 文件内容
 	 */
 	public static String[] read(final String fileName) {
-		return LKFileReader.read(fileName, LKStringStatics.STR_CHARSET_UTF_8);
+		return read(fileName, "UTF-8");
 	}
 
 

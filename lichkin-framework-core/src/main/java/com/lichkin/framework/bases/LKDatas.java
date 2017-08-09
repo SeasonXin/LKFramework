@@ -17,10 +17,15 @@ import com.lichkin.framework.bases.statics.LKWebStatics;
 import com.lichkin.framework.utils.lang.LKObjectUtils;
 import com.lichkin.framework.utils.lang.json.LKJSONUtils;
 
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+
 /**
  * 数据集合类
  * @author SuZhou LichKin Information Technology Co., Ltd.
  */
+@Getter
+@NoArgsConstructor
 public final class LKDatas {
 
 	/** serialVersionUID */
@@ -28,14 +33,6 @@ public final class LKDatas {
 
 	/** 内置集合 */
 	private Map<String, Object> map = new HashMap<>();
-
-
-	/**
-	 * 构造方法
-	 */
-	public LKDatas() {
-		super();
-	}
 
 
 	/**
@@ -51,21 +48,12 @@ public final class LKDatas {
 
 
 	/**
-	 * 获取内置集合（只读）
-	 * @return 内置集合
-	 */
-	public Map<String, Object> getMap() {
-		return map;
-	}
-
-
-	/**
 	 * 获取内置集合（只读），除去框架内部定义参数。
 	 * @return 内置集合
 	 */
 	public Map<String, Object> getMapWithOutFrameworkParams() {
 		final Map<String, Object> newMap = new HashMap<>();
-		for (Entry<String, Object> entry : map.entrySet()) {
+		for (final Entry<String, Object> entry : map.entrySet()) {
 			final String key = entry.getKey();
 			final Object value = entry.getValue();
 			if (LKWebStatics.REQUEST_ID.equals(key) || LKWebStatics.REQUEST_IP.equals(key) || LKWebStatics.REQUEST_TIME.equals(key) || LKWebStatics.REQUEST_URL.equals(key)) {
@@ -114,7 +102,7 @@ public final class LKDatas {
 				return requestDatas;
 			}
 			final JSONObject jsonObject = new JSONObject();
-			for (Entry<String, Object> entry : map.entrySet()) {
+			for (final Entry<String, Object> entry : map.entrySet()) {
 				final String keyStr = entry.getKey();
 				if (keyStr.startsWith("requestDatas[") && keyStr.endsWith("]")) {
 					jsonObject.put(keyStr.substring(keyStr.indexOf("[") + 1, keyStr.indexOf("]")), entry.getValue());
@@ -340,7 +328,6 @@ public final class LKDatas {
 	 * 获取对象
 	 * @deprecated 使用方法替代com.lichkin.framework.bases.LKDatas#toBean(Class)
 	 * @see com.lichkin.framework.bases.LKDatas#toBean(Class)
-	 * @param <T> 类型
 	 * @param clazz 对象类型
 	 * @return 对象
 	 */
@@ -352,7 +339,6 @@ public final class LKDatas {
 
 	/**
 	 * 获取对象
-	 * @param <T> 类型
 	 * @param clazz 对象类型
 	 * @return 对象
 	 */
@@ -365,7 +351,6 @@ public final class LKDatas {
 	 * 获取对象
 	 * @deprecated 使用方法替代com.lichkin.framework.bases.LKDatas#toBean(String, Class)
 	 * @see com.lichkin.framework.bases.LKDatas#toBean(String, Class)
-	 * @param <T> 类型
 	 * @param key 键
 	 * @param clazz 对象类型
 	 * @return 对象
@@ -378,7 +363,6 @@ public final class LKDatas {
 
 	/**
 	 * 获取对象
-	 * @param <T> 类型
 	 * @param key 键
 	 * @param clazz 对象类型
 	 * @return 对象
@@ -392,7 +376,6 @@ public final class LKDatas {
 	 * 获取对象列表
 	 * @deprecated 使用方法替代com.lichkin.framework.bases.LKDatas#toListBean(Class)
 	 * @see com.lichkin.framework.bases.LKDatas#toListBean(Class)
-	 * @param <T> 类型
 	 * @param clazz 对象类型
 	 * @return 对象列表
 	 */
@@ -404,7 +387,6 @@ public final class LKDatas {
 
 	/**
 	 * 获取对象列表
-	 * @param <T> 类型
 	 * @param clazz 对象类型
 	 * @return 对象列表
 	 */
@@ -417,7 +399,6 @@ public final class LKDatas {
 	 * 获取对象列表
 	 * @deprecated 使用方法替代com.lichkin.framework.bases.LKDatas#toListBean(String, Class)
 	 * @see com.lichkin.framework.bases.LKDatas#toListBean(String, Class)
-	 * @param <T> 类型
 	 * @param key 键
 	 * @param clazz 对象类型
 	 * @return 对象列表
@@ -430,7 +411,6 @@ public final class LKDatas {
 
 	/**
 	 * 获取对象列表
-	 * @param <T> 类型
 	 * @param key 键
 	 * @param clazz 对象类型
 	 * @return 对象列表
@@ -475,7 +455,7 @@ public final class LKDatas {
 		final LKDatas datas = new LKDatas();
 		if (value instanceof JSONObject) {
 			final JSONObject jsonObject = (JSONObject) value;
-			for (Entry<String, Object> entry : jsonObject.entrySet()) {
+			for (final Entry<String, Object> entry : jsonObject.entrySet()) {
 				datas.put(entry.getKey(), entry.getValue());
 			}
 		} else {

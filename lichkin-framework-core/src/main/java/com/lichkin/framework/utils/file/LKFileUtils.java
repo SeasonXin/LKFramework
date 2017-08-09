@@ -9,7 +9,6 @@ import java.math.BigInteger;
 import java.security.MessageDigest;
 
 import com.lichkin.framework.bases.statics.LKFileExtNameStatics;
-import com.lichkin.framework.bases.statics.LKStringStatics;
 import com.lichkin.framework.utils.lang.LKRandomUtils;
 import com.lichkin.framework.utils.lang.LKStringUtils;
 
@@ -27,13 +26,13 @@ public class LKFileUtils {
 	public static String getStandardPath(String path) {
 		path = LKStringUtils.trimToEmpty(path);
 		if (LKStringUtils.isBlank(path)) {
-			return LKStringStatics.STR_SEPARATOR;
+			return "/";
 		}
-		if (!path.startsWith(LKStringStatics.STR_SEPARATOR)) {
-			path = LKStringStatics.STR_SEPARATOR + path;
+		if (!path.startsWith("/")) {
+			path = "/" + path;
 		}
-		if (path.endsWith(LKStringStatics.STR_SEPARATOR)) {
-			return path.substring(0, path.lastIndexOf(LKStringStatics.STR_SEPARATOR));
+		if (path.endsWith("/")) {
+			return path.substring(0, path.lastIndexOf("/"));
 		}
 		return path;
 	}
@@ -49,8 +48,8 @@ public class LKFileUtils {
 		if (LKStringUtils.isBlank(fileName)) {
 			return LKFileExtNameStatics.TXT;
 		}
-		if (fileName.startsWith(LKStringStatics.STR_SEPARATOR)) {
-			fileName = fileName.substring(LKStringStatics.STR_SEPARATOR.length(), fileName.length());
+		if (fileName.startsWith("/")) {
+			fileName = fileName.substring("/".length(), fileName.length());
 		}
 		return fileName;
 	}
@@ -66,8 +65,8 @@ public class LKFileUtils {
 		if (LKStringUtils.isBlank(extName)) {
 			return LKFileExtNameStatics.TXT;
 		}
-		if (!extName.startsWith(LKStringStatics.STR_DOT)) {
-			extName = LKStringStatics.STR_DOT + extName;
+		if (!extName.startsWith(".")) {
+			extName = "." + extName;
 		}
 		return extName.toUpperCase();
 	}
@@ -83,7 +82,7 @@ public class LKFileUtils {
 		if (file.exists()) {
 			return file;
 		} else {
-			file = new File(LKFileUtils.getAbsolutePath(fileName));
+			file = new File(getAbsolutePath(fileName));
 			if ((file != null) && file.exists()) {
 				return file;
 			}
@@ -134,7 +133,7 @@ public class LKFileUtils {
 	 * @return 绝对路径
 	 */
 	public static String getAbsolutePath(final String relativePath) {
-		return LKFileUtils.getRunningPath() + relativePath;
+		return getRunningPath() + relativePath;
 	}
 
 
@@ -143,8 +142,7 @@ public class LKFileUtils {
 	 * @return 运行路径
 	 */
 	public static String getRunningPath() {
-		// return Loader.getResource(STR_EMPTY).getPath();
-		return ClassLoader.getSystemResource(LKStringStatics.STR_EMPTY).getPath();
+		return ClassLoader.getSystemResource("").getPath();
 	}
 
 
@@ -201,7 +199,7 @@ public class LKFileUtils {
 		InputStream is = null;
 		try {
 			is = new FileInputStream(file);
-			return LKFileUtils.getMD5(is);
+			return getMD5(is);
 		} catch (final FileNotFoundException e) {
 			e.printStackTrace();
 			return LKRandomUtils.create(32);

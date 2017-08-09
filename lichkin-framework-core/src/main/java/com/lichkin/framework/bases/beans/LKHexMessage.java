@@ -4,10 +4,13 @@ import org.apache.commons.lang.ArrayUtils;
 
 import com.lichkin.framework.utils.lang.LKNumberUtils;
 
+import lombok.Getter;
+
 /**
  * 十六进制消息类
  * @author SuZhou LichKin Information Technology Co., Ltd.
  */
+@Getter
 public class LKHexMessage {
 
 	/** 十进制表示的字节数组 */
@@ -58,42 +61,6 @@ public class LKHexMessage {
 		}
 		this.bytes = bytes;
 		this.hexes = hexes;
-	}
-
-
-	/**
-	 * 获取十进制表示的字节数组
-	 * @return 十进制表示的字节数组
-	 */
-	public byte[] getBytes() {
-		return bytes;
-	}
-
-
-	/**
-	 * 获取十六进制表示的字节数组
-	 * @return 十六进制表示的字节数组
-	 */
-	public String[] getHexes() {
-		return hexes;
-	}
-
-
-	/**
-	 * 获取十六进制表示的字符串
-	 * @return 十六进制表示的字符串
-	 */
-	public String getMessage() {
-		return message;
-	}
-
-
-	/**
-	 * 获取字节数
-	 * @return 字节数
-	 */
-	public int getLength() {
-		return length;
 	}
 
 

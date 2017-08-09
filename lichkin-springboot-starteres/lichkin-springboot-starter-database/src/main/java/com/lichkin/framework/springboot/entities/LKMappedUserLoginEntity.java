@@ -6,7 +6,6 @@ import javax.persistence.MappedSuperclass;
 import com.alibaba.fastjson.annotation.JSONField;
 import com.lichkin.framework.bases.entities.LKUserLoginInterface;
 import com.lichkin.framework.bases.statics.LKEntityFieldLengthStatics;
-import com.lichkin.framework.bases.statics.LKStringStatics;
 import com.lichkin.framework.utils.lang.LKStringUtils;
 import com.lichkin.framework.utils.security.md5.LKMD5Encrypter;
 
@@ -105,7 +104,7 @@ public class LKMappedUserLoginEntity extends LKMappedBaseEntity implements LKUse
 	 * 更新校验码
 	 */
 	public void updateCheckCode() {
-		setCheckCode(LKMD5Encrypter.encrypt(LKStringUtils.trimToEmpty(getLoginName()) + LKStringUtils.trimToEmpty(getCellphone()) + LKStringUtils.trimToEmpty(getEmail()) + LKStringUtils.trimToEmpty(getUserCard()), LKStringStatics.STR_CHARSET_UTF_8, LKStringUtils.trimToEmpty(getBusId())));
+		setCheckCode(LKMD5Encrypter.encrypt(LKStringUtils.trimToEmpty(getLoginName()) + LKStringUtils.trimToEmpty(getCellphone()) + LKStringUtils.trimToEmpty(getEmail()) + LKStringUtils.trimToEmpty(getUserCard()), "UTF-8", LKStringUtils.trimToEmpty(getBusId())));
 	}
 
 }

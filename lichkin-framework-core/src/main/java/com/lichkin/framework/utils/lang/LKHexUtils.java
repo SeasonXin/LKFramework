@@ -103,7 +103,7 @@ public final class LKHexUtils {
 	 * @return 十六进制字符串
 	 */
 	public static String toHexBytesFromDecimal(final String decimal) {
-		return LKHexUtils.toHexBytesFromBinaryData(new BigInteger(decimal).toByteArray());
+		return toHexBytesFromBinaryData(new BigInteger(decimal).toByteArray());
 	}
 
 
@@ -115,7 +115,7 @@ public final class LKHexUtils {
 	public static String toHexBytesFromBinaryData(final byte[] bytes) {
 		final StringBuilder sb = new StringBuilder();
 		for (final byte b : bytes) {
-			sb.append(LKHexUtils.toHexBytesFromByte(b));
+			sb.append(toHexBytesFromByte(b));
 		}
 		return sb.toString();
 	}
@@ -127,7 +127,7 @@ public final class LKHexUtils {
 	 * @return 十六进制字符串
 	 */
 	public static String toHexBytesFromBigInteger(final BigInteger decimal) {
-		return LKHexUtils.toHexBytesFromBinaryData(decimal.toByteArray());
+		return toHexBytesFromBinaryData(decimal.toByteArray());
 	}
 
 
@@ -137,7 +137,7 @@ public final class LKHexUtils {
 	 * @return 十六进制字符串
 	 */
 	public static String toHexBytesFromLong(final long decimal) {
-		return LKHexUtils.toHexBytesFromBinaryData(new BigInteger(String.valueOf(decimal)).toByteArray());
+		return toHexBytesFromBinaryData(new BigInteger(String.valueOf(decimal)).toByteArray());
 	}
 
 
@@ -147,7 +147,7 @@ public final class LKHexUtils {
 	 * @return 十六进制字符串
 	 */
 	public static String toHexBytesFromInteger(final int decimal) {
-		return LKHexUtils.toHexBytesFromBinaryData(new BigInteger(String.valueOf(decimal)).toByteArray());
+		return toHexBytesFromBinaryData(new BigInteger(String.valueOf(decimal)).toByteArray());
 	}
 
 
@@ -157,7 +157,7 @@ public final class LKHexUtils {
 	 * @return 十六进制字符串
 	 */
 	public static String toHexBytesFromShort(final short decimal) {
-		return LKHexUtils.toHexBytesFromBinaryData(new BigInteger(String.valueOf(decimal)).toByteArray());
+		return toHexBytesFromBinaryData(new BigInteger(String.valueOf(decimal)).toByteArray());
 	}
 
 
@@ -188,7 +188,7 @@ public final class LKHexUtils {
 	 * @return 十进制数字
 	 */
 	public static String toDecimalFromHex(final String hex) {
-		return LKHexUtils.toBigIntegerFromHex(hex).toString();
+		return toBigIntegerFromHex(hex).toString();
 	}
 
 
@@ -208,7 +208,7 @@ public final class LKHexUtils {
 	 * @return 十进制数字
 	 */
 	public static long toLongFromHex(final String hex) {
-		return LKHexUtils.toBigIntegerFromHex(hex).longValue();
+		return toBigIntegerFromHex(hex).longValue();
 	}
 
 
@@ -218,7 +218,7 @@ public final class LKHexUtils {
 	 * @return 十进制数字
 	 */
 	public static int toIntegerFromHex(final String hex) {
-		return LKHexUtils.toBigIntegerFromHex(hex).intValue();
+		return toBigIntegerFromHex(hex).intValue();
 	}
 
 
@@ -228,7 +228,7 @@ public final class LKHexUtils {
 	 * @return 十进制数字
 	 */
 	public static short toShortFromHex(final String hex) {
-		return LKHexUtils.toBigIntegerFromHex(hex).shortValue();
+		return toBigIntegerFromHex(hex).shortValue();
 	}
 
 
@@ -238,7 +238,7 @@ public final class LKHexUtils {
 	 * @return 十进制数字
 	 */
 	public static byte toByteFromHex(final String hex) {
-		return LKHexUtils.toBigIntegerFromHex(hex).byteValue();
+		return toBigIntegerFromHex(hex).byteValue();
 	}
 
 
@@ -250,10 +250,10 @@ public final class LKHexUtils {
 	 * @return 字节数组
 	 */
 	public static byte[] toBytesFromHex(String hex) {
-		hex = LKHexUtils.fillZero(hex);
+		hex = fillZero(hex);
 		final byte[] bytes = new byte[hex.length() / 2];
 		for (int i = 0, start = 0; i < bytes.length; i++, start = i * 2) {
-			bytes[i] = LKHexUtils.toByteFromHex(hex.substring(start, start + 2));
+			bytes[i] = toByteFromHex(hex.substring(start, start + 2));
 		}
 		return bytes;
 	}
@@ -265,7 +265,7 @@ public final class LKHexUtils {
 	 * @return 字节数组
 	 */
 	public static byte[] toBytesFromDecimal(final String decimal) {
-		return LKHexUtils.toBytesFromHex(LKHexUtils.toHexFromDecimal(decimal));
+		return toBytesFromHex(toHexFromDecimal(decimal));
 	}
 
 
@@ -275,7 +275,7 @@ public final class LKHexUtils {
 	 * @return 字节数组
 	 */
 	public static byte[] toBytesFromBigInteger(final BigInteger decimal) {
-		return LKHexUtils.toBytesFromHex(LKHexUtils.toHexFromBigInteger(decimal));
+		return toBytesFromHex(toHexFromBigInteger(decimal));
 	}
 
 
@@ -285,7 +285,7 @@ public final class LKHexUtils {
 	 * @return 字节数组
 	 */
 	public static byte[] toBytesFromLong(final long decimal) {
-		return LKHexUtils.toBytesFromHex(LKHexUtils.toHexFromLong(decimal));
+		return toBytesFromHex(toHexFromLong(decimal));
 	}
 
 
@@ -295,7 +295,7 @@ public final class LKHexUtils {
 	 * @return 字节数组
 	 */
 	public static byte[] toBytesFromInteger(final int decimal) {
-		return LKHexUtils.toBytesFromHex(LKHexUtils.toHexFromInteger(decimal));
+		return toBytesFromHex(toHexFromInteger(decimal));
 	}
 
 
@@ -305,7 +305,7 @@ public final class LKHexUtils {
 	 * @return 字节数组
 	 */
 	public static byte[] toBytesFromShort(final short decimal) {
-		return LKHexUtils.toBytesFromHex(LKHexUtils.toHexFromShort(decimal));
+		return toBytesFromHex(toHexFromShort(decimal));
 	}
 
 
@@ -315,7 +315,7 @@ public final class LKHexUtils {
 	 * @return 字节数组
 	 */
 	public static byte[] toBytesFromByte(final byte decimal) {
-		return LKHexUtils.toBytesFromHex(LKHexUtils.toHexFromByte(decimal));
+		return toBytesFromHex(toHexFromByte(decimal));
 	}
 
 }

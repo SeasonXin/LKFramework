@@ -1,7 +1,8 @@
 package com.lichkin.framework.wechat.vo.config;
 
-import com.lichkin.framework.wechat.LKWechatApiUrls;
-import com.lichkin.framework.wechat.LKWechatVariables;
+import com.lichkin.framework.bases.LKDatas;
+import com.lichkin.framework.utils.lang.LKStringUtils;
+import com.lichkin.framework.wechat.statics.LKWechatConfigStatics;
 
 import lombok.Getter;
 
@@ -29,7 +30,12 @@ public class ViewButton extends Button {
 	public void init(final int x, final int y) {
 		super.init(x, y);
 		final String btnName = "btn" + x + y;
-		url = LKWechatApiUrls.OAUTH2_TOGO.replace(LKWechatVariables.VARIABLE_BTN_NAME, btnName).replace(LKWechatVariables.VARIABLE_STATE, btnName);
+		final LKDatas datas = new LKDatas();
+		datas.put("#appid", LKWechatConfigStatics.appid);
+		datas.put("#projectUrl", LKWechatConfigStatics.projectUrl);
+		datas.put("#btnName", btnName);
+		datas.put("#state", btnName);
+		url = LKStringUtils.replaceDatas(url, datas);
 	}
 
 }

@@ -62,6 +62,25 @@ public class LKSysConfigs implements LKSysConfigKeys {
 	/**
 	 * 获取配置值
 	 * @param key 键
+	 * @param defaultValue 默认值
+	 * @return 配置值
+	 */
+	public static boolean get(final String key, final boolean defaultValue) {
+		final String value = map.get(key);
+		if (value == null) {
+			return defaultValue;
+		}
+		try {
+			return Boolean.parseBoolean(value);
+		} catch (final Exception e) {
+			throw new LKRuntimeException(LKErrorCodeEnum.ERROR, e);
+		}
+	}
+
+
+	/**
+	 * 获取配置值
+	 * @param key 键
 	 * @return 配置值
 	 */
 	public static String get(final String key) {

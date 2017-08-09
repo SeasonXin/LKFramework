@@ -7,8 +7,6 @@ import java.io.OutputStream;
 import java.net.HttpURLConnection;
 import java.net.URL;
 
-import com.lichkin.framework.bases.statics.LKStringStatics;
-
 /**
  * 请求工具类
  * @author SuZhou LichKin Information Technology Co., Ltd.
@@ -23,7 +21,7 @@ public final class LKRequestUtils {
 	 */
 	@Deprecated
 	public static String doRequest(final String url) throws Exception {
-		return LKRequestUtils.doRequest(url, LKStringStatics.STR_CHARSET_UTF_8);
+		return LKRequestUtils.doRequest(url, "UTF-8");
 	}
 
 
@@ -97,7 +95,7 @@ public final class LKRequestUtils {
 	 */
 	@Deprecated
 	public static String doRequestStream(final String url, final String jsonStr) throws Exception {
-		return LKRequestUtils.doRequestStream(url, jsonStr, LKStringStatics.STR_CHARSET_UTF_8);
+		return LKRequestUtils.doRequestStream(url, jsonStr, "UTF-8");
 	}
 
 

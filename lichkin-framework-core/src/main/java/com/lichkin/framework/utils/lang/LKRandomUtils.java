@@ -16,7 +16,7 @@ public final class LKRandomUtils {
 	 * @return 随机字符串
 	 */
 	public static String create(final int length) {
-		return LKRandomUtils.create(length, LKRangeTypeEnum.NUMBER_NORMAL_AND_LETTER_NORMAL);
+		return create(length, LKRangeTypeEnum.NUMBER_NORMAL_AND_LETTER_NORMAL);
 	}
 
 
@@ -26,7 +26,7 @@ public final class LKRandomUtils {
 	 * @return 随机字符串
 	 */
 	public static String createNumber(final int length) {
-		return LKRandomUtils.create(length, LKRangeTypeEnum.NUMBER_WITHOUT_ZERO);
+		return create(length, LKRangeTypeEnum.NUMBER_WITHOUT_ZERO);
 	}
 
 

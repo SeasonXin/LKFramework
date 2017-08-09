@@ -27,10 +27,6 @@
       <groupId>com.lichkin</groupId>
       <artifactId>lichkin-springboot-starter-web</artifactId>
     </dependency>
-    <dependency>
-      <groupId>com.lichkin</groupId>
-      <artifactId>lichkin-springboot-starter-web-front</artifactId>
-    </dependency>
   </dependencies>
 
 </project>

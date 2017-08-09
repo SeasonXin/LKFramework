@@ -14,7 +14,7 @@ class LKRSA {
 
 	static {
 		try {
-			LKRSA.keyFactory = KeyFactory.getInstance("RSA");
+			keyFactory = KeyFactory.getInstance("RSA");
 		} catch (final NoSuchAlgorithmException e) {
 			e.printStackTrace();
 		}

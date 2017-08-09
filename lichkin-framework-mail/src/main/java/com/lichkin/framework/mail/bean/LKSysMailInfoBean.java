@@ -11,15 +11,19 @@ import org.apache.commons.lang3.ArrayUtils;
 import com.lichkin.framework.bases.enums.LKErrorCodeEnum;
 import com.lichkin.framework.bases.exceptions.LKRuntimeException;
 import com.lichkin.framework.bases.statics.LKFrameworkStatics;
-import com.lichkin.framework.bases.statics.LKStringStatics;
 import com.lichkin.framework.utils.file.LKFileReader;
 import com.lichkin.framework.utils.file.LKFileUtils;
 import com.lichkin.framework.utils.lang.LKStringUtils;
+
+import lombok.Getter;
+import lombok.Setter;
 
 /**
  * 邮件信息
  * @author SuZhou LichKin Information Technology Co., Ltd.
  */
+@Getter
+@Setter
 public final class LKSysMailInfoBean implements Serializable {
 
 	/** serialVersionUID */
@@ -89,79 +93,9 @@ public final class LKSysMailInfoBean implements Serializable {
 	private File[] attachments = new File[0];
 
 
-	public String getBusCode() {
-		return busCode;
-	}
-
-
-	public void setBusCode(final String busCode) {
-		this.busCode = busCode;
-	}
-
-
-	public String getHost() {
-		return host;
-	}
-
-
-	public void setHost(final String host) {
-		this.host = host;
-	}
-
-
-	public String getPort() {
-		return port;
-	}
-
-
-	public void setPort(final String port) {
-		this.port = port;
-	}
-
-
-	public boolean isAuth() {
-		return auth;
-	}
-
-
-	public void setAuth(final boolean auth) {
-		this.auth = auth;
-	}
-
-
-	public String getUserName() {
-		return userName;
-	}
-
-
-	public void setUserName(final String userName) {
-		this.userName = userName;
-	}
-
-
-	public String getPassword() {
-		return password;
-	}
-
-
-	public void setPassword(final String password) {
-		this.password = password;
-	}
-
-
-	public String getFromAddress() {
-		return fromAddress;
-	}
-
-
 	public void setFromAddress(final String fromAddress) {
 		this.fromAddress = fromAddress;
 		initFrom();
-	}
-
-
-	public String getFromDisplayName() {
-		return fromDisplayName;
 	}
 
 
@@ -176,13 +110,13 @@ public final class LKSysMailInfoBean implements Serializable {
 			if (ArrayUtils.isNotEmpty(tos)) {
 				final StringBuilder sb = new StringBuilder();
 				for (final InternetAddress obj : tos) {
-					sb.append(obj.getAddress()).append(LKStringStatics.STR_COMMA);
+					sb.append(obj.getAddress()).append(",");
 				}
 				return sb.toString();
 			}
-			return LKStringStatics.STR_EMPTY;
+			return "";
 		}
-		return to.replaceAll(LKFrameworkStatics.ARR_SPLITOR, LKStringStatics.STR_COMMA);
+		return to.replaceAll(LKFrameworkStatics.ARR_SPLITOR, ",");
 	}
 
 
@@ -204,13 +138,13 @@ public final class LKSysMailInfoBean implements Serializable {
 			if (ArrayUtils.isNotEmpty(ccs)) {
 				final StringBuilder sb = new StringBuilder();
 				for (final InternetAddress obj : ccs) {
-					sb.append(obj.getAddress()).append(LKStringStatics.STR_COMMA);
+					sb.append(obj.getAddress()).append(",");
 				}
 				return sb.toString();
 			}
-			return LKStringStatics.STR_EMPTY;
+			return "";
 		}
-		return cc.replaceAll(LKFrameworkStatics.ARR_SPLITOR, LKStringStatics.STR_COMMA);
+		return cc.replaceAll(LKFrameworkStatics.ARR_SPLITOR, ",");
 	}
 
 
@@ -232,13 +166,13 @@ public final class LKSysMailInfoBean implements Serializable {
 			if (ArrayUtils.isNotEmpty(bccs)) {
 				final StringBuilder sb = new StringBuilder();
 				for (final InternetAddress obj : bccs) {
-					sb.append(obj.getAddress()).append(LKStringStatics.STR_COMMA);
+					sb.append(obj.getAddress()).append(",");
 				}
 				return sb.toString();
 			}
-			return LKStringStatics.STR_EMPTY;
+			return "";
 		}
-		return bcc.replaceAll(LKFrameworkStatics.ARR_SPLITOR, LKStringStatics.STR_COMMA);
+		return bcc.replaceAll(LKFrameworkStatics.ARR_SPLITOR, ",");
 	}
 
 
@@ -260,13 +194,13 @@ public final class LKSysMailInfoBean implements Serializable {
 			if (ArrayUtils.isNotEmpty(attachments)) {
 				final StringBuilder sb = new StringBuilder();
 				for (final File obj : attachments) {
-					sb.append(obj.getAbsolutePath()).append(LKStringStatics.STR_COMMA);
+					sb.append(obj.getAbsolutePath()).append(",");
 				}
 				return sb.toString();
 			}
-			return LKStringStatics.STR_EMPTY;
+			return "";
 		}
-		return attachment.replaceAll(LKFrameworkStatics.ARR_SPLITOR, LKStringStatics.STR_COMMA);
+		return attachment.replaceAll(LKFrameworkStatics.ARR_SPLITOR, ",");
 	}
 
 
@@ -286,11 +220,6 @@ public final class LKSysMailInfoBean implements Serializable {
 	}
 
 
-	public String getSubject() {
-		return subject;
-	}
-
-
 	public void setSubject(String subject) {
 		if (LKStringUtils.isBlank(subject)) {
 			subject = "NO SUBJECT";
@@ -299,25 +228,15 @@ public final class LKSysMailInfoBean implements Serializable {
 	}
 
 
-	public String getContent() {
-		return content;
-	}
-
-
 	public void setContent(String content) {
 		if (LKStringUtils.isBlank(contentPath)) {
 			if (LKStringUtils.isBlank(content)) {
-				content = LKStringStatics.STR_EMPTY;
+				content = "";
 			}
 			this.content = content;
 		} else {
 			this.content = content + contentTmp;
 		}
-	}
-
-
-	public String getContentPath() {
-		return contentPath;
 	}
 
 
@@ -327,7 +246,7 @@ public final class LKSysMailInfoBean implements Serializable {
 			final String[] contentArr = LKFileReader.read(contentPath);
 			if (ArrayUtils.isNotEmpty(contentArr)) {
 				if (LKStringUtils.isBlank(content)) {
-					content = LKStringStatics.STR_EMPTY;
+					content = "";
 				}
 				for (final String str : contentArr) {
 					content += str;
@@ -335,31 +254,6 @@ public final class LKSysMailInfoBean implements Serializable {
 				contentTmp = content;
 			}
 		}
-	}
-
-
-	public InternetAddress getFrom() {
-		return from;
-	}
-
-
-	public InternetAddress[] getTos() {
-		return tos;
-	}
-
-
-	public InternetAddress[] getCcs() {
-		return ccs;
-	}
-
-
-	public InternetAddress[] getBccs() {
-		return bccs;
-	}
-
-
-	public File[] getAttachments() {
-		return attachments;
 	}
 
 

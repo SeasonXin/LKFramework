@@ -24,7 +24,6 @@ import com.lichkin.framework.bases.enums.LKDatePatternEnum;
 import com.lichkin.framework.bases.enums.LKErrorCodeEnum;
 import com.lichkin.framework.bases.exceptions.LKRuntimeException;
 import com.lichkin.framework.bases.statics.LKSQLStatics;
-import com.lichkin.framework.bases.statics.LKStringStatics;
 import com.lichkin.framework.springboot.utils.LKEntityInitializer;
 import com.lichkin.framework.utils.lang.LKStringUtils;
 
@@ -99,7 +98,7 @@ public abstract class LKBaseDao implements LKDao {
 						if (order != null) {
 							final String property = order.getProperty();
 							final String direction = order.getDirection().toString();
-							sb.append(LKStringStatics.STR_BLANK).append(property).append(LKStringStatics.STR_BLANK).append(direction).append(LKStringStatics.STR_COMMA);
+							sb.append(" ").append(property).append(" ").append(direction).append(",");
 						}
 					}
 					sql += sb.deleteCharAt(sb.length() - 1);
@@ -204,7 +203,7 @@ public abstract class LKBaseDao implements LKDao {
 						if (order != null) {
 							final String property = order.getProperty();
 							final String direction = order.getDirection().toString();
-							sb.append(LKStringStatics.STR_BLANK).append(property).append(LKStringStatics.STR_BLANK).append(direction).append(LKStringStatics.STR_COMMA);
+							sb.append(" ").append(property).append(" ").append(direction).append(",");
 						}
 					}
 					sql += sb.deleteCharAt(sb.length() - 1);

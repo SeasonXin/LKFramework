@@ -55,6 +55,6 @@ public interface LKWechatMenuStatics {
 	public static final String BTN_NAME_URL_SUFFIX = "%3FbtnName%3D";
 
 	/** URL按钮名称后缀长度 */
-	public static final int BTN_NAME_URL_SUFFIX_LENGTH = LKWechatMenuStatics.BTN_NAME_URL_SUFFIX.length();
+	public static final int BTN_NAME_URL_SUFFIX_LENGTH = BTN_NAME_URL_SUFFIX.length();
 
 }

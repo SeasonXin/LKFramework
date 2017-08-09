@@ -46,7 +46,6 @@ public class LKJSONUtils {
 
 	/**
 	 * 将对象转换成对象
-	 * @param <T> 类型
 	 * @param obj 对象
 	 * @param clazz 对象类型
 	 * @return 对象
@@ -61,7 +60,6 @@ public class LKJSONUtils {
 
 	/**
 	 * 将对象转换成对象列表
-	 * @param <T> 类型
 	 * @param obj 对象
 	 * @param clazz 对象类型
 	 * @return 对象列表
@@ -76,7 +74,6 @@ public class LKJSONUtils {
 
 	/**
 	 * 将对象转换成对象
-	 * @param <T> 类型
 	 * @param jsonStr JSON字符串
 	 * @param key 键
 	 * @param clazz 对象类型
@@ -92,7 +89,6 @@ public class LKJSONUtils {
 
 	/**
 	 * 将对象转换成对象列表
-	 * @param <T> 类型
 	 * @param jsonStr JSON字符串
 	 * @param key 键
 	 * @param clazz 对象类型

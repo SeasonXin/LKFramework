@@ -4,11 +4,12 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
-import com.lichkin.framework.springboot.wechat.LKWechatProperties;
+import com.lichkin.framework.bases.LKDatas;
 import com.lichkin.framework.utils.lang.LKRandomUtils;
+import com.lichkin.framework.utils.lang.LKStringUtils;
 import com.lichkin.framework.utils.lang.xml.LKXmlUtils;
-import com.lichkin.framework.wechat.LKWechatApiUrls;
 import com.lichkin.framework.wechat.bean.LKWechatBean;
+import com.lichkin.framework.wechat.statics.LKWechatConfigStatics;
 import com.lichkin.framework.wechat.vo.Article;
 
 /**
@@ -121,10 +122,10 @@ public final class LKWechatXMLCreater {
 	public static String createNewsWelcom(final LKWechatBean bean) {
 		final List<Article> articles = new ArrayList<>();
 		final Article article = new Article();
-		article.setTitle(LKWechatProperties.WECHAT_MSG_WELCOME_TITLE);
-		article.setDescription(LKWechatProperties.WECHAT_MSG_WELCOME_DESCRIPTION);
-		article.setPicUrl(LKWechatProperties.WECHAT_MSG_WELCOME_PICURL);
-		article.setUrl(LKWechatApiUrls.MSG_WELCOME_URL + bean.getOpenid());
+		article.setTitle(LKWechatConfigStatics.welcomeTitle);
+		article.setDescription(LKWechatConfigStatics.welcomeDescription);
+		article.setPicUrl(LKWechatConfigStatics.welcomePicUrl);
+		article.setUrl(LKStringUtils.replaceDatas(LKWechatConfigStatics.welcomeUrl, new LKDatas().put("#openid", bean.getOpenid())));
 		articles.add(article);
 		return LKWechatXMLCreater.createNews(bean, articles);
 	}

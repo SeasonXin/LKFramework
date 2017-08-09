@@ -8,7 +8,8 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.lichkin.framework.bases.LKDatas;
 import com.lichkin.framework.bases.annotations.WithOutLogin;
-import com.lichkin.framework.springboot.web.controllers.LKController;
+import com.lichkin.framework.springboot.controllers.LKController;
+import com.lichkin.framework.springboot.utils.LKModelAndViewUtils;
 
 /**
  * 只实现一些常用页面的跳转逻辑
@@ -26,7 +27,7 @@ public class LKRootController extends LKController {
 	@WithOutLogin
 	@RequestMapping(value = "/{subUrl}.html", method = RequestMethod.GET)
 	public ModelAndView toGo(final LKDatas requestDatas, @PathVariable(value = "subUrl") final String subUrl) {
-		return getModelAndView(requestDatas);
+		return LKModelAndViewUtils.analyzeViewName(getModelAndView());
 	}
 
 }

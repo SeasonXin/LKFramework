@@ -9,7 +9,6 @@ import java.io.InputStream;
 
 import javax.imageio.ImageIO;
 
-import com.lichkin.framework.bases.statics.LKStringStatics;
 import com.lichkin.framework.utils.file.LKFileUtils;
 
 /**
@@ -36,7 +35,7 @@ public class LKImgZoomer {
 		g.drawImage(sourceImg.getScaledInstance(width, height, Image.SCALE_DEFAULT), 0, 0, null); // 绘制缩小后的图
 		g.dispose();
 		final File targetFile = LKFileUtils.createFile(targetFilePath);
-		ImageIO.write(targetImg, sourceFileName.substring(sourceFileName.lastIndexOf(LKStringStatics.STR_DOT) + 1), targetFile);// 输出到文件流
+		ImageIO.write(targetImg, sourceFileName.substring(sourceFileName.lastIndexOf(".") + 1), targetFile);// 输出到文件流
 		return targetFile;
 	}
 

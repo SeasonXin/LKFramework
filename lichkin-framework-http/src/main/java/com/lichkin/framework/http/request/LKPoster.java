@@ -21,7 +21,6 @@ import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.lichkin.framework.bases.enums.LKErrorCodeEnum;
 import com.lichkin.framework.bases.exceptions.LKRuntimeException;
-import com.lichkin.framework.bases.statics.LKStringStatics;
 import com.lichkin.framework.utils.lang.LKObjectUtils;
 import com.lichkin.framework.utils.lang.LKStringUtils;
 
@@ -41,7 +40,7 @@ public class LKPoster extends LKRequester {
 	 */
 	public static String post(final String url, final List<NameValuePair> params, String charset, final boolean useSSL) {
 		if (charset == null) {
-			charset = LKStringStatics.STR_CHARSET_UTF_8;
+			charset = "UTF-8";
 		}
 
 		final CloseableHttpClient client = useSSL ? LKRequester.createSSLClient() : LKRequester.createClient();
@@ -84,7 +83,7 @@ public class LKPoster extends LKRequester {
 	 */
 	public static String postString(final String url, final String params, String charset, final boolean useSSL) {
 		if (charset == null) {
-			charset = LKStringStatics.STR_CHARSET_UTF_8;
+			charset = "UTF-8";
 		}
 
 		final CloseableHttpClient client = useSSL ? LKRequester.createSSLClient() : LKRequester.createClient();

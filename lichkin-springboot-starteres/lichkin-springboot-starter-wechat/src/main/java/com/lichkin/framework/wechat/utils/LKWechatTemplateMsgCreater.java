@@ -1,9 +1,10 @@
 package com.lichkin.framework.wechat.utils;
 
 import com.lichkin.framework.bases.LKDatas;
+import com.lichkin.framework.bases.enums.LKErrorCodeEnum;
+import com.lichkin.framework.bases.exceptions.LKRuntimeException;
 import com.lichkin.framework.springboot.utils.LKPropertiesUtils;
-import com.lichkin.framework.wechat.LKWechatConfigKeys;
-import com.lichkin.framework.wechat.statics.LKWechatStatics;
+import com.lichkin.framework.wechat.statics.LKWechatConfigStatics;
 import com.lichkin.framework.wechat.vo.TemplateMsg;
 
 /**
@@ -26,10 +27,20 @@ public final class LKWechatTemplateMsgCreater {
 	 * @return 消息
 	 */
 	public static TemplateMsg createMeasureResultMsg(final String openid, final String configKey, final LKDatas templateDatas) {
+		final String templateId = LKPropertiesUtils.getProperty("lichkin.framework.wechat.msg." + configKey + ".url");
+		if (templateId == null) {
+			throw new LKRuntimeException(LKErrorCodeEnum.ERROR, "lichkin.framework.wechat.msg." + configKey + ".url is null.");
+		}
+
+		final String msgUrl = LKPropertiesUtils.getProperty("lichkin.framework.wechat.msg." + configKey + ".templateId");
+		if (msgUrl == null) {
+			throw new LKRuntimeException(LKErrorCodeEnum.ERROR, "lichkin.framework.wechat.msg." + configKey + ".templateId is null.");
+		}
+
 		final TemplateMsg msg = new TemplateMsg();
 		msg.setTouser(openid);
-		msg.setTemplate_id(LKPropertiesUtils.getProperty(LKWechatConfigKeys.CONFIG_WECHAT_MSG_PREFIX + configKey + LKWechatConfigKeys.CONFIG_WECHAT_MSG_SUFFIX_URL));
-		msg.setUrl(LKWechatStatics.PROJECT_URL + LKPropertiesUtils.getProperty(LKWechatConfigKeys.CONFIG_WECHAT_MSG_PREFIX + configKey + LKWechatConfigKeys.CONFIG_WECHAT_MSG_SUFFIX_TEMPLATE_ID));
+		msg.setTemplate_id(templateId);
+		msg.setUrl(LKWechatConfigStatics.projectUrl + msgUrl);
 		msg.setData(templateDatas);
 		return msg;
 	}

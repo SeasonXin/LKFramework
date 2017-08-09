@@ -27,7 +27,7 @@ public final class LKMatcherUtils {
 	 * @return 匹配成功返回true，否则返回false。
 	 */
 	public static boolean matches(final String regex, final String input) {
-		return LKMatcherUtils.getMatcher(regex, input).matches();
+		return getMatcher(regex, input).matches();
 	}
 
 }

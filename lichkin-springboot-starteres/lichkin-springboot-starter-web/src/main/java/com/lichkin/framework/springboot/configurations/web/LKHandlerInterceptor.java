@@ -23,11 +23,10 @@ import com.lichkin.framework.bases.enums.LKRangeTypeEnum;
 import com.lichkin.framework.bases.statics.LKWebStatics;
 import com.lichkin.framework.http.utils.LKIpUtils;
 import com.lichkin.framework.http.utils.LKUrlUtils;
+import com.lichkin.framework.springboot.utils.LKMultipartFileUtils;
 import com.lichkin.framework.springboot.utils.LKPropertiesUtils;
+import com.lichkin.framework.springboot.utils.LKRequestExtractorOnSpring;
 import com.lichkin.framework.springboot.web.LKSessionUser;
-import com.lichkin.framework.springboot.web.LKWebProperties;
-import com.lichkin.framework.springboot.web.http.request.LKMultipartFileUtils;
-import com.lichkin.framework.springboot.web.http.request.LKRequestExtractorOnSpring;
 import com.lichkin.framework.utils.lang.LKRandomUtils;
 import com.lichkin.framework.utils.lang.LKStringUtils;
 import com.lichkin.framework.utils.lang.json.alibaba.LKJSONUtils;
@@ -36,7 +35,7 @@ import com.lichkin.framework.utils.lang.json.alibaba.LKJSONUtils;
  * 拦截器
  * @author SuZhou LichKin Information Technology Co., Ltd.
  */
-public class LKHandlerInterceptor implements HandlerInterceptor {
+public class LKHandlerInterceptor implements HandlerInterceptor, LKWebStatics {
 
 	/** 日志对象 */
 	private final Log logger = LogFactory.getLog(getClass());
@@ -53,20 +52,20 @@ public class LKHandlerInterceptor implements HandlerInterceptor {
 		final LKDatas requestDatasReduce = LKMultipartFileUtils.convertMultipartFiles(requestDatas);
 
 		// 设置自定义的参数
-		request.setAttribute(LKWebStatics.LK_REQUEST_ID, requestId);
-		request.setAttribute(LKWebStatics.LK_REQUEST_TIME, requestTime);
-		request.setAttribute(LKWebStatics.LK_REQUEST_IP, requestIp);
-		request.setAttribute(LKWebStatics.LK_REQUEST_URL, requestUrl);
-		request.setAttribute(LKWebStatics.LK_REQUEST_DATAS, requestDatas);
-		request.setAttribute(LKWebStatics.LK_REQUEST_DATAS_REDUCE, requestDatasReduce);
+		request.setAttribute(LK_REQUEST_ID, requestId);
+		request.setAttribute(LK_REQUEST_TIME, requestTime);
+		request.setAttribute(LK_REQUEST_IP, requestIp);
+		request.setAttribute(LK_REQUEST_URL, requestUrl);
+		request.setAttribute(LK_REQUEST_DATAS, requestDatas);
+		request.setAttribute(LK_REQUEST_DATAS_REDUCE, requestDatasReduce);
 
 		// 记录日志
 		final Map<String, Object> map = new HashMap<>();
-		map.put(LKWebStatics.REQUEST_ID, requestId);
-		map.put(LKWebStatics.REQUEST_TIME, requestTime.toString(ALL.getNameEn()));
-		map.put(LKWebStatics.REQUEST_IP, requestIp);
-		map.put(LKWebStatics.REQUEST_URL, requestUrl);
-		map.put(LKWebStatics.REQUEST_DATAS, requestDatasReduce.getMap());
+		map.put(REQUEST_ID, requestId);
+		map.put(REQUEST_TIME, requestTime.toString(ALL.getNameEn()));
+		map.put(REQUEST_IP, requestIp);
+		map.put(REQUEST_URL, requestUrl);
+		map.put(REQUEST_DATAS, requestDatasReduce.getMap());
 		logger.info(LKJSONUtils.toJson(map, true, false));
 
 		if ((handler != null) && (handler instanceof HandlerMethod)) {
@@ -109,7 +108,7 @@ public class LKHandlerInterceptor implements HandlerInterceptor {
 				return true;
 			}
 
-			response.sendRedirect(LKUrlUtils.getBasePath(request) + LKWebProperties.LK_WEB_PAGE_LOGIN_URL);
+			response.sendRedirect(LKUrlUtils.getBasePath(request) + "/login.html");
 			return false;
 		}
 
@@ -121,9 +120,9 @@ public class LKHandlerInterceptor implements HandlerInterceptor {
 	public void postHandle(final HttpServletRequest request, final HttpServletResponse response, final Object handler, final ModelAndView mav) throws Exception {
 		// 记录日志
 		final Map<String, Object> map = new HashMap<>();
-		map.put(LKWebStatics.REQUEST_ID, request.getAttribute(LKWebStatics.LK_REQUEST_ID));
-		map.put(LKWebStatics.REQUEST_HANDLER_CLASS, ((HandlerMethod) handler).getBean().toString());
-		map.put(LKWebStatics.REQUEST_HANDLER_METHOD, ((HandlerMethod) handler).getMethod().getName());
+		map.put(REQUEST_ID, request.getAttribute(LK_REQUEST_ID));
+		map.put(REQUEST_HANDLER_CLASS, ((HandlerMethod) handler).getBean().toString());
+		map.put(REQUEST_HANDLER_METHOD, ((HandlerMethod) handler).getMethod().getName());
 		logger.info(JSON.toJSONString(map));
 	}
 
@@ -132,15 +131,15 @@ public class LKHandlerInterceptor implements HandlerInterceptor {
 	public void afterCompletion(final HttpServletRequest request, final HttpServletResponse response, final Object handler, final Exception ex) throws Exception {
 		// 计算时间
 		final DateTime now = DateTime.now();
-		final DateTime requestTime = (DateTime) request.getAttribute(LKWebStatics.LK_REQUEST_TIME);
+		final DateTime requestTime = (DateTime) request.getAttribute(LK_REQUEST_TIME);
 		final long responseElapsedTime = now.getMillis() - requestTime.getMillis();
 
 		// 记录日志
 		final Map<String, Object> map = new HashMap<>();
-		map.put(LKWebStatics.REQUEST_ID, request.getAttribute(LKWebStatics.LK_REQUEST_ID));
-		map.put(LKWebStatics.REQUEST_TIME, requestTime.toString(ALL.getNameEn()));
-		map.put(LKWebStatics.RESPONSE_TIME, now.toString(ALL.getNameEn()));
-		map.put(LKWebStatics.RESPONSE_ELAPSED_TIME, responseElapsedTime + "ms");
+		map.put(REQUEST_ID, request.getAttribute(LK_REQUEST_ID));
+		map.put(REQUEST_TIME, requestTime.toString(ALL.getNameEn()));
+		map.put(RESPONSE_TIME, now.toString(ALL.getNameEn()));
+		map.put(RESPONSE_ELAPSED_TIME, responseElapsedTime + "ms");
 		logger.info(JSON.toJSONString(map));
 	}
 
