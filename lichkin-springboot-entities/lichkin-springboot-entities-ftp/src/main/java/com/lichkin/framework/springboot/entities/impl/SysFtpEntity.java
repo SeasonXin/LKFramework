@@ -1,4 +1,4 @@
-package com.lichkin.framework.springframework.entities.sys.ftp;
+package com.lichkin.framework.springboot.entities.impl;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -6,10 +6,9 @@ import javax.persistence.Table;
 
 import org.joda.time.DateTime;
 
-import com.lichkin.framework.bases.statics.LKStringStatics;
-import com.lichkin.framework.springboot.db.entities.LKMappedBaseEntity;
+import com.alibaba.fastjson.annotation.JSONField;
+import com.lichkin.framework.springboot.entities.LKMappedBaseEntity;
 import com.lichkin.framework.utils.lang.LKRandomUtils;
-import com.lichkin.framework.utils.lang.LKStringUtils;
 
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -27,39 +26,48 @@ import lombok.Setter;
 public class SysFtpEntity extends LKMappedBaseEntity {
 
 	/** serialVersionUID */
-	private static final long serialVersionUID = -6287627962494484328L;
+	private static final long serialVersionUID = 8888886666668023L;
 
 	/** FTP服务器地址：localhost；192.168.1.111； */
-	@Column(length = 50, insertable = true, updatable = false, unique = false)
+	@Column(insertable = true, updatable = false, nullable = false, unique = false, length = LENGTH_BUS_NAME)
+	@JSONField(ordinal = 1)
 	private String serverPath;
 
 	/** 根路径：/opt/uploadFiles */
-	@Column(length = 50, insertable = true, updatable = false, unique = false)
+	@Column(insertable = true, updatable = false, nullable = false, unique = false, length = LENGTH_BUS_NAME)
+	@JSONField(ordinal = 2)
 	private String rootPath;
 
-	/** 文件全名称：/yyyy/yyyyMM/yyyyMMdd/yyyyMMddHHmmssSSSabcdef.txt */
-	@Column(length = 250, insertable = true, updatable = false, unique = false)
+	/** 文件全名称：/yyyy/yyyyMM/yyyyMMdd/yyyyMMddHHmmssSSSabcdef.TXT */
+	@Column(insertable = true, updatable = false, nullable = false, unique = false, length = LENGTH_NAME)
+	@JSONField(ordinal = 3)
 	private String fileName;
 
 	/** 文件显示名：测试.txt */
-	@Column(length = 100, insertable = true, updatable = false, unique = false)
+	@Column(insertable = true, updatable = false, nullable = false, unique = false, length = LENGTH_BUS_NAME)
+	@JSONField(ordinal = 4)
 	private String showName;
 
 	/** 文件扩展名：TXT */
-	@Column(length = 50, insertable = true, updatable = false, unique = false)
+	@Column(insertable = true, updatable = false, nullable = false, unique = false, length = LENGTH_BUS_NAME)
+	@JSONField(ordinal = 5)
 	private String extName;
 
 	/** 模块名：/hrContact */
-	@Column(length = 50, insertable = true, updatable = false, unique = false)
+	@Column(insertable = true, updatable = false, nullable = false, unique = false, length = LENGTH_BUS_NAME)
+	@JSONField(ordinal = 6)
 	private String moduleName;
 
 	/** 文件大小（单位：bytes） */
-	@Column(length = 50, insertable = true, updatable = false, unique = false)
+	@Column(insertable = true, updatable = false, nullable = false, unique = false)
+	@JSONField(ordinal = 7)
 	private long fileSize;
 
 	/** MD5值 */
-	@Column(length = 32, insertable = true, updatable = false, unique = true)
+	@Column(insertable = true, updatable = false, nullable = false, unique = true, length = LENGTH_ENCRYPT)
+	@JSONField(ordinal = 8)
 	private String md5;
+
 
 	/**
 	 * 构造方法
@@ -68,18 +76,19 @@ public class SysFtpEntity extends LKMappedBaseEntity {
 	 * @param moduleName 模块名
 	 * @param showName 文件显示名
 	 */
-	public SysFtpEntity(String serverPath, String rootPath, String moduleName, String showName) {
+	public SysFtpEntity(final String serverPath, final String rootPath, final String moduleName, final String showName) {
 		this();
 		final DateTime now = DateTime.now();
-		this.serverPath = LKStringUtils.isBlank(serverPath) ? "localhost" : serverPath;
-		this.rootPath = LKStringUtils.isBlank(rootPath) ? LKStringStatics.STR_SEPARATOR : rootPath;
-		this.moduleName = LKStringUtils.isBlank(moduleName) ? "/moduleName" : LKStringStatics.STR_SEPARATOR + moduleName;
-		this.showName = LKStringUtils.isBlank(showName) ? "showName.txt" : showName;
-		String relativePath = now.toString("/yyyy/yyyyMM/yyyyMMdd");
-		int dotIndex = showName.lastIndexOf(LKStringStatics.STR_DOT);
+		this.serverPath = serverPath;
+		this.rootPath = rootPath;
+		this.moduleName = moduleName;
+		this.showName = showName;
+		final String relativePath = now.toString("/yyyy/yyyyMM/yyyyMMdd");
+		final int dotIndex = showName.lastIndexOf(".");
 		extName = showName.substring(dotIndex + 1, showName.length()).toUpperCase();
-		fileName = relativePath + LKStringStatics.STR_SEPARATOR + now.toString("yyyyMMddHHmmssSSS") + LKRandomUtils.create(6) + LKStringStatics.STR_DOT + extName.toLowerCase();
+		fileName = relativePath + "/" + now.toString("yyyyMMddHHmmssSSS") + LKRandomUtils.create(6) + "." + extName;
 	}
+
 
 	/**
 	 * 生成文件全名称
@@ -89,13 +98,14 @@ public class SysFtpEntity extends LKMappedBaseEntity {
 		return rootPath + moduleName + fileName;
 	}
 
+
 	/**
 	 * 生成文件全路径
 	 * @return 文件全路径
 	 */
 	public String createFullFilePath() {
-		String fullFileName = createFullFileName();
-		return fullFileName.substring(0, fullFileName.lastIndexOf(LKStringStatics.STR_SEPARATOR));
+		final String fullFileName = createFullFileName();
+		return fullFileName.substring(0, fullFileName.lastIndexOf("/"));
 	}
 
 }

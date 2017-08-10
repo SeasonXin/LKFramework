@@ -125,7 +125,7 @@ public class LKPoster extends LKRequester {
 	 * @return 响应信息字符串
 	 */
 	public static String postMap(final String url, final Map<String, String> params, final String charset, final boolean useSSL) {
-		return LKPoster.post(url, LKPoster.toListNameValuePair(params, false), charset, useSSL);
+		return post(url, toListNameValuePair(params, false), charset, useSSL);
 	}
 
 
@@ -159,7 +159,7 @@ public class LKPoster extends LKRequester {
 	 * @return 响应信息字符串
 	 */
 	public static String postJson(final String url, final String params, final String charset, final boolean useSSL) {
-		return LKPoster.post(url, LKPoster.toListNameValuePair(params, false), charset, useSSL);
+		return post(url, toListNameValuePair(params, false), charset, useSSL);
 	}
 
 

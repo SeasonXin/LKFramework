@@ -1,4 +1,4 @@
-package com.lichkin.framework.springframework.entities.sys.app;
+package com.lichkin.framework.springboot.entities.impl;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -6,9 +6,9 @@ import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
 import javax.persistence.Table;
 
+import com.alibaba.fastjson.annotation.JSONField;
 import com.lichkin.framework.bases.enums.LKLoginChannelEnum;
-import com.lichkin.framework.bases.statics.LKEntityFieldLengthStatics;
-import com.lichkin.framework.springboot.db.entities.LKMappedBaseEntity;
+import com.lichkin.framework.springboot.entities.LKMappedBaseEntity;
 
 import lombok.Getter;
 import lombok.Setter;
@@ -24,31 +24,37 @@ import lombok.Setter;
 public final class SysAppFeedbackEntity extends LKMappedBaseEntity {
 
 	/** serialVersionUID */
-	private static final long serialVersionUID = 7584358803840175098L;
+	private static final long serialVersionUID = 8888886666668018L;
 
 	/** 客户端名称 */
-	@Column(insertable = true, updatable = true, nullable = false, unique = false, length = 50)
+	@Column(insertable = true, updatable = false, nullable = false, unique = false, length = LENGTH_BUS_NAME)
+	@JSONField(ordinal = 1)
 	private String appName;
 
 	/** 客户端类型 */
 	@Enumerated(EnumType.STRING)
-	@Column(insertable = true, updatable = true, nullable = false, unique = false, length = 32)
+	@Column(insertable = true, updatable = false, nullable = false, unique = false, length = LENGTH_CODE)
+	@JSONField(ordinal = 2)
 	private LKLoginChannelEnum platform;
 
 	/** 当前版本，V1.0.0。 */
-	@Column(insertable = true, updatable = true, nullable = false, unique = false, length = 10)
+	@Column(insertable = true, updatable = false, nullable = false, unique = false, length = LENGTH_CODE)
+	@JSONField(ordinal = 3)
 	private String currentAppVersion;
 
 	/** 用户ID */
-	@Column(insertable = true, updatable = true, nullable = true, unique = false, length = LKEntityFieldLengthStatics.LENGTH_ID)
+	@Column(insertable = true, updatable = false, nullable = false, unique = false, length = LENGTH_ID)
+	@JSONField(ordinal = 4)
 	private String userId;
 
 	/** 联系方式 */
-	@Column(insertable = true, updatable = true, nullable = true, unique = false, length = 200)
+	@Column(insertable = true, updatable = false, nullable = true, unique = false, length = LENGTH_VALUE)
+	@JSONField(ordinal = 5)
 	private String contactWay;
 
 	/** 反馈文件IDs */
-	@Column(insertable = true, updatable = true, nullable = true, unique = false, length = 200)
+	@Column(insertable = true, updatable = false, nullable = true, unique = false, length = LENGTH_VALUE)
+	@JSONField(ordinal = 6)
 	private String feedbackFileIds;
 
 }

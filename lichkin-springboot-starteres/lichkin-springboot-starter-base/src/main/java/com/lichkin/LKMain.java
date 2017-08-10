@@ -22,7 +22,7 @@ import com.lichkin.framework.utils.lang.json.alibaba.LKJSONUtils;
 public class LKMain implements LKSysConfigKeys {
 
 	/** 默认加载的profile */
-	private static String[] PROFILES = { "db", "web", "admin", "common" };
+	private static String[] PROFILES = { "db", "web", "common" };
 
 	/** 默认加载的profile长度 */
 	private static int PROFILES_LENGTH = PROFILES.length;
@@ -143,7 +143,6 @@ public class LKMain implements LKSysConfigKeys {
 	private static void analysizeProfiles() {
 		analysizeProfileDB();// 解析数据库环境
 		analysizeProfileWeb();// 解析WEB环境
-		analysizeProfileAdmin();// 解析ADMIN环境
 		PROFILES_LENGTH = PROFILES.length;
 	}
 
@@ -169,16 +168,6 @@ public class LKMain implements LKSysConfigKeys {
 		}
 	}
 
-
-	/**
-	 * 解析ADMIN环境
-	 * @return 依赖Admin环境返回true，否则返回false。
-	 */
-	private static void analysizeProfileAdmin() {
-		if (!ClassUtils.isPresent("com.lichkin.framework.springboot.admin.services.LKAdminService", null)) {
-			PROFILES = ArrayUtils.removeElement(PROFILES, "admin");
-		}
-	}
 
 
 	/**

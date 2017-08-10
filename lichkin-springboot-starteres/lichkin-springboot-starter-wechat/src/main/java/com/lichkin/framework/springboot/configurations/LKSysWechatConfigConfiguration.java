@@ -77,44 +77,57 @@ public class LKSysWechatConfigConfiguration extends LKDBService implements Appli
 		getOpenidUrl = LKStringUtils.replaceDatas(getOpenidUrl, new LKDatas().put("#appid", appid).put("#secret", secret));
 		LKWechatConfigStatics.getOpenidUrl = getOpenidUrl;
 
+		// getAccessTokenUrl
 		String getAccessTokenUrl = LKPropertiesUtils.getProperty("lichkin.framework.wechat.apiUrls.getAccessToken");
 		if (getAccessTokenUrl == null) {
 			throw new LKRuntimeException(LKErrorCodeEnum.ERROR, "lichkin.framework.wechat.apiUrls.getAccessToken is null.");
 		}
-
 		getAccessTokenUrl = LKStringUtils.replaceDatas(getAccessTokenUrl, new LKDatas().put("#appid", appid).put("#secret", secret));
 		LKWechatConfigStatics.getAccessTokenUrl = getAccessTokenUrl;
 
+		// menuCreateUrl
 		final String menuCreateUrl = LKPropertiesUtils.getProperty("lichkin.framework.wechat.apiUrls.menuCreate");
 		if (menuCreateUrl == null) {
 			throw new LKRuntimeException(LKErrorCodeEnum.ERROR, "lichkin.framework.wechat.apiUrls.menuCreate is null.");
 		}
 		LKWechatConfigStatics.menuCreateUrl = menuCreateUrl;
 
+		// getJsTicketUrl
 		final String getJsTicketUrl = LKPropertiesUtils.getProperty("lichkin.framework.wechat.apiUrls.getJsTicket");
 		if (getJsTicketUrl == null) {
 			throw new LKRuntimeException(LKErrorCodeEnum.ERROR, "lichkin.framework.wechat.apiUrls.getJsTicket is null.");
 		}
 		LKWechatConfigStatics.getJsTicketUrl = getJsTicketUrl;
 
+		// wechatJsUrl
+		final String wechatJsUrl = LKPropertiesUtils.getProperty("lichkin.framework.wechat.apiUrls.wechatJs");
+		if (wechatJsUrl == null) {
+			throw new LKRuntimeException(LKErrorCodeEnum.ERROR, "lichkin.framework.wechat.apiUrls.wechatJs is null.");
+		}
+		LKWechatConfigStatics.wechatJsUrl = wechatJsUrl;
+
+		// welcomeTitle
 		final String welcomeTitle = LKPropertiesUtils.getProperty("lichkin.framework.wechat.msg.welcome.title");
 		if (welcomeTitle == null) {
 			throw new LKRuntimeException(LKErrorCodeEnum.ERROR, "lichkin.framework.wechat.msg.welcome.title is null.");
 		}
 		LKWechatConfigStatics.welcomeTitle = welcomeTitle;
 
+		// welcomeDescription
 		final String welcomeDescription = LKPropertiesUtils.getProperty("lichkin.framework.wechat.msg.welcome.description");
 		if (welcomeDescription == null) {
 			throw new LKRuntimeException(LKErrorCodeEnum.ERROR, "lichkin.framework.wechat.msg.welcome.description is null.");
 		}
 		LKWechatConfigStatics.welcomeDescription = welcomeDescription;
 
+		// welcomePicUrl
 		final String welcomePicUrl = LKPropertiesUtils.getProperty("lichkin.framework.wechat.msg.welcome.picUrl");
 		if (welcomePicUrl == null) {
 			throw new LKRuntimeException(LKErrorCodeEnum.ERROR, "lichkin.framework.wechat.msg.welcome.picUrl is null.");
 		}
 		LKWechatConfigStatics.welcomePicUrl = welcomePicUrl;
 
+		// welcomeUrl
 		final String welcomeUrl = LKPropertiesUtils.getProperty("lichkin.framework.wechat.msg.welcome.url");
 		if (welcomeUrl == null) {
 			throw new LKRuntimeException(LKErrorCodeEnum.ERROR, "lichkin.framework.wechat.msg.welcome.url is null.");

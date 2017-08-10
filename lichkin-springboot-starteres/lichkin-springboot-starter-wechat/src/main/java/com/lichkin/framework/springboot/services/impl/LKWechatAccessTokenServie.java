@@ -9,7 +9,7 @@ import com.lichkin.framework.bases.enums.LKDatePatternEnum;
 import com.lichkin.framework.http.request.LKRequestUtils;
 import com.lichkin.framework.springboot.entities.impl.SysWechatTokenEntity;
 import com.lichkin.framework.springboot.services.LKDBService;
-import com.lichkin.framework.utils.lang.json.LKJSONUtils;
+import com.lichkin.framework.utils.lang.json.alibaba.LKJSONUtils;
 import com.lichkin.framework.wechat.statics.LKWechatConfigStatics;
 
 /**
@@ -42,7 +42,7 @@ public class LKWechatAccessTokenServie extends LKDBService {
 				final String jsonStr = LKRequestUtils.doRequest(LKWechatConfigStatics.getAccessTokenUrl);
 				logger.info(jsonStr);
 
-				final LKDatas datas = LKJSONUtils.toDatas(jsonStr);
+				final LKDatas datas = LKJSONUtils.toDatas(jsonStr, false);
 				LKWechatAccessTokenServie.accessToken = datas.getString("access_token", null);
 				LKWechatAccessTokenServie.expiresIn = datas.getInteger("expires_in", null);
 				LKWechatAccessTokenServie.insertTime = DateTime.now();

@@ -15,6 +15,9 @@ public interface LKEntityFieldLengthStatics {
 	/** length for field time */
 	public static final int LENGTH_TIME = 19;
 
+	/** length for field time */
+	public static final int LENGTH_TIME_ALL = 32;
+
 	/** length for field systemTag */
 	public static final int LENGTH_SYSTEM_TAG = 100;
 

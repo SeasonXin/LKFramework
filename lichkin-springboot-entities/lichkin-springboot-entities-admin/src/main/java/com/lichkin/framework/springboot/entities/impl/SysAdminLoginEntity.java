@@ -1,9 +1,9 @@
-package com.lichkin.framework.springframework.entities.sys.admin;
+package com.lichkin.framework.springboot.entities.impl;
 
 import javax.persistence.Entity;
 import javax.persistence.Table;
 
-import com.lichkin.framework.springboot.db.entities.LKMappedUserLoginEntity;
+import com.lichkin.framework.springboot.entities.LKMappedUserLoginEntity;
 
 /**
  * 管理员用户登录表实体类
@@ -14,6 +14,6 @@ import com.lichkin.framework.springboot.db.entities.LKMappedUserLoginEntity;
 public class SysAdminLoginEntity extends LKMappedUserLoginEntity {
 
 	/** serialVersionUID */
-	private static final long serialVersionUID = 1255969692877688672L;
+	private static final long serialVersionUID = 8888886666668021L;
 
 }
