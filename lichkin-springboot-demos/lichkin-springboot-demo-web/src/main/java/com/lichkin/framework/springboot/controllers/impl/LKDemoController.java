@@ -1,4 +1,4 @@
-package com.lichkin.framework.springboot.web.controllers;
+package com.lichkin.framework.springboot.controllers.impl;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
