@@ -1,0 +1,44 @@
+{
+	"id": "3cf7f00c-7308-8c36-2e78-e6ee53574cd2",
+	"name": "demos",
+	"description": "",
+	"order": [
+		"31463e7f-0a1e-29e4-0484-a6d7be7d12f6"
+	],
+	"folders": [],
+	"folders_order": [],
+	"timestamp": 1502350426235,
+	"owner": "2490884",
+	"public": false,
+	"requests": [
+		{
+			"id": "31463e7f-0a1e-29e4-0484-a6d7be7d12f6",
+			"headers": "Content-Type: application/json\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "http://localhost:8080/demo/demo.do",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "POST",
+			"data": [],
+			"dataMode": "raw",
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1502352351387,
+			"name": "http://localhost:8080/demo/demo.do",
+			"description": "",
+			"collectionId": "3cf7f00c-7308-8c36-2e78-e6ee53574cd2",
+			"responses": [],
+			"rawModeData": "{\r\n    \"callerName\": \"demoCaller\",\r\n    \"password\": \"Pa$5w0rd\",\r\n    \"requestDatas\": {\r\n        \"a\": \"b\"\r\n    }\r\n}"
+		}
+	]
+}

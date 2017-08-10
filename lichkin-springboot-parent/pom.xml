@@ -40,12 +40,14 @@
     <module>../lichkin-springboot-starteres/lichkin-springboot-starter-web-front</module>
     <module>../lichkin-springboot-starteres/lichkin-springboot-starter-web-back</module>
     <module>../lichkin-springboot-starteres/lichkin-springboot-starter-wechat</module>
+    <module>../lichkin-springboot-starteres/lichkin-springboot-starter-interfaces</module>
 
     <module>../lichkin-springboot-entities/lichkin-springboot-entities-quartz</module>
     <module>../lichkin-springboot-entities/lichkin-springboot-entities-mail</module>
     <module>../lichkin-springboot-entities/lichkin-springboot-entities-sc</module>
     <module>../lichkin-springboot-entities/lichkin-springboot-entities-sms</module>
     <module>../lichkin-springboot-entities/lichkin-springboot-entities-wechat</module>
+    <module>../lichkin-springboot-entities/lichkin-springboot-entities-interfaces</module>
   </modules>
 
   <dependencyManagement>
@@ -129,6 +131,11 @@
         <artifactId>lichkin-springboot-starter-wechat</artifactId>
         <version>${current.version}</version>
       </dependency>
+      <dependency>
+        <groupId>com.lichkin</groupId>
+        <artifactId>lichkin-springboot-starter-interfaces</artifactId>
+        <version>${current.version}</version>
+      </dependency>
 
       <dependency>
         <groupId>com.lichkin</groupId>
@@ -153,6 +160,11 @@
       <dependency>
         <groupId>com.lichkin</groupId>
         <artifactId>lichkin-springboot-entities-wechat</artifactId>
+        <version>${current.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>com.lichkin</groupId>
+        <artifactId>lichkin-springboot-entities-interfaces</artifactId>
         <version>${current.version}</version>
       </dependency>
     </dependencies>

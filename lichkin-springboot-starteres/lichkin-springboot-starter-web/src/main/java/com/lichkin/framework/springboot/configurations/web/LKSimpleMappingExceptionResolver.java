@@ -8,6 +8,7 @@ import org.apache.commons.logging.LogFactory;
 import org.springframework.http.converter.json.Jackson2ObjectMapperBuilder;
 import org.springframework.http.server.ServletServerHttpResponse;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.method.HandlerMethod;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.handler.SimpleMappingExceptionResolver;
@@ -36,8 +37,24 @@ public class LKSimpleMappingExceptionResolver extends SimpleMappingExceptionReso
 		logger.error(ex);
 
 		if ((handler != null) && (handler instanceof HandlerMethod)) {
-			final ResponseBody responseBody = ((HandlerMethod) handler).getMethodAnnotation(ResponseBody.class);
-			if (responseBody != null) {// 方法使用了ResponseBody注解，则视为 AJAX请求。
+			boolean isDataRequest = false;
+
+			// 判断.do型请求
+			if (!isDataRequest && LKStringUtils.endsWith(request.getRequestURI(), ".do")) {
+				isDataRequest = true;
+			}
+
+			// 判断RestController注解
+			if (!isDataRequest && (((HandlerMethod) handler).getBean().getClass().getAnnotation(RestController.class) != null)) {
+				isDataRequest = true;
+			}
+
+			// 判断ResponseBody注解
+			if (!isDataRequest && (((HandlerMethod) handler).getMethodAnnotation(ResponseBody.class) != null)) {
+				isDataRequest = true;
+			}
+
+			if (isDataRequest) {// 方法使用了ResponseBody注解，则视为数据请求。
 				try {
 					final ObjectMapper objectMapper = Jackson2ObjectMapperBuilder.json().applicationContext(LKApplicationContext.getContext()).build();
 					final JsonGenerator generator = objectMapper.getFactory().createGenerator(new ServletServerHttpResponse(response).getBody(), JsonEncoding.UTF8);
