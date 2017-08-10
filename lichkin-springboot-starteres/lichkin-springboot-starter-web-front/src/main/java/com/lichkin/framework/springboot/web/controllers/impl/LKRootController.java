@@ -30,4 +30,30 @@ public class LKRootController extends LKController {
 		return LKModelAndViewUtils.analyzeViewName(getModelAndView());
 	}
 
+
+	/**
+	 * 页面跳转
+	 * @param requestDatas 请求参数，由框架自动解析请求的参数并注入。
+	 * @param subUrl 子路径
+	 * @return 页面路径，附带了请求参数及请求路径的相关信息。
+	 */
+	@WithOutLogin
+	@RequestMapping(value = "/{x}/{y}.html", method = RequestMethod.GET)
+	public ModelAndView toGo(final LKDatas requestDatas, @PathVariable(value = "x") final String x, @PathVariable(value = "y") final String y) {
+		return LKModelAndViewUtils.analyzeViewName(getModelAndView());
+	}
+
+
+	/**
+	 * 页面跳转
+	 * @param requestDatas 请求参数，由框架自动解析请求的参数并注入。
+	 * @param subUrl 子路径
+	 * @return 页面路径，附带了请求参数及请求路径的相关信息。
+	 */
+	@WithOutLogin
+	@RequestMapping(value = "/{x}/{y}/{z}.html", method = RequestMethod.GET)
+	public ModelAndView toGo(final LKDatas requestDatas, @PathVariable(value = "x") final String x, @PathVariable(value = "y") final String y, @PathVariable(value = "z") final String z) {
+		return LKModelAndViewUtils.analyzeViewName(getModelAndView());
+	}
+
 }
