@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<resources>
+    <string name="btn_ok_text">确定</string>
+    <string name="btn_cancel_text">取消</string>
+    <string name="module_wait_tip">该功能即将上线，敬请期待！~</string>
+    <string name="scan_tip">请扫描您的二维码！~</string>
+    <string name="scan_success_tip">扫描结束！~</string>
+    <string name="bluetooth_nonsupport_tip">你的设备不支持蓝牙！~</string>
+    <string name="bluetooth_off_tip">没有开启蓝牙，尝试重新开启！~</string>
+    <string name="bluetooth_gatt_disconnected">蓝牙gatt断开连接！~</string>
+    <string name="bluetooth_device_scanning">蓝牙设备扫描中</string>
+</resources>

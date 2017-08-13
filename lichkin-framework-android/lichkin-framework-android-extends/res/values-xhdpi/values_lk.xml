@@ -1,0 +1,5 @@
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- dimens -->
+    <dimen name="lk_title_textSize">24dp</dimen>
+    <dimen name="lk_textSize">18dp</dimen>
+</resources>

@@ -1,0 +1,22 @@
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- colors -->
+    <color name="lk_backgroundColor">#71CEF0</color>
+    <color name="lk_foregroundColor">#01A6E6</color>
+    <color name="lk_title_textColor">#FFFFFF</color>
+    <color name="lk_textColor">#FFFFFF</color>
+    <color name="lk_textColor_dark">#666666</color>
+    <!-- dimens -->
+    <dimen name="lk_title_textSize">18dp</dimen>
+    <dimen name="lk_textSize">12dp</dimen>
+    <!-- styles -->
+    <style name="lk_title">
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:background">@color/lk_foregroundColor</item>
+        <item name="android:gravity">center</item>
+        <item name="android:paddingBottom">1dp</item>
+        <item name="android:paddingTop">1dp</item>
+        <item name="android:textColor">@color/lk_title_textColor</item>
+        <item name="android:textSize">@dimen/lk_title_textSize</item>
+    </style>
+</resources>
