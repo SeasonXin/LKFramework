@@ -6,7 +6,7 @@
     <color name="lk_alert_dialog_btn_color">#01A6E6</color>
     <color name="lk_alert_dialog_btn_color_pressed">#48C6EF</color>
     <color name="lk_alert_dialog_btn_textColor">#FFFFFF</color>
-    <color name="lk_loading_dialog_background_color">#99000000</color>
+    <color name="lk_loading_dialog_background_color">#6648C6EF</color>
     <!-- dimens -->
     <dimen name="lk_alert_dialog_frame_radius">6dp</dimen>
     <dimen name="lk_loading_dialog_msg_textSize">12sp</dimen>

@@ -1,6 +1,7 @@
 package com.lichkin.framework.android.activities;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 
 /**
@@ -17,6 +18,16 @@ public class LKActivity extends Activity {
 	protected void onCreate(final Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		ctx = this;
+	}
+
+
+	/**
+	 * 重启Activity
+	 */
+	protected void restartActivity() {
+		final Intent intent = getIntent();
+		finish();
+		startActivity(intent);
 	}
 
 }

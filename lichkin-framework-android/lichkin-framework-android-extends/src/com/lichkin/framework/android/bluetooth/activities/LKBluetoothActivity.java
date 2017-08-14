@@ -3,7 +3,6 @@ package com.lichkin.framework.android.bluetooth.activities;
 import com.lichkin.framework.android.R;
 import com.lichkin.framework.android.activities.LKActivity;
 import com.lichkin.framework.android.bluetooth.utils.LKBluetoothDeviceScanner;
-import com.lichkin.framework.android.bluetooth.utils.LKBluetoothScanCallback;
 import com.lichkin.framework.android.utils.LKDialogUtils;
 import com.lichkin.framework.android.utils.LKResourceUtils;
 import com.lichkin.framework.android.widgets.LKCallback;
@@ -38,12 +37,8 @@ public abstract class LKBluetoothActivity extends LKActivity {
 	/** 是否获取到ActivityResult */
 	private boolean resultOk = false;
 
-
-	/**
-	 * 获取扫描回调方法
-	 * @return 扫描回调方法
-	 */
-	protected abstract LKBluetoothScanCallback getScanCallback();
+	/** 扫描状态变更广播接收器已注册 */
+	private boolean stateChangedActionBroadcastReceiverRegistered = false;
 
 
 	@Override
@@ -72,7 +67,6 @@ public abstract class LKBluetoothActivity extends LKActivity {
 
 		};
 		deviceScanner = LKBluetoothDeviceScanner.getInstance(bluetoothAdapter);
-		deviceScanner.scan(getScanCallback(), ctx);
 	}
 
 
@@ -81,7 +75,10 @@ public abstract class LKBluetoothActivity extends LKActivity {
 		super.onStop();
 		if (!resultOk) {
 			checkBluetooth();
-			registerReceiver(stateChangedActionBroadcastReceiver, new IntentFilter("android.bluetooth.adapter.action.STATE_CHANGED"));
+			if (!stateChangedActionBroadcastReceiverRegistered) {
+				registerReceiver(stateChangedActionBroadcastReceiver, new IntentFilter("android.bluetooth.adapter.action.STATE_CHANGED"));
+				stateChangedActionBroadcastReceiverRegistered = true;
+			}
 		}
 	}
 
@@ -89,7 +86,10 @@ public abstract class LKBluetoothActivity extends LKActivity {
 	@Override
 	protected void onPause() {
 		super.onPause();
-		unregisterReceiver(stateChangedActionBroadcastReceiver);
+		if (stateChangedActionBroadcastReceiverRegistered) {
+			unregisterReceiver(stateChangedActionBroadcastReceiver);
+			stateChangedActionBroadcastReceiverRegistered = false;
+		}
 	}
 
 
