@@ -1,10 +1,19 @@
 <?xml version="1.0" encoding="utf-8" standalone="no"?>
 <resources>
+    <!-- 符号 -->
+    <string name="str_left_square_brackets">【</string>
+    <string name="str_right_square_brackets">】</string>
+    <string name="str_comma">，</string>
+    <string name="str_period">。</string>
+    <string name="str_exclamation">！</string>
+    <!-- 其它 -->
     <string name="btn_ok_text">确定</string>
     <string name="btn_cancel_text">取消</string>
     <string name="module_wait_tip">该功能即将上线，敬请期待！~</string>
+    <!-- 二维码 -->
     <string name="scan_tip">请扫描您的二维码！~</string>
     <string name="scan_success_tip">扫描结束！~</string>
+    <!-- 蓝牙 -->
     <string name="bluetooth_nonsupport_tip">你的设备不支持蓝牙！~</string>
     <string name="bluetooth_off_tip">没有开启蓝牙，尝试重新开启！~</string>
     <string name="bluetooth_gatt_disconnected">蓝牙gatt断开连接！~</string>

@@ -24,10 +24,19 @@ public class LKActivity extends Activity {
 	/**
 	 * 重启Activity
 	 */
-	protected void restartActivity() {
+	public void restartActivity() {
 		final Intent intent = getIntent();
 		finish();
 		startActivity(intent);
+	}
+
+
+	/**
+	 * 获取当前Activity对象
+	 * @return Activity对象
+	 */
+	public LKActivity getCurrentActivity() {
+		return LKActivity.this;
 	}
 
 }

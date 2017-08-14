@@ -1,10 +1,19 @@
 <?xml version="1.0" encoding="utf-8" standalone="no"?>
 <resources>
+    <!-- symbols -->
+    <string name="str_left_square_brackets">&#91;</string>
+    <string name="str_right_square_brackets">&#93;</string>
+    <string name="str_comma">&#44;</string>
+    <string name="str_period">&#46;</string>
+    <string name="str_exclamation">&#33;</string>
+    <!-- others -->
     <string name="btn_ok_text">OK</string>
     <string name="btn_cancel_text">Cancel</string>
     <string name="module_wait_tip">this module is coming soon, please wait.</string>
+    <!-- qrcode -->
     <string name="scan_tip">please scan your code.</string>
     <string name="scan_success_tip">scan finished.</string>
+    <!-- bluetooth -->
     <string name="bluetooth_nonsupport_tip">your device is unspport bluetooth.</string>
     <string name="bluetooth_off_tip">bluetooth is not on, try to reopen bluetooth.</string>
     <string name="bluetooth_gatt_disconnected">bluetooth gatt disconnected</string>
