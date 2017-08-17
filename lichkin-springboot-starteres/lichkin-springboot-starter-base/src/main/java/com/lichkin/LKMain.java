@@ -22,7 +22,7 @@ import com.lichkin.framework.utils.lang.json.alibaba.LKJSONUtils;
 public class LKMain implements LKSysConfigKeys {
 
 	/** 默认加载的profile */
-	private static String[] PROFILES = { "db", "web", "common" };
+	private static String[] PROFILES = { "db", "db2", "web", "common" };
 
 	/** 默认加载的profile长度 */
 	private static int PROFILES_LENGTH = PROFILES.length;
@@ -142,6 +142,7 @@ public class LKMain implements LKSysConfigKeys {
 	 */
 	private static void analysizeProfiles() {
 		analysizeProfileDB();// 解析数据库环境
+		analysizeProfileDB2();// 解析数据库从库环境
 		analysizeProfileWeb();// 解析WEB环境
 		PROFILES_LENGTH = PROFILES.length;
 	}
@@ -152,8 +153,19 @@ public class LKMain implements LKSysConfigKeys {
 	 * @return 依赖数据库环境返回true，否则返回false。
 	 */
 	private static void analysizeProfileDB() {
-		if (!ClassUtils.isPresent("com.lichkin.framework.springboot.daos.LKDao", null)) {
+		if (!ClassUtils.isPresent("com.lichkin.framework.springboot.configurations.LKSpringBootConfiguration4DBPrimary", null)) {
 			PROFILES = ArrayUtils.removeElement(PROFILES, "db");
+		}
+	}
+
+
+	/**
+	 * 解析数据库从库环境
+	 * @return 依赖数据库环境返回true，否则返回false。
+	 */
+	private static void analysizeProfileDB2() {
+		if (!ClassUtils.isPresent("com.lichkin.framework.springboot.configurations.LKSpringBootConfiguration4DBSecondary", null)) {
+			PROFILES = ArrayUtils.removeElement(PROFILES, "db2");
 		}
 	}
 
@@ -163,11 +175,10 @@ public class LKMain implements LKSysConfigKeys {
 	 * @return 依赖Web环境返回true，否则返回false。
 	 */
 	private static void analysizeProfileWeb() {
-		if (!ClassUtils.isPresent("com.lichkin.framework.springboot.web.LKSessionUser", null)) {
+		if (!ClassUtils.isPresent("com.lichkin.framework.springboot.configurations.web.LKSpringBootConfiguration4Web", null)) {
 			PROFILES = ArrayUtils.removeElement(PROFILES, "web");
 		}
 	}
-
 
 
 	/**

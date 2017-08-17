@@ -11,6 +11,7 @@ import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.boot.orm.jpa.EntityManagerFactoryBuilder;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Lazy;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 import org.springframework.orm.jpa.JpaTransactionManager;
 import org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean;
@@ -29,11 +30,12 @@ public class LKSpringBootConfiguration4DBSecondary {
 	/** 数据源 */
 	@Autowired
 	@Qualifier("secondaryDataSource")
-	private DataSource dataSource;
+	@Lazy
+	private DataSource secondaryDataSource;
 
 	/** JPA配置属性 */
 	@Autowired
-	private JpaProperties jpaProperties;
+	private JpaProperties secondaryJpaProperties;
 
 
 	/**
@@ -66,7 +68,7 @@ public class LKSpringBootConfiguration4DBSecondary {
 	 */
 	@Bean(name = "secondaryLocalContainerEntityManagerFactoryBean")
 	public LocalContainerEntityManagerFactoryBean secondaryLocalContainerEntityManagerFactoryBean(final EntityManagerFactoryBuilder builder) {
-		return builder.dataSource(dataSource).properties(jpaProperties.getHibernateProperties(dataSource)).packages("com.lichkin.**.entity.impl").persistenceUnit("secondaryPersistenceUnit").build();
+		return builder.dataSource(secondaryDataSource).properties(secondaryJpaProperties.getHibernateProperties(secondaryDataSource)).packages("com.lichkin.**.entity.impl").persistenceUnit("secondaryPersistenceUnit").build();
 	}
 
 
