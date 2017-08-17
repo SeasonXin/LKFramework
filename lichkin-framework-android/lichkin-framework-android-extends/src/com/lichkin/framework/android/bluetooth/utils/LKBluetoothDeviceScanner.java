@@ -56,7 +56,7 @@ public class LKBluetoothDeviceScanner {
 	private BluetoothAdapter bluetoothAdapter;
 
 	/** 设备列表 */
-	private final List<BluetoothDevice> listDevice = new ArrayList<>();
+	private final List<BluetoothDevice> listDevice = new ArrayList<BluetoothDevice>();
 
 
 	/**

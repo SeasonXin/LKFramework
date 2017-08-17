@@ -21,6 +21,6 @@
         android:layout_gravity="center"
         android:background="@drawable/selector_lk_alert_dialog_btn"
         android:gravity="center"
-        android:textColor="@color/lk_alert_dialog_btn_textColor"
-        android:textSize="@dimen/lk_alert_dialog_btn_textSize" />
+        android:textColor="@color/lk_btn_textColor"
+        android:textSize="@dimen/lk_btn_textSize" />
 </LinearLayout>

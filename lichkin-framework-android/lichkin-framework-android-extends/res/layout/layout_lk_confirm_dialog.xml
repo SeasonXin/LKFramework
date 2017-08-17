@@ -30,8 +30,8 @@
             android:layout_weight="1"
             android:background="@drawable/selector_lk_alert_dialog_btn"
             android:gravity="center"
-            android:textColor="@color/lk_alert_dialog_btn_textColor"
-            android:textSize="@dimen/lk_alert_dialog_btn_textSize" />
+            android:textColor="@color/lk_btn_textColor"
+            android:textSize="@dimen/lk_btn_textSize" />
         <View
             android:layout_width="1dp"
             android:layout_height="match_parent"
@@ -45,7 +45,7 @@
             android:layout_weight="1"
             android:background="@drawable/selector_lk_alert_dialog_btn"
             android:gravity="center"
-            android:textColor="@color/lk_alert_dialog_btn_textColor"
-            android:textSize="@dimen/lk_alert_dialog_btn_textSize" />
+            android:textColor="@color/lk_btn_textColor"
+            android:textSize="@dimen/lk_btn_textSize" />
     </LinearLayout>
 </LinearLayout>

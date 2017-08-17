@@ -27,12 +27,22 @@ public class LKResourceUtils {
 
 
 	/**
-	 * 获取color值
+	 * 获取dimen值
 	 * @param dimenId dimenId标签配置的name值
-	 * @return color标签配置的值
+	 * @return dimen标签配置的值
 	 */
 	public static int getDimensionPixelSize(final int dimenId) {
 		return LKContextUtils.getInstance().getResources().getDimensionPixelSize(dimenId);
+	}
+
+
+	/**
+	 * 获取dimen值
+	 * @param dimenId dimenId标签配置的name值
+	 * @return dimen标签配置的值
+	 */
+	public static int getDimensionDpSize(final int dimenId) {
+		return LKAndroidUtils.getDpValueByPxValue(getDimensionPixelSize(dimenId));
 	}
 
 }

@@ -1,0 +1,11 @@
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
+    <dimen name="lk_title_textSize">18dp</dimen>
+    <dimen name="lk_textSize">12dp</dimen>
+    <dimen name="btn_width">200dp</dimen>
+    <dimen name="btn_height">40dp</dimen>
+    <dimen name="lk_btn_radius">6dp</dimen>
+    <dimen name="lk_btn_textSize">16dp</dimen>
+    <dimen name="lk_frame_radius">6dp</dimen>
+    <dimen name="lk_loading_dialog_msg_textSize">12sp</dimen>
+    <dimen name="lk_alert_dialog_msg_textSize">16sp</dimen>
+</resources>
