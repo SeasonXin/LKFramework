@@ -74,7 +74,9 @@
         <artifactId>lichkin-framework-mail</artifactId>
         <version>${current.version}</version>
       </dependency>
+
       <!-- lichkin springboot framework -->
+      <!-- starters -->
       <dependency>
         <groupId>com.lichkin</groupId>
         <artifactId>lichkin-springboot-starter-base</artifactId>
@@ -143,6 +145,7 @@
         <version>${current.version}</version>
       </dependency>
 
+      <!-- entities -->
       <dependency>
         <groupId>com.lichkin</groupId>
         <artifactId>lichkin-springboot-entities-quartz</artifactId>
@@ -172,6 +175,33 @@
         <groupId>com.lichkin</groupId>
         <artifactId>lichkin-springboot-entities-interfaces</artifactId>
         <version>${current.version}</version>
+      </dependency>
+
+      <!-- webjars -->
+      <dependency>
+        <groupId>com.lichkin</groupId>
+        <artifactId>lichkin-webjars-jquery-3.2.1</artifactId>
+        <version>1.0.0-RELEASE</version>
+      </dependency>
+      <dependency>
+        <groupId>com.lichkin</groupId>
+        <artifactId>lichkin-webjars-easyui-1.4.5</artifactId>
+        <version>1.0.0-RELEASE</version>
+      </dependency>
+      <dependency>
+        <groupId>com.lichkin</groupId>
+        <artifactId>lichkin-webjars-echarts-2.2.7</artifactId>
+        <version>1.0.0-RELEASE</version>
+      </dependency>
+      <dependency>
+        <groupId>com.lichkin</groupId>
+        <artifactId>lichkin-webjars-my97-4.72</artifactId>
+        <version>1.0.0-RELEASE</version>
+      </dependency>
+      <dependency>
+        <groupId>com.lichkin</groupId>
+        <artifactId>lichkin-webjars-qrcode-20170802</artifactId>
+        <version>1.0.0-RELEASE</version>
       </dependency>
     </dependencies>
   </dependencyManagement>

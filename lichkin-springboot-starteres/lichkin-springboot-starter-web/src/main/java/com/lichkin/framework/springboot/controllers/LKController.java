@@ -14,6 +14,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.lichkin.framework.bases.LKDatas;
+import com.lichkin.framework.bases.enums.LKErrorCodeEnum;
+import com.lichkin.framework.bases.exceptions.LKRuntimeException;
 import com.lichkin.framework.bases.statics.LKWebStatics;
 import com.lichkin.framework.http.utils.LKUrlUtils;
 
@@ -105,6 +107,20 @@ public abstract class LKController implements LKWebStatics {
 			}
 		}
 		return "";
+	}
+
+
+	/**
+	 * 验证参数（只做非空验证，""、" "、null都将视为空。）
+	 * @param requestDatas 请求数据
+	 * @param keys 参数key数组
+	 */
+	public void validateParams(final LKDatas requestDatas, final String... keys) {
+		for (final String key : keys) {
+			if (requestDatas.getString(key, null) == null) {
+				throw new LKRuntimeException(LKErrorCodeEnum.PARAMS_EXCEPTION);
+			}
+		}
 	}
 
 }

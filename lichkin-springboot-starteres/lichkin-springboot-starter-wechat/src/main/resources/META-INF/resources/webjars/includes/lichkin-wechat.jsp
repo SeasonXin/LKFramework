@@ -19,6 +19,19 @@
     nonceStr: '<%=signature.getNonceStr()%>',
     signature: '<%=signature.getSignature()%>'
   });
+
+  // 根据实际使用情况来设置
+  /**
+  LKWechat.config({
+    jsApiList : [
+      'hideAllNonBaseMenuItem'
+    ]
+  });
+
+  wx.ready(function() {
+    wx.hideAllNonBaseMenuItem();
+  });
+  */
 </script>
 <%
 	}

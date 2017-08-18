@@ -1,8 +1,6 @@
 package com.lichkin.framework.springboot.controllers;
 
 import com.lichkin.framework.bases.LKDatas;
-import com.lichkin.framework.bases.enums.LKErrorCodeEnum;
-import com.lichkin.framework.bases.exceptions.LKRuntimeException;
 import com.lichkin.framework.bases.vos.LKInvokeValueVo;
 import com.lichkin.framework.springboot.services.LKInterfacesBaseService;
 
@@ -17,20 +15,6 @@ public abstract class LKInterfacesBaseController extends LKController {
 	 * @return 业务类对象
 	 */
 	public abstract LKInterfacesBaseService getService();
-
-
-	/**
-	 * 验证参数（只做非空验证，""、" "、null都将视为空。）
-	 * @param requestDatas 请求数据
-	 * @param keys 参数key数组
-	 */
-	public void validateParams(final LKDatas requestDatas, final String... keys) {
-		for (final String key : keys) {
-			if (requestDatas.getString(key, null) == null) {
-				throw new LKRuntimeException(LKErrorCodeEnum.PARAMS_EXCEPTION);
-			}
-		}
-	}
 
 
 	/**
