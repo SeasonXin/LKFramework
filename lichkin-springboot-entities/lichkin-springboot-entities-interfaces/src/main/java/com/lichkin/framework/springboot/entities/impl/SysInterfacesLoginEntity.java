@@ -34,7 +34,7 @@ public class SysInterfacesLoginEntity extends LKMappedIDEntity {
 	private String interfacesVersion;
 
 	/** 登录名 */
-	@Column(insertable = true, updatable = false, nullable = false, unique = true, length = LENGTH_CODE)
+	@Column(insertable = true, updatable = false, nullable = false, unique = false, length = LENGTH_CODE)
 	@JSONField(ordinal = 3)
 	private String loginName;
 
