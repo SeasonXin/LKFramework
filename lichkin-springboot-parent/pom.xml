@@ -10,7 +10,7 @@
 
   <groupId>com.lichkin</groupId>
   <artifactId>lichkin-springboot-parent</artifactId>
-  <version>1.0.0-SNAPSHOT</version>
+  <version>1.0.0-RELEASE</version>
 
   <parent>
     <groupId>org.springframework.boot</groupId>
@@ -21,7 +21,8 @@
   <properties>
     <java.version>1.8</java.version>
 
-    <current.version>1.0.0-SNAPSHOT</current.version>
+    <current.lichkin.springboot.version>1.0.0-RELEASE</current.lichkin.springboot.version>
+    <current.lichkin.version>1.0.0-RELEASE</current.lichkin.version>
 
     <start-class>com.lichkin.LKMain</start-class>
   </properties>
@@ -57,22 +58,22 @@
       <dependency>
         <groupId>com.lichkin</groupId>
         <artifactId>lichkin-framework-core</artifactId>
-        <version>${current.version}</version>
+        <version>${current.lichkin.version}</version>
       </dependency>
       <dependency>
         <groupId>com.lichkin</groupId>
         <artifactId>lichkin-framework-http</artifactId>
-        <version>${current.version}</version>
+        <version>${current.lichkin.version}</version>
       </dependency>
       <dependency>
         <groupId>com.lichkin</groupId>
         <artifactId>lichkin-framework-pinyin</artifactId>
-        <version>${current.version}</version>
+        <version>${current.lichkin.version}</version>
       </dependency>
       <dependency>
         <groupId>com.lichkin</groupId>
         <artifactId>lichkin-framework-mail</artifactId>
-        <version>${current.version}</version>
+        <version>${current.lichkin.version}</version>
       </dependency>
 
       <!-- lichkin springboot framework -->
@@ -80,101 +81,101 @@
       <dependency>
         <groupId>com.lichkin</groupId>
         <artifactId>lichkin-springboot-starter-base</artifactId>
-        <version>${current.version}</version>
+        <version>${current.lichkin.springboot.version}</version>
       </dependency>
       <dependency>
         <groupId>com.lichkin</groupId>
         <artifactId>lichkin-springboot-starter-database</artifactId>
-        <version>${current.version}</version>
+        <version>${current.lichkin.springboot.version}</version>
       </dependency>
       <dependency>
         <groupId>com.lichkin</groupId>
         <artifactId>lichkin-springboot-starter-database-secondary</artifactId>
-        <version>${current.version}</version>
+        <version>${current.lichkin.springboot.version}</version>
       </dependency>
 
       <dependency>
         <groupId>com.lichkin</groupId>
         <artifactId>lichkin-springboot-starter-quartz</artifactId>
-        <version>${current.version}</version>
+        <version>${current.lichkin.springboot.version}</version>
       </dependency>
       <dependency>
         <groupId>com.lichkin</groupId>
         <artifactId>lichkin-springboot-starter-mail</artifactId>
-        <version>${current.version}</version>
+        <version>${current.lichkin.springboot.version}</version>
       </dependency>
       <dependency>
         <groupId>com.lichkin</groupId>
         <artifactId>lichkin-springboot-starter-sc</artifactId>
-        <version>${current.version}</version>
+        <version>${current.lichkin.springboot.version}</version>
       </dependency>
       <dependency>
         <groupId>com.lichkin</groupId>
         <artifactId>lichkin-springboot-starter-sms</artifactId>
-        <version>${current.version}</version>
+        <version>${current.lichkin.springboot.version}</version>
       </dependency>
       <dependency>
         <groupId>com.lichkin</groupId>
         <artifactId>lichkin-springboot-starter-sms-sc</artifactId>
-        <version>${current.version}</version>
+        <version>${current.lichkin.springboot.version}</version>
       </dependency>
 
       <dependency>
         <groupId>com.lichkin</groupId>
         <artifactId>lichkin-springboot-starter-web</artifactId>
-        <version>${current.version}</version>
+        <version>${current.lichkin.springboot.version}</version>
       </dependency>
       <dependency>
         <groupId>com.lichkin</groupId>
         <artifactId>lichkin-springboot-starter-web-front</artifactId>
-        <version>${current.version}</version>
+        <version>${current.lichkin.springboot.version}</version>
       </dependency>
       <dependency>
         <groupId>com.lichkin</groupId>
         <artifactId>lichkin-springboot-starter-web-back</artifactId>
-        <version>${current.version}</version>
+        <version>${current.lichkin.springboot.version}</version>
       </dependency>
       <dependency>
         <groupId>com.lichkin</groupId>
         <artifactId>lichkin-springboot-starter-wechat</artifactId>
-        <version>${current.version}</version>
+        <version>${current.lichkin.springboot.version}</version>
       </dependency>
       <dependency>
         <groupId>com.lichkin</groupId>
         <artifactId>lichkin-springboot-starter-interfaces</artifactId>
-        <version>${current.version}</version>
+        <version>${current.lichkin.springboot.version}</version>
       </dependency>
 
       <!-- entities -->
       <dependency>
         <groupId>com.lichkin</groupId>
         <artifactId>lichkin-springboot-entities-quartz</artifactId>
-        <version>${current.version}</version>
+        <version>${current.lichkin.springboot.version}</version>
       </dependency>
       <dependency>
         <groupId>com.lichkin</groupId>
         <artifactId>lichkin-springboot-entities-mail</artifactId>
-        <version>${current.version}</version>
+        <version>${current.lichkin.springboot.version}</version>
       </dependency>
       <dependency>
         <groupId>com.lichkin</groupId>
         <artifactId>lichkin-springboot-entities-sc</artifactId>
-        <version>${current.version}</version>
+        <version>${current.lichkin.springboot.version}</version>
       </dependency>
       <dependency>
         <groupId>com.lichkin</groupId>
         <artifactId>lichkin-springboot-entities-sms</artifactId>
-        <version>${current.version}</version>
+        <version>${current.lichkin.springboot.version}</version>
       </dependency>
       <dependency>
         <groupId>com.lichkin</groupId>
         <artifactId>lichkin-springboot-entities-wechat</artifactId>
-        <version>${current.version}</version>
+        <version>${current.lichkin.springboot.version}</version>
       </dependency>
       <dependency>
         <groupId>com.lichkin</groupId>
         <artifactId>lichkin-springboot-entities-interfaces</artifactId>
-        <version>${current.version}</version>
+        <version>${current.lichkin.springboot.version}</version>
       </dependency>
 
       <!-- webjars -->
