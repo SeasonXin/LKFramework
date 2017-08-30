@@ -69,7 +69,10 @@ public abstract class LKController implements LKWebStatics {
 			requestURI = requestURI.substring(0, requestURI.indexOf(";"));
 		}
 		final String requestURIWithoutCtx = LKUrlUtils.getRequestURIWithoutCtx(contextPath, requestURI);
-		final String requestURIRoot = getRootRequestMappingValue();
+		String requestURIRoot = getRootRequestMappingValue();
+		if ("".equals(requestURIRoot) && (requestURI.split("/").length > 2)) {
+			requestURIRoot = "/" + requestURI.split("/")[1];
+		}
 
 		// 在请求数据中加入请求相关路径的参数
 		requestDatas.put(LK_REQUEST_CTX, contextPath);
