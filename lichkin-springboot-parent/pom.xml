@@ -10,7 +10,7 @@
 
   <groupId>com.lichkin</groupId>
   <artifactId>lichkin-springboot-parent</artifactId>
-  <version>1.0.1-RELEASE</version>
+  <version>1.0.2-RELEASE</version>
 
   <parent>
     <groupId>org.springframework.boot</groupId>
@@ -28,7 +28,7 @@
   </properties>
 
   <modules>
-    <module>../lichkin-springboot-entities/lichkin-springboot-entities-interfaces</module>
+    <module>../lichkin-springboot-starteres/lichkin-springboot-starter-web</module>
   </modules>
 
   <dependencyManagement>
@@ -102,7 +102,7 @@
       <dependency>
         <groupId>com.lichkin</groupId>
         <artifactId>lichkin-springboot-starter-web</artifactId>
-        <version>${current.lichkin.springboot.version}</version>
+        <version>1.0.2-RELEASE</version>
       </dependency>
       <dependency>
         <groupId>com.lichkin</groupId>
