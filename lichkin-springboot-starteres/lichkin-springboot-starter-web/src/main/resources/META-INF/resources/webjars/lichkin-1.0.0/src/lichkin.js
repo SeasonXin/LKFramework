@@ -38,9 +38,6 @@
         LK.log('params is undefined');
         return;
       }
-      if (typeof params != 'string') {
-        params = JSON.stringify(params);
-      }
       if (typeof callback == 'string') {
         callback = window[callback];
       }

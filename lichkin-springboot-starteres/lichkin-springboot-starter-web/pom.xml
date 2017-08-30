@@ -13,7 +13,7 @@
   <parent>
     <groupId>com.lichkin</groupId>
     <artifactId>lichkin-springboot-parent</artifactId>
-    <version>1.0.2-RELEASE</version>
+    <version>1.0.3-RELEASE</version>
     <relativePath>../../lichkin-springboot-parent</relativePath>
   </parent>
 
