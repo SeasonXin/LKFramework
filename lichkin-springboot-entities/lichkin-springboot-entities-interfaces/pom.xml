@@ -9,12 +9,11 @@
   <packaging>jar</packaging>
 
   <artifactId>lichkin-springboot-entities-interfaces</artifactId>
-  <version>1.0.1-RELEASE</version>
 
   <parent>
     <groupId>com.lichkin</groupId>
     <artifactId>lichkin-springboot-parent</artifactId>
-    <version>1.0.0-RELEASE</version>
+    <version>1.0.1-RELEASE</version>
     <relativePath>../../lichkin-springboot-parent</relativePath>
   </parent>
 
