@@ -10,7 +10,7 @@
 
   <groupId>com.lichkin</groupId>
   <artifactId>lichkin-springboot-parent</artifactId>
-  <version>1.0.0-RELEASE</version>
+  <version>1.0.1-RELEASE</version>
 
   <parent>
     <groupId>org.springframework.boot</groupId>
@@ -28,27 +28,6 @@
   </properties>
 
   <modules>
-    <module>../lichkin-springboot-starteres/lichkin-springboot-starter-base</module>
-    <module>../lichkin-springboot-starteres/lichkin-springboot-starter-database</module>
-    <module>../lichkin-springboot-starteres/lichkin-springboot-starter-database-secondary</module>
-
-    <module>../lichkin-springboot-starteres/lichkin-springboot-starter-quartz</module>
-    <module>../lichkin-springboot-starteres/lichkin-springboot-starter-mail</module>
-    <module>../lichkin-springboot-starteres/lichkin-springboot-starter-sc</module>
-    <module>../lichkin-springboot-starteres/lichkin-springboot-starter-sms</module>
-    <module>../lichkin-springboot-starteres/lichkin-springboot-starter-sms-sc</module>
-
-    <module>../lichkin-springboot-starteres/lichkin-springboot-starter-web</module>
-    <module>../lichkin-springboot-starteres/lichkin-springboot-starter-web-front</module>
-    <module>../lichkin-springboot-starteres/lichkin-springboot-starter-web-back</module>
-    <module>../lichkin-springboot-starteres/lichkin-springboot-starter-wechat</module>
-    <module>../lichkin-springboot-starteres/lichkin-springboot-starter-interfaces</module>
-
-    <module>../lichkin-springboot-entities/lichkin-springboot-entities-quartz</module>
-    <module>../lichkin-springboot-entities/lichkin-springboot-entities-mail</module>
-    <module>../lichkin-springboot-entities/lichkin-springboot-entities-sc</module>
-    <module>../lichkin-springboot-entities/lichkin-springboot-entities-sms</module>
-    <module>../lichkin-springboot-entities/lichkin-springboot-entities-wechat</module>
     <module>../lichkin-springboot-entities/lichkin-springboot-entities-interfaces</module>
   </modules>
 
@@ -175,7 +154,7 @@
       <dependency>
         <groupId>com.lichkin</groupId>
         <artifactId>lichkin-springboot-entities-interfaces</artifactId>
-        <version>${current.lichkin.springboot.version}</version>
+        <version>1.0.1-RELEASE</version>
       </dependency>
 
       <!-- webjars -->
