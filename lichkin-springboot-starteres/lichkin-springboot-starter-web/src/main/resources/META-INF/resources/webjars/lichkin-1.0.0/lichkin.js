@@ -17,10 +17,16 @@
           if (typeof params == 'undefined') {
             params = 'params is undefined';
           }
-          if (typeof params != 'string') {
-            params = JSON.stringify(params);
+          if (typeof params == 'string') {
+            params = {
+              data : params
+            };
+          } else {
+            params = {
+              data : params
+            }
           }
-          window.WebViewJavascriptBridge.callHandler('log', params);
+          window.WebViewJavascriptBridge.callHandler('log', params, callback);
         } else {
           console.log(params);
         }
