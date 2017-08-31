@@ -24,10 +24,10 @@ public class TaskStarter {
 	private TaskService taskService;
 
 
-	@Scheduled(fixedRate = 20000)
+	@Scheduled(fixedRate = 3000)
 	@Transactional
 	public void testTasks() {
-		logger.info("每20秒执行一次");
+		logger.info("每3秒钟执行一次");
 		taskService.executeTask();
 	}
 
