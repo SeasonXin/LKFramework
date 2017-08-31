@@ -103,7 +103,7 @@ function showDetail(x, y) {
   updateCurrent($("#menu" + x + y), x, y);
 
   // 隐藏表单
-  frm.parent().hide();
+  frm.parents('.boxOut').hide();
 
   // 验证当前按钮是否可以进行相应的编辑
   if (!validateCurrentBtn()) {
@@ -125,7 +125,7 @@ function showDetail(x, y) {
   }
 
   // 显示表单对象
-  frm.parent().show();
+  frm.parents('.boxOut').show();
 }
 
 /**
@@ -163,7 +163,7 @@ function doSaveButton() {
   currentBtn.data('type', btnType.val());
 
   // 隐藏表单
-  frm.parent().hide();
+  frm.parents('.boxOut').hide();
 }
 
 /**
@@ -171,7 +171,7 @@ function doSaveButton() {
  */
 function doDeleteButton() {
   // 隐藏表单
-  frm.parent().hide();
+  frm.parents('.boxOut').hide();
 
   // 参数验证
   if (currentY == 0) {// 一级菜单
@@ -245,7 +245,7 @@ function doSaveMenu(flag) {
     menuDatas[x] = menuX;
   }
   LK.$.ajax({
-    url : '/config/saveMenu',
+    url : 'saveMenu',
     data : {
       flag : flag,
       menuDatas : JSON.stringify(menuDatas)

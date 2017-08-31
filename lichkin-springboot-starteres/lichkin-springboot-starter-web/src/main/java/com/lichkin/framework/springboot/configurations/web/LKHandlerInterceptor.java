@@ -68,6 +68,11 @@ public class LKHandlerInterceptor implements HandlerInterceptor, LKWebStatics {
 		map.put(REQUEST_DATAS, requestDatasReduce.getMap());
 		logger.info(LKJSONUtils.toJson(map, true, false));
 
+		// 开启debug模式后不进行地址及登录判断。
+		if (LKPropertiesUtils.getProperty("lichkin.framework.web.debug", false)) {
+			return true;
+		}
+
 		if ((handler != null) && (handler instanceof HandlerMethod)) {
 			// 先判断IP地址是否允许访问
 			final AllowReuqestIpKey allowReuqestIpKey = ((HandlerMethod) handler).getMethodAnnotation(AllowReuqestIpKey.class);

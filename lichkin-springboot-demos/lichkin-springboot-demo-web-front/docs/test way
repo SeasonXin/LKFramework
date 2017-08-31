@@ -1,0 +1,3 @@
+代码与lichkin-springboot-demo-web项目完全一样，只是引入了lichkin-springboot-starter-web-front项目。
+
+因lichkin-springboot-starter-web-front项目中映射了根路径下一级、二级、三级请求，所以可以通过localhost:8080/demo.html访问到/WEB-INF/pages/demo.jsp页面，此为一级路径映射的结果。

@@ -13,19 +13,28 @@
   <parent>
     <groupId>com.lichkin</groupId>
     <artifactId>lichkin-springboot-parent</artifactId>
-    <version>1.0.0-RELEASE</version>
+    <version>1.1.0-RELEASE</version>
     <relativePath>../../lichkin-springboot-parent</relativePath>
   </parent>
 
   <dependencies>
     <!-- lichkin framework -->
+    <!-- starters -->
     <dependency>
       <groupId>com.lichkin</groupId>
       <artifactId>lichkin-springboot-starter-web</artifactId>
     </dependency>
+
+    <!-- entities -->
     <dependency>
       <groupId>com.lichkin</groupId>
       <artifactId>lichkin-springboot-entities-wechat</artifactId>
+    </dependency>
+
+    <!-- webjars -->
+    <dependency>
+      <groupId>com.lichkin</groupId>
+      <artifactId>lichkin-webjars-jquery-3.2.1</artifactId>
     </dependency>
   </dependencies>
 

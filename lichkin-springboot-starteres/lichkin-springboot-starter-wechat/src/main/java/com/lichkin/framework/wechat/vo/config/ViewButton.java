@@ -35,7 +35,7 @@ public class ViewButton extends Button {
 		datas.put("#projectUrl", LKWechatConfigStatics.projectUrl);
 		datas.put("#btnName", btnName);
 		datas.put("#state", btnName);
-		url = LKStringUtils.replaceDatas(url, datas);
+		url = LKStringUtils.replaceDatas(LKWechatConfigStatics.authorizeUrl, datas);
 	}
 
 }

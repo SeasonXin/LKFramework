@@ -1,0 +1,4 @@
+application-web.yml中的ui值和isAdmin值默认是注释掉的，可以通过打开注释来重新配置响应页面。
+项目启动后通过localhost:8080访问页面， 根据不同的组合情况，将使用不同的页面响应。
+
+LKDemoController中映射了/demo/{subUrl}.html的请求，所以通过访问localhost:8080/demo/demo.html可以访问到/WEB-INF/pages/demo/demo.jsp页面。

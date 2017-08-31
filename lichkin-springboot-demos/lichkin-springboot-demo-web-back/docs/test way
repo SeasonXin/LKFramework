@@ -1,0 +1,5 @@
+后台项目即需要登录操作，在引入lichkin-springboot-starter-web-back项目后，需要对com.lichkin.framework.springboot.services.LKLoginService进行实现，此为演示项目，没有进行相关的业务实现。
+
+可以通过localhost:8080/login.html访问登录页面。
+
+有登录操作，故离不开数据库，所以在后台项目中，使用了t_sys_config表来配置web项目内容，效果仍然与lichkin-springboot-demo-web是一致的，取消了application-web.yml文件的配置，当然使用该文件配置仍然可以，只是数据库中配置的值优先级要高于配置配置的值，这也是为了防止不同环境下代码误配或者恶意篡改配置，数据库的配置相对则更加安全些。

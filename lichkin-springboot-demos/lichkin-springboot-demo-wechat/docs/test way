@@ -1,0 +1,10 @@
+发布到服务器，通过微信公众号平台配置验证地址:[服务器域名]/lichkin/wechat/token/verify.do。
+
+实现com.lichkin.framework.springboot.services.LKWechatTodoService中的方法来完成微信菜单点击的业务、关注事件响应等。
+
+可以通过访问[服务器域名]/lichkin/wechat/config/menu.html来进行菜单的配置。
+
+因为菜单的发布需要使用微信提供的access_token，所以只有在生产环境才能够进行发布。
+可以在本地启动项目进行菜单的配置，或者使用测试账号来查看菜单配置效果。
+
+菜单配置很重要，所以需要项目通过引入lichkin-springboot-starter-web-back项目，并实现登录逻辑后，通过登录页面进行登录后才可以访问菜单配置页面。当然如果是开发环境下，可以使用lichkin.framework.web.debug=true来绕过登录逻辑。

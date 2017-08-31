@@ -11,6 +11,7 @@ VALUES
 ('wechat.apiUrls.getJsTicket',NULL,'USING','lichkin.framework.wechat.apiUrls.getJsTicket','https://api.weixin.qq.com/cgi-bin/ticket/getticket?access_token=#access_token&type=jsapi','LichKin-Project'),
 ('wechat.apiUrls.getOpenid',NULL,'USING','lichkin.framework.wechat.apiUrls.getOpenid','https://api.weixin.qq.com/sns/oauth2/access_token?appid=#appid&secret=#secret&code=#code&grant_type=authorization_code','LichKin-Project'),
 ('wechat.apiUrls.menuCreate',NULL,'USING','lichkin.framework.wechat.apiUrls.menuCreate','https://api.weixin.qq.com/cgi-bin/menu/create?access_token=#access_token','LichKin-Project'),
+('wechat.apiUrls.wechatJsUrl',NULL,'USING','lichkin.framework.wechat.apiUrls.wechatJs','http://res.wx.qq.com/open/js/jweixin-1.0.0.js','LichKin-Project'),
 ('wechat.msg.demo.templateId',NULL,'USING','lichkin.framework.wechat.msg.demo.templateId','123456','LichKin-Project'),
 ('wechat.msg.demo.url',NULL,'USING','lichkin.framework.wechat.msg.demo.url','http://localhost:8080/demo.html','LichKin-Project'),
 ('wechat.msg.welcome.description',NULL,'USING','lichkin.framework.wechat.msg.welcome.description','苏州鑫宏利业信息科技有限公司','LichKin-Project'),

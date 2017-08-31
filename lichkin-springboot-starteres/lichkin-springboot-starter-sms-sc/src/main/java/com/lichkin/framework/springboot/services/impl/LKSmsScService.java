@@ -34,9 +34,12 @@ public class LKSmsScService extends LKDBService {
 	 * @param timeout 超时时长（分钟）
 	 * @return 验证码对象
 	 */
-	public SysSecurityCodeEntity getScAndSendSms(final String systemTag, final LKSmsSenderEnum sender, final LKPrototypeEnum busType, final String cellphone, final String message, final int length, final boolean threaded, final int timeout) {
+	public SysSecurityCodeEntity getScAndSendSms(final String systemTag, final LKSmsSenderEnum sender, final LKPrototypeEnum busType, final String cellphone, String message, final int length, final boolean threaded, final int timeout) {
 		// 获取验证码
 		final SysSecurityCodeEntity entity = scService.createSecurityCode(systemTag, busType, cellphone, length, timeout);
+
+		// 替换短信验证码
+		message = message.replaceAll("#sc", entity.getSecurityCode());
 
 		// 发送短信
 		smsService.sendSms(systemTag, sender, busType, cellphone, message, threaded);

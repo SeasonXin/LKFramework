@@ -10,7 +10,7 @@
 
   <groupId>com.lichkin</groupId>
   <artifactId>lichkin-springboot-parent</artifactId>
-  <version>1.0.5-RELEASE</version>
+  <version>1.1.0-RELEASE</version>
 
   <parent>
     <groupId>org.springframework.boot</groupId>
@@ -21,15 +21,35 @@
   <properties>
     <java.version>1.8</java.version>
 
-    <current.lichkin.springboot.version>1.0.0-RELEASE</current.lichkin.springboot.version>
+    <current.lichkin.springboot.version>1.1.0-RELEASE</current.lichkin.springboot.version>
     <current.lichkin.version>1.0.0-RELEASE</current.lichkin.version>
 
     <start-class>com.lichkin.LKMain</start-class>
   </properties>
 
   <modules>
+    <module>../lichkin-springboot-starteres/lichkin-springboot-starter-base</module>
+    <module>../lichkin-springboot-starteres/lichkin-springboot-starter-database</module>
+    <module>../lichkin-springboot-starteres/lichkin-springboot-starter-database-secondary</module>
+
+    <module>../lichkin-springboot-starteres/lichkin-springboot-starter-quartz</module>
+    <module>../lichkin-springboot-starteres/lichkin-springboot-starter-mail</module>
+    <module>../lichkin-springboot-starteres/lichkin-springboot-starter-sc</module>
+    <module>../lichkin-springboot-starteres/lichkin-springboot-starter-sms</module>
+    <module>../lichkin-springboot-starteres/lichkin-springboot-starter-sms-sc</module>
+
     <module>../lichkin-springboot-starteres/lichkin-springboot-starter-web</module>
+    <module>../lichkin-springboot-starteres/lichkin-springboot-starter-web-front</module>
     <module>../lichkin-springboot-starteres/lichkin-springboot-starter-web-back</module>
+    <module>../lichkin-springboot-starteres/lichkin-springboot-starter-wechat</module>
+    <module>../lichkin-springboot-starteres/lichkin-springboot-starter-interfaces</module>
+
+    <module>../lichkin-springboot-entities/lichkin-springboot-entities-quartz</module>
+    <module>../lichkin-springboot-entities/lichkin-springboot-entities-mail</module>
+    <module>../lichkin-springboot-entities/lichkin-springboot-entities-sc</module>
+    <module>../lichkin-springboot-entities/lichkin-springboot-entities-sms</module>
+    <module>../lichkin-springboot-entities/lichkin-springboot-entities-wechat</module>
+    <module>../lichkin-springboot-entities/lichkin-springboot-entities-interfaces</module>
   </modules>
 
   <dependencyManagement>
@@ -66,7 +86,7 @@
       <dependency>
         <groupId>com.lichkin</groupId>
         <artifactId>lichkin-springboot-starter-database</artifactId>
-        <version>1.0.5-RELEASE</version>
+        <version>${current.lichkin.springboot.version}</version>
       </dependency>
       <dependency>
         <groupId>com.lichkin</groupId>
@@ -103,7 +123,7 @@
       <dependency>
         <groupId>com.lichkin</groupId>
         <artifactId>lichkin-springboot-starter-web</artifactId>
-        <version>1.0.4-RELEASE</version>
+        <version>${current.lichkin.springboot.version}</version>
       </dependency>
       <dependency>
         <groupId>com.lichkin</groupId>
@@ -113,7 +133,7 @@
       <dependency>
         <groupId>com.lichkin</groupId>
         <artifactId>lichkin-springboot-starter-web-back</artifactId>
-        <version>1.0.4-RELEASE</version>
+        <version>${current.lichkin.springboot.version}</version>
       </dependency>
       <dependency>
         <groupId>com.lichkin</groupId>
@@ -155,7 +175,7 @@
       <dependency>
         <groupId>com.lichkin</groupId>
         <artifactId>lichkin-springboot-entities-interfaces</artifactId>
-        <version>1.0.1-RELEASE</version>
+        <version>${current.lichkin.springboot.version}</version>
       </dependency>
 
       <!-- webjars -->
