@@ -9,11 +9,12 @@
   <packaging>jar</packaging>
 
   <artifactId>lichkin-springboot-starter-database</artifactId>
+  <version>1.0.5-RELEASE</version>
 
   <parent>
     <groupId>com.lichkin</groupId>
     <artifactId>lichkin-springboot-parent</artifactId>
-    <version>1.0.0-RELEASE</version>
+    <version>1.0.5-RELEASE</version>
     <relativePath>../../lichkin-springboot-parent</relativePath>
   </parent>
 

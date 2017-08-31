@@ -10,7 +10,7 @@
 
   <groupId>com.lichkin</groupId>
   <artifactId>lichkin-springboot-parent</artifactId>
-  <version>1.0.4-RELEASE</version>
+  <version>1.0.5-RELEASE</version>
 
   <parent>
     <groupId>org.springframework.boot</groupId>
@@ -66,7 +66,7 @@
       <dependency>
         <groupId>com.lichkin</groupId>
         <artifactId>lichkin-springboot-starter-database</artifactId>
-        <version>${current.lichkin.springboot.version}</version>
+        <version>1.0.5-RELEASE</version>
       </dependency>
       <dependency>
         <groupId>com.lichkin</groupId>
