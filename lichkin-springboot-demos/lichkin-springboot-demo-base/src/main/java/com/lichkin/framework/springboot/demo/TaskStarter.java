@@ -22,16 +22,16 @@ public class TaskStarter {
 	private TaskService taskService;
 
 
-	@Scheduled(cron = "0 0/1 * * * ?")
+	@Scheduled(cron = "0/5 * * * * ?")
 	public void statusCheck() {
-		logger.info("每分钟执行一次");
+		logger.info("每5秒钟执行一次");
 		taskService.executeTask();
 	}
 
 
-	@Scheduled(fixedRate = 20000)
+	@Scheduled(fixedRate = 3000)
 	public void testTasks() {
-		logger.info("每20秒执行一次");
+		logger.info("每3秒钟执行一次");
 		taskService.executeTask();
 	}
 
