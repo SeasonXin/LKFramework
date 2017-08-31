@@ -10,7 +10,7 @@
 
   <groupId>com.lichkin</groupId>
   <artifactId>lichkin-springboot-parent</artifactId>
-  <version>1.0.3-RELEASE</version>
+  <version>1.0.4-RELEASE</version>
 
   <parent>
     <groupId>org.springframework.boot</groupId>
@@ -29,6 +29,7 @@
 
   <modules>
     <module>../lichkin-springboot-starteres/lichkin-springboot-starter-web</module>
+    <module>../lichkin-springboot-starteres/lichkin-springboot-starter-web-back</module>
   </modules>
 
   <dependencyManagement>
@@ -102,7 +103,7 @@
       <dependency>
         <groupId>com.lichkin</groupId>
         <artifactId>lichkin-springboot-starter-web</artifactId>
-        <version>1.0.3-RELEASE</version>
+        <version>1.0.4-RELEASE</version>
       </dependency>
       <dependency>
         <groupId>com.lichkin</groupId>
@@ -112,7 +113,7 @@
       <dependency>
         <groupId>com.lichkin</groupId>
         <artifactId>lichkin-springboot-starter-web-back</artifactId>
-        <version>${current.lichkin.springboot.version}</version>
+        <version>1.0.4-RELEASE</version>
       </dependency>
       <dependency>
         <groupId>com.lichkin</groupId>

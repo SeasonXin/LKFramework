@@ -34,7 +34,7 @@ public class LKBackRestController extends LKController {
 	@RequestMapping(value = "/login.do", method = RequestMethod.POST)
 	public String doLogin(final LKDatas requestDatas) {
 		session.setAttribute(LKSessionUser.SESSION_USER, service.doLogin(requestDatas));
-		return LKController.SUCCESS;
+		return SUCCESS;
 	}
 
 
@@ -45,7 +45,7 @@ public class LKBackRestController extends LKController {
 	@RequestMapping(value = "/logout.do", method = RequestMethod.POST)
 	public String toLogout() {
 		session.removeAttribute(LKSessionUser.SESSION_USER);
-		return LKController.SUCCESS;
+		return SUCCESS;
 	}
 
 
