@@ -26,18 +26,18 @@ public class TaskStarter {
 	private TaskService2 taskService2;
 
 
-	@Scheduled(fixedRate = 20000)
+	@Scheduled(fixedRate = 3000)
 	@Transactional
 	public void testTasks() {
-		logger.info("每20秒执行一次");
+		logger.info("每3秒钟执行一次");
 		taskService.executeTask();
 	}
 
 
-	@Scheduled(fixedRate = 20000)
+	@Scheduled(fixedRate = 5000)
 	@Transactional(value = "secondaryPlatformTransactionManager")
 	public void testTasks2() {
-		logger.info("每20秒执行一次");
+		logger.info("每5秒钟执行一次");
 		taskService2.executeTask();
 	}
 
