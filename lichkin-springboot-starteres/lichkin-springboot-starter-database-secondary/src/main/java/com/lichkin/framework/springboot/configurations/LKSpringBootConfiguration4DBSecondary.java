@@ -24,7 +24,7 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
  */
 @Configuration
 @EnableTransactionManagement
-@EnableJpaRepositories(enableDefaultTransactions = false, entityManagerFactoryRef = "secondaryLocalContainerEntityManagerFactoryBean", basePackages = { "com.lichkin.**.dao.impl" })
+@EnableJpaRepositories(enableDefaultTransactions = false, entityManagerFactoryRef = "secondaryLocalContainerEntityManagerFactoryBean", transactionManagerRef = "secondaryPlatformTransactionManager", basePackages = { "com.lichkin.**.dao.impl" })
 public class LKSpringBootConfiguration4DBSecondary {
 
 	/** 数据源 */
