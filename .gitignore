@@ -5,3 +5,7 @@
 /**/bin/
 /**/target/
 /**/gen/
+
+#ignore idea files
+.idea
+*.iml
